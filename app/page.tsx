@@ -645,18 +645,19 @@ function CtaBand() {
 
 function Footer() {
   return (
-    <footer className="mx-auto max-w-6xl px-6 py-12">
-      <div
-        className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between"
-      >
-        <Logo width={120} showBeta={false} />
-        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm" style={{ color: TEXT_BODY }}>
-          <a href={LOGIN_URL} className="hover:opacity-80">Log in</a>
-          <a href={SIGNUP_URL} className="hover:opacity-80">Sign up</a>
+    <footer
+      className="mx-auto max-w-6xl px-6 py-12"
+      style={{ borderTop: `1px solid ${CARD_BORDER}` }}
+    >
+      <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <Logo width={100} showBeta={false} />
+        <div className="flex items-center gap-x-6 text-sm" style={{ color: TEXT_BODY }}>
           <Link href="/privacy" className="hover:opacity-80">Privacy</Link>
           <Link href="/terms" className="hover:opacity-80">Terms</Link>
-          <span style={{ color: "#5a5a5e" }}>© {new Date().getFullYear()} Elite Prep Inc.</span>
         </div>
+      </div>
+      <div className="mt-8 text-xs" style={{ color: "#5a5a5e" }}>
+        © {new Date().getFullYear()} Elite Prep Inc.
       </div>
     </footer>
   );
