@@ -77,11 +77,21 @@ function Hero() {
         priority
         sizes="100vw"
         quality={90}
-        className="-z-20 object-cover object-center"
+        className="-z-20 object-cover object-[center_25%] md:object-center"
       />
+      {/* Mobile: stronger top+bottom letterbox so copy reads everywhere */}
       <div
         aria-hidden
-        className="absolute inset-0 -z-10"
+        className="absolute inset-0 -z-10 md:hidden"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.85) 100%)",
+        }}
+      />
+      {/* Desktop: lighter, left-darker so the figure stays bright on the right */}
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10 hidden md:block"
         style={{
           background: [
             "linear-gradient(90deg, rgba(17,17,18,0.65) 0%, rgba(17,17,18,0.35) 40%, rgba(17,17,18,0.10) 75%, rgba(17,17,18,0.05) 100%)",
@@ -90,7 +100,7 @@ function Hero() {
         }}
       />
 
-      <div className="relative mx-auto flex max-w-6xl flex-col justify-center px-6 pb-16 pt-24 sm:pb-24 sm:pt-32 min-h-[600px] sm:min-h-[680px] lg:min-h-[760px]">
+      <div className="relative mx-auto flex max-w-6xl flex-col justify-start md:justify-center px-6 pb-24 pt-24 sm:pt-32 min-h-[600px] sm:min-h-[680px] lg:min-h-[760px]">
         <div className="max-w-3xl">
           <h1
             className="text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-[68px]"
@@ -114,7 +124,7 @@ function Hero() {
             <span style={{ color: TEXT_HEAD }}>perform</span> — and shows you the
             formula that puts you at your best.
           </p>
-          <div className="mt-10">
+          <div className="mt-8 md:mt-10">
             <a
               href={SIGNUP_URL}
               className="inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold transition-opacity hover:opacity-90"
@@ -124,7 +134,7 @@ function Hero() {
             </a>
           </div>
           <p
-            className="mt-6 text-xs"
+            className="mt-5 md:mt-6 text-xs"
             style={{ color: "#bdbdc0" }}
           >
             Starting with competitive golf — built for every sport.
