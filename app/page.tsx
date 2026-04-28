@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Target, ArrowRight, Trophy, User, Users, Gauge, Check, CheckCircle2, BarChart3, X } from "lucide-react";
 import Logo from "./components/Logo";
 import PhoneMockup from "./components/PhoneMockup";
+import Reveal from "./components/Reveal";
 
 const LOGIN_URL = "https://app.eliteprep.app/login";
 const SIGNUP_URL = "https://app.eliteprep.app/signup";
@@ -141,30 +142,32 @@ function Thesis() {
       }}
     >
       <div className="mx-auto max-w-4xl px-6 py-24 text-center sm:py-32">
-        <p
-          className="text-xs font-semibold tracking-[0.2em] uppercase mb-6"
-          style={{ color: BRAND }}
-        >
-          What we believe
-        </p>
-        <h2
-          className="text-2xl font-semibold leading-[1.15] tracking-tight sm:text-3xl md:text-4xl lg:text-5xl"
-          style={{ color: TEXT_HEAD, fontFamily: "var(--font-zilla), serif" }}
-        >
-          How you prepare —
-          <span style={{ color: TEXT_BODY }}> not just how much you play —</span>
-          <br className="hidden sm:block" /> determines how you perform when it counts.
-        </h2>
-        <p
-          className="mx-auto mt-8 max-w-2xl text-base leading-relaxed sm:text-lg"
-          style={{ color: TEXT_BODY }}
-        >
-          Most athlete apps live in one lane. Some track shots. Some track runs.
-          Some track recovery. None of them connect what you did in practice to
-          how you performed in competition. Elite Prep is the first platform that
-          does — because preparation is the most important variable in
-          competitive sport, and the one nobody&rsquo;s been measuring properly.
-        </p>
+        <Reveal>
+          <p
+            className="text-xs font-semibold tracking-[0.2em] uppercase mb-6"
+            style={{ color: BRAND }}
+          >
+            What we believe
+          </p>
+          <h2
+            className="text-2xl font-semibold leading-[1.15] tracking-tight sm:text-3xl md:text-4xl lg:text-5xl"
+            style={{ color: TEXT_HEAD, fontFamily: "var(--font-zilla), serif" }}
+          >
+            How you prepare —
+            <span style={{ color: TEXT_BODY }}> not just how much you play —</span>
+            <br className="hidden sm:block" /> determines how you perform when it counts.
+          </h2>
+          <p
+            className="mx-auto mt-8 max-w-2xl text-base leading-relaxed sm:text-lg"
+            style={{ color: TEXT_BODY }}
+          >
+            Most athlete apps live in one lane. Some track shots. Some track runs.
+            Some track recovery. None of them connect what you did in practice to
+            how you performed in competition. Elite Prep is the first platform that
+            does — because preparation is the most important variable in
+            competitive sport, and the one nobody&rsquo;s been measuring properly.
+          </p>
+        </Reveal>
       </div>
     </section>
   );
@@ -177,20 +180,22 @@ function Pillars() {
       style={{ background: "#0d0d0e", borderColor: CARD_BORDER }}
     >
       <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
-        <div className="mb-16 max-w-2xl">
-          <p
-            className="text-xs font-semibold tracking-wider uppercase mb-3"
-            style={{ color: BRAND }}
-          >
-            How it works
-          </p>
-          <h2
-            className="text-3xl font-semibold leading-tight sm:text-4xl"
-            style={{ color: TEXT_HEAD, fontFamily: "var(--font-zilla), serif" }}
-          >
-            Four answers. Every time you open the app.
-          </h2>
-        </div>
+        <Reveal>
+          <div className="mb-16 max-w-2xl">
+            <p
+              className="text-xs font-semibold tracking-wider uppercase mb-3"
+              style={{ color: BRAND }}
+            >
+              How it works
+            </p>
+            <h2
+              className="text-3xl font-semibold leading-tight sm:text-4xl"
+              style={{ color: TEXT_HEAD, fontFamily: "var(--font-zilla), serif" }}
+            >
+              Four answers. Every time you open the app.
+            </h2>
+          </div>
+        </Reveal>
 
         <div className="flex flex-col gap-16">
           <Pillar
@@ -296,10 +301,12 @@ function Pillar({
   );
 
   return (
-    <div className="grid items-center gap-10 lg:grid-cols-2">
-      <div className={flip ? "lg:order-2" : "lg:order-1"}>{text}</div>
-      <div className={flip ? "lg:order-1" : "lg:order-2"}>{demo}</div>
-    </div>
+    <Reveal>
+      <div className="grid items-center gap-10 lg:grid-cols-2">
+        <div className={flip ? "lg:order-2" : "lg:order-1"}>{text}</div>
+        <div className={flip ? "lg:order-1" : "lg:order-2"}>{demo}</div>
+      </div>
+    </Reveal>
   );
 }
 
@@ -324,30 +331,33 @@ function WhyElitePrep() {
   ];
   return (
     <section className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
-      <div className="mb-12 max-w-3xl">
-        <p
-          className="text-xs font-semibold tracking-wider uppercase mb-3"
-          style={{ color: BRAND }}
-        >
-          How Elite Prep compares
-        </p>
-        <h2
-          className="text-3xl font-semibold leading-[1.05] tracking-tight sm:text-4xl lg:text-5xl"
-          style={{ color: TEXT_HEAD, fontFamily: "var(--font-zilla), serif" }}
-        >
-          Built for the{" "}
-          <span style={{ color: BRAND, fontStyle: "italic" }}>next event.</span>
-        </h2>
-        <p
-          className="mt-6 max-w-2xl text-base leading-relaxed sm:text-lg"
-          style={{ color: TEXT_BODY }}
-        >
-          Other tools tell you to get better someday. Elite Prep tells you
-          whether you&rsquo;re ready in seventeen days — and exactly what
-          to do about it.
-        </p>
-      </div>
+      <Reveal>
+        <div className="mb-12 max-w-3xl">
+          <p
+            className="text-xs font-semibold tracking-wider uppercase mb-3"
+            style={{ color: BRAND }}
+          >
+            How Elite Prep compares
+          </p>
+          <h2
+            className="text-3xl font-semibold leading-[1.05] tracking-tight sm:text-4xl lg:text-5xl"
+            style={{ color: TEXT_HEAD, fontFamily: "var(--font-zilla), serif" }}
+          >
+            Built for the{" "}
+            <span style={{ color: BRAND, fontStyle: "italic" }}>next event.</span>
+          </h2>
+          <p
+            className="mt-6 max-w-2xl text-base leading-relaxed sm:text-lg"
+            style={{ color: TEXT_BODY }}
+          >
+            Other tools tell you to get better someday. Elite Prep tells you
+            whether you&rsquo;re ready in seventeen days — and exactly what
+            to do about it.
+          </p>
+        </div>
+      </Reveal>
 
+      <Reveal>
       <div
         className="md:hidden rounded-2xl border overflow-hidden"
         style={{ borderColor: CARD_BORDER, background: CARD_BG }}
@@ -417,7 +427,9 @@ function WhyElitePrep() {
           </tbody>
         </table>
       </div>
+      </Reveal>
 
+      <Reveal>
       <div
         className="hidden md:block overflow-x-auto rounded-2xl border"
         style={{ borderColor: CARD_BORDER, background: CARD_BG }}
@@ -486,6 +498,7 @@ function WhyElitePrep() {
           </tbody>
         </table>
       </div>
+      </Reveal>
 
     </section>
   );
@@ -523,40 +536,48 @@ function CompareMark({ value, size = "md" }: { value: true | false; size?: "sm" 
 function WhoItsFor() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
-      <div className="mb-12 max-w-2xl">
-        <p
-          className="text-xs font-semibold tracking-wider uppercase mb-3"
-          style={{ color: BRAND }}
-        >
-          Who it's for
-        </p>
-        <h2
-          className="text-3xl font-semibold leading-tight sm:text-4xl"
-          style={{ color: TEXT_HEAD, fontFamily: "var(--font-zilla), serif" }}
-        >
-          For athletes who take the work seriously
-          <br />and the coaches in their corner.
-        </h2>
-      </div>
+      <Reveal>
+        <div className="mb-12 max-w-2xl">
+          <p
+            className="text-xs font-semibold tracking-wider uppercase mb-3"
+            style={{ color: BRAND }}
+          >
+            Who it's for
+          </p>
+          <h2
+            className="text-3xl font-semibold leading-tight sm:text-4xl"
+            style={{ color: TEXT_HEAD, fontFamily: "var(--font-zilla), serif" }}
+          >
+            For athletes who take the work seriously
+            <br />and the coaches in their corner.
+          </h2>
+        </div>
+      </Reveal>
       <div className="grid gap-6 md:grid-cols-3">
-        <Audience
-          Icon={Trophy}
-          title="Individual athletes"
-          body="Junior, collegiate, amateur, pro — anyone who cares about the work between events. Walk into every event knowing you put in the right prep."
-          primary
-        />
-        <Audience
-          Icon={User}
-          title="Individual coaches"
-          body="The gap between lessons stops being a black box. Every practice, training block, and competitive rep — logged, scored, and shared with you."
-          primary
-        />
-        <Audience
-          Icon={Users}
-          title="Team coaches"
-          body="See the whole roster at a glance. Spot prep slipping before it shows up in results, and standardize how the team prepares."
-          primary
-        />
+        <Reveal delay={0}>
+          <Audience
+            Icon={Trophy}
+            title="Individual athletes"
+            body="Junior, collegiate, amateur, pro — anyone who cares about the work between events. Walk into every event knowing you put in the right prep."
+            primary
+          />
+        </Reveal>
+        <Reveal delay={0.1}>
+          <Audience
+            Icon={User}
+            title="Individual coaches"
+            body="The gap between lessons stops being a black box. Every practice, training block, and competitive rep — logged, scored, and shared with you."
+            primary
+          />
+        </Reveal>
+        <Reveal delay={0.2}>
+          <Audience
+            Icon={Users}
+            title="Team coaches"
+            body="See the whole roster at a glance. Spot prep slipping before it shows up in results, and standardize how the team prepares."
+            primary
+          />
+        </Reveal>
       </div>
     </section>
   );
@@ -611,40 +632,42 @@ function CtaBand() {
       style={{ background: "#0d0d0e", borderColor: CARD_BORDER }}
     >
       <div className="mx-auto max-w-3xl px-6 py-20 text-center sm:py-24">
-        <span
-          className="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold tracking-wider uppercase mb-5"
-          style={{ background: BRAND_DIM, color: BRAND }}
-        >
-          Free during beta
-        </span>
-        <h2
-          className="text-3xl font-semibold leading-tight sm:text-4xl"
-          style={{ color: TEXT_HEAD, fontFamily: "var(--font-zilla), serif" }}
-        >
-          Build a season you can actually plan around.
-        </h2>
-        <p
-          className="mx-auto mt-5 max-w-xl text-base leading-relaxed"
-          style={{ color: TEXT_BODY }}
-        >
-          No card, no commitment — every feature is open while we polish v1.
-        </p>
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <a
-            href={SIGNUP_URL}
-            className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold transition-opacity hover:opacity-90"
-            style={{ background: BRAND_GRADIENT, color: "#111112" }}
+        <Reveal>
+          <span
+            className="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold tracking-wider uppercase mb-5"
+            style={{ background: BRAND_DIM, color: BRAND }}
           >
-            Create your account <ArrowRight className="h-4 w-4" />
-          </a>
-          <a
-            href={LOGIN_URL}
-            className="rounded-full border px-7 py-3.5 text-base font-medium transition-colors hover:bg-white/5"
-            style={{ borderColor: CARD_BORDER, color: TEXT_HEAD }}
+            Free during beta
+          </span>
+          <h2
+            className="text-3xl font-semibold leading-tight sm:text-4xl"
+            style={{ color: TEXT_HEAD, fontFamily: "var(--font-zilla), serif" }}
           >
-            Log in
-          </a>
-        </div>
+            Build a season you can actually plan around.
+          </h2>
+          <p
+            className="mx-auto mt-5 max-w-xl text-base leading-relaxed"
+            style={{ color: TEXT_BODY }}
+          >
+            No card, no commitment — every feature is open while we polish v1.
+          </p>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href={SIGNUP_URL}
+              className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold transition-opacity hover:opacity-90"
+              style={{ background: BRAND_GRADIENT, color: "#111112" }}
+            >
+              Create your account <ArrowRight className="h-4 w-4" />
+            </a>
+            <a
+              href={LOGIN_URL}
+              className="rounded-full border px-7 py-3.5 text-base font-medium transition-colors hover:bg-white/5"
+              style={{ borderColor: CARD_BORDER, color: TEXT_HEAD }}
+            >
+              Log in
+            </a>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
