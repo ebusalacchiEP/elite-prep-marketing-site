@@ -305,11 +305,11 @@ function Pillar({
 
 function WhyElitePrep() {
   type CompareValue = true | false;
-  const competitors: { name: string; short: string; sub: string; primary?: boolean }[] = [
-    { name: "Elite Prep", short: "Elite Prep", sub: "Event-Anchored", primary: true },
-    { name: "Stat Trackers", short: "Stat", sub: "Shot & Round Data" },
-    { name: "Coaching Apps", short: "Coach", sub: "Video & Comms" },
-    { name: "Team Platforms", short: "Team", sub: "Enterprise Suites" },
+  const competitors: { name: string; sub: string; primary?: boolean }[] = [
+    { name: "Elite Prep", sub: "Event-Anchored", primary: true },
+    { name: "Stat Trackers", sub: "Shot & Round Data" },
+    { name: "Coaching Apps", sub: "Video & Comms" },
+    { name: "Team Platforms", sub: "Enterprise Suites" },
   ];
   const rows: { feature: string; marks: CompareValue[] }[] = [
     { feature: "Plans your training around your real event calendar", marks: [true, false, false, false] },
@@ -352,10 +352,17 @@ function WhyElitePrep() {
         className="md:hidden rounded-2xl border overflow-hidden"
         style={{ borderColor: CARD_BORDER, background: CARD_BG }}
       >
-        <table className="w-full border-collapse">
+        <table className="w-full border-collapse table-fixed">
+          <colgroup>
+            <col style={{ width: "32%" }} />
+            <col style={{ width: "17%" }} />
+            <col style={{ width: "17%" }} />
+            <col style={{ width: "17%" }} />
+            <col style={{ width: "17%" }} />
+          </colgroup>
           <thead>
             <tr>
-              <th className="px-2.5 py-3 text-left" />
+              <th className="px-2 py-3 text-left" />
               {competitors.map((c) => (
                 <th
                   key={c.name}
@@ -368,13 +375,13 @@ function WhyElitePrep() {
                   }}
                 >
                   <div
-                    className={c.primary ? "text-[11px] font-semibold leading-tight" : "text-xs font-semibold"}
+                    className="text-[10px] font-semibold leading-[1.15] break-words"
                     style={{
                       color: c.primary ? BRAND : TEXT_HEAD,
                       fontFamily: "var(--font-zilla), serif",
                     }}
                   >
-                    {c.short}
+                    {c.name}
                   </div>
                 </th>
               ))}
@@ -384,7 +391,7 @@ function WhyElitePrep() {
             {rows.map((r) => (
               <tr key={r.feature}>
                 <td
-                  className="px-2.5 py-3 text-left text-[11px] leading-snug"
+                  className="px-2 py-3 text-left text-[11px] leading-snug"
                   style={{
                     color: TEXT_HEAD,
                     borderTop: `1px solid ${CARD_BORDER}`,
@@ -395,7 +402,7 @@ function WhyElitePrep() {
                 {r.marks.map((m, ci) => (
                   <td
                     key={ci}
-                    className="px-1 py-3 text-center"
+                    className="px-0 py-3 text-center"
                     style={{
                       background:
                         ci === 0 ? "rgba(154,187,198,0.06)" : "transparent",
@@ -646,18 +653,21 @@ function CtaBand() {
 function Footer() {
   return (
     <footer
-      className="mx-auto max-w-6xl px-6 py-12"
+      className="mx-auto max-w-6xl px-6 py-10"
       style={{ borderTop: `1px solid ${CARD_BORDER}` }}
     >
-      <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
-        <Logo width={100} showBeta={false} />
-        <div className="flex items-center gap-x-6 text-sm" style={{ color: TEXT_BODY }}>
+      <div className="flex flex-row items-center justify-between gap-4">
+        <Logo width={90} showBeta={false} />
+        <div
+          className="flex flex-wrap items-center justify-end gap-x-4 gap-y-1 text-xs sm:text-sm"
+          style={{ color: TEXT_BODY }}
+        >
           <Link href="/privacy" className="hover:opacity-80">Privacy</Link>
           <Link href="/terms" className="hover:opacity-80">Terms</Link>
+          <span style={{ color: "#5a5a5e" }}>
+            © {new Date().getFullYear()} Elite Prep Inc.
+          </span>
         </div>
-      </div>
-      <div className="mt-8 text-xs" style={{ color: "#5a5a5e" }}>
-        © {new Date().getFullYear()} Elite Prep Inc.
       </div>
     </footer>
   );
