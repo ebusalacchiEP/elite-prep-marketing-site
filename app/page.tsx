@@ -71,7 +71,7 @@ function Hero() {
   return (
     <section className="relative isolate overflow-hidden">
       <Image
-        src="/hero/tournament.jpg"
+        src="/hero/tournament-v2.jpg"
         alt="Tournament gallery and grandstand surrounding the green during a final-round event"
         fill
         priority
