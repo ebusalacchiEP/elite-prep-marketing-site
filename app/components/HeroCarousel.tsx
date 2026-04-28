@@ -12,11 +12,6 @@ type Slide = {
 
 const SLIDES: Slide[] = [
   {
-    src: "/hero/tournament-v3.jpg",
-    alt: "Golfer at the tee with rolling fairways and houses behind",
-    position: "center 75%",
-  },
-  {
     src: "/hero/courtney-cook-SsIIw_MET0E-unsplash.jpg",
     alt: "Golfer following through against a mountain backdrop",
     position: "center 45%",
