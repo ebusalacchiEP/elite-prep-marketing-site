@@ -77,7 +77,7 @@ function Hero() {
         priority
         sizes="100vw"
         quality={90}
-        className="-z-20 object-cover object-[center_20%] md:object-center"
+        className="-z-20 object-cover origin-top scale-[1.5] md:origin-center md:scale-100 md:object-[center_75%]"
       />
       {/* Mobile: stronger top+bottom letterbox so copy reads everywhere */}
       <div
