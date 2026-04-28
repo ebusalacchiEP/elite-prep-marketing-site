@@ -155,19 +155,22 @@ function Thesis() {
             className="text-2xl font-semibold leading-[1.15] tracking-tight sm:text-3xl md:text-4xl lg:text-5xl"
             style={{ color: TEXT_HEAD, fontFamily: "var(--font-zilla), serif" }}
           >
-            How you prepare —
-            <span style={{ color: TEXT_BODY }}> not just how much you play —</span>
-            <br className="hidden sm:block" /> determines how you perform when it counts.
+            Real preparation isn&rsquo;t just measured in hours of sleep.
           </h2>
           <p
             className="mx-auto mt-8 max-w-2xl text-base leading-relaxed sm:text-lg"
             style={{ color: TEXT_BODY }}
           >
-            Most athlete apps live in one lane. Some track shots. Some track runs.
-            Some track recovery. None of them connect what you did in practice to
-            how you performed in competition. Elite Prep is the first platform that
-            does — because preparation is the most important variable in
-            competitive sport, and the one nobody&rsquo;s been measuring properly.
+            Some platforms track your sleep and recovery. Others track your shots
+            and scores. A few connect you with your coach. All of it matters.
+            None of it measures the thing that actually moves the needle: the
+            work you do in practice, the focus you bring to it, and whether
+            it&rsquo;s preparing you for what&rsquo;s next.{" "}
+            <span style={{ color: TEXT_HEAD }}>Elite Prep measures that.</span>{" "}
+            The reps. The decisions. What you focused on, how it felt, what you
+            noticed. Because preparation is the most important variable in
+            competitive sport, and nobody&rsquo;s been measuring it where it
+            matters most.
           </p>
         </Reveal>
       </div>
