@@ -88,7 +88,7 @@ function Hero() {
         }}
       />
 
-      <div className="relative mx-auto flex max-w-6xl flex-col justify-end px-6 pb-16 pt-24 sm:pb-24 sm:pt-32 min-h-[600px] sm:min-h-[680px] lg:min-h-[760px] lg:justify-center">
+      <div className="relative mx-auto flex max-w-6xl flex-col justify-center px-6 pb-16 pt-24 sm:pb-24 sm:pt-32 min-h-[600px] sm:min-h-[680px] lg:min-h-[760px]">
         <div className="max-w-3xl">
           <h1
             className="text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-[68px]"
