@@ -85,7 +85,7 @@ function Hero() {
         className="absolute inset-0 -z-10 md:hidden"
         style={{
           background:
-            "linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.85) 100%)",
+            "linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.6) 100%)",
         }}
       />
       {/* Desktop: lighter, left-darker so the figure stays bright on the right */}
