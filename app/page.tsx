@@ -67,9 +67,9 @@ function TopNav() {
 
 function Hero() {
   return (
-    <section className="mx-auto max-w-6xl px-6 pt-16 pb-24 sm:pt-24 sm:pb-32">
-      <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
-        <div>
+    <section className="mx-auto max-w-6xl px-6 pt-10 pb-24 sm:pt-24 sm:pb-32">
+      <div className="grid items-center gap-10 lg:gap-12 lg:grid-cols-[1.1fr_1fr]">
+        <div className="order-2 lg:order-1">
           <span
             className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold tracking-wider uppercase"
             style={{ background: BRAND_DIM, color: BRAND }}
@@ -118,7 +118,7 @@ function Hero() {
           </p>
         </div>
 
-        <div className="flex justify-center lg:justify-end">
+        <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
           <PhoneMockup
             src="/app-screens/hero-dashboard.png"
             alt="Elite Prep dashboard showing the next event countdown, forecast, and readiness score"
