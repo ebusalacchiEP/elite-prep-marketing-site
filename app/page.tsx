@@ -243,8 +243,8 @@ function Pillars() {
           <Pillar
             Icon={BarChart3}
             eyebrow="The patterns"
-            title="See yourself in your data."
-            body="Two layers of analytics, side by side: how you played and how you prepared. Strokes gained, time per practice segment, challenge level, finish-with-win rate. Patterns surfaced, not buried in spreadsheets."
+            title="Practice. Performance. Connected."
+            body="Two layers of analytics, side by side. How you prepared. How you performed. The patterns that emerge when you can see both at once — patterns that stay invisible when you only track one half."
             demoSrc="/app-screens/stats.png"
             demoAlt="Stats & Insights view with weekly volume bar chart, activity mix donut, and scoring trend over time"
             flip={true}
