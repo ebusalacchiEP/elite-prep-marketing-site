@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Target, ArrowRight, Trophy, User, Users, Gauge, Check, CheckCircle2, BarChart3, X } from "lucide-react";
 import Logo from "./components/Logo";
@@ -68,25 +69,54 @@ function TopNav() {
 
 function Hero() {
   return (
-    <section className="mx-auto max-w-6xl px-6 pt-10 pb-24 sm:pt-24 sm:pb-32">
-      <div className="grid items-center gap-10 lg:gap-12 lg:grid-cols-[1.1fr_1fr]">
-        <div className="order-2 lg:order-1">
+    <section className="relative isolate overflow-hidden">
+      <Image
+        src="/hero/tournament.jpg"
+        alt="Tournament gallery and grandstand surrounding the green during a final-round event"
+        fill
+        priority
+        sizes="100vw"
+        quality={90}
+        className="-z-20 object-cover object-center"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(17,17,18,0.45) 0%, rgba(17,17,18,0.65) 45%, rgba(17,17,18,0.92) 100%)",
+        }}
+      />
+
+      <div className="relative mx-auto flex max-w-6xl flex-col justify-end px-6 pb-16 pt-24 sm:pb-24 sm:pt-32 min-h-[600px] sm:min-h-[680px] lg:min-h-[760px] lg:justify-center">
+        <div className="max-w-3xl">
           <span
             className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold tracking-wider uppercase"
-            style={{ background: BRAND_DIM, color: BRAND }}
+            style={{
+              background: "rgba(154,187,198,0.18)",
+              color: BRAND,
+              backdropFilter: "blur(6px)",
+            }}
           >
             <Trophy size={13} strokeWidth={2} />
             Built for athletes
           </span>
           <h1
-            className="mt-6 text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-[64px]"
-            style={{ color: TEXT_HEAD, fontFamily: "var(--font-zilla), serif" }}
+            className="mt-6 text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-[68px]"
+            style={{
+              color: TEXT_HEAD,
+              fontFamily: "var(--font-zilla), serif",
+              textShadow: "0 2px 30px rgba(0,0,0,0.55)",
+            }}
           >
             Walk into your event feeling ready.
           </h1>
           <p
-            className="mt-6 max-w-xl text-lg leading-relaxed"
-            style={{ color: TEXT_BODY }}
+            className="mt-6 max-w-xl text-base leading-relaxed sm:text-lg"
+            style={{
+              color: "#d8d8da",
+              textShadow: "0 1px 12px rgba(0,0,0,0.5)",
+            }}
           >
             Elite Prep is the only platform that tracks both sides of competition —
             how you <span style={{ color: TEXT_HEAD }}>prepare</span> and how you{" "}
@@ -113,18 +143,10 @@ function Hero() {
           </div>
           <p
             className="mt-6 text-xs"
-            style={{ color: "#7a7a7e" }}
+            style={{ color: "#bdbdc0" }}
           >
             Starting with competitive golf — built for every sport.
           </p>
-        </div>
-
-        <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
-          <PhoneMockup
-            src="/app-screens/hero-dashboard.png"
-            alt="Elite Prep dashboard showing the next event countdown, forecast, and readiness score"
-            width={360}
-          />
         </div>
       </div>
     </section>
