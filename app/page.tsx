@@ -187,7 +187,7 @@ function Pillars() {
             className="text-3xl font-semibold leading-tight sm:text-4xl"
             style={{ color: TEXT_HEAD, fontFamily: "var(--font-zilla), serif" }}
           >
-            Three answers. Every time you open the app.
+            Four answers. Every time you open the app.
           </h2>
         </div>
 
