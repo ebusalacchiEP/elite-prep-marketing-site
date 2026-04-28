@@ -14,11 +14,29 @@ const zillaSlab = Zilla_Slab({
   weight: ["400", "500", "600"],
 });
 
+const SITE_URL = "https://www.eliteprep.app";
+const SITE_TITLE = "Elite Prep — Walk into your event feeling ready";
+const SITE_DESCRIPTION =
+  "Performance tracking for athletes who take prep seriously. Forecast your event, see your readiness, and log every competition, practice, and training session in one place. Starting with golf.";
+
 export const metadata: Metadata = {
-  title: "Elite Prep — Walk into your event feeling ready",
-  description:
-    "Performance tracking for athletes who take prep seriously. Forecast your event, see your readiness, and log every competition, practice, and training session in one place. Starting with golf.",
+  metadataBase: new URL(SITE_URL),
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
   applicationName: "Elite Prep",
+  openGraph: {
+    type: "website",
+    siteName: "Elite Prep",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
 };
 
 export const viewport: Viewport = {
