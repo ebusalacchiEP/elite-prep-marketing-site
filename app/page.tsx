@@ -167,22 +167,28 @@ function Thesis() {
             className="text-2xl font-semibold leading-[1.15] tracking-tight sm:text-3xl md:text-4xl lg:text-5xl"
             style={{ color: TEXT_HEAD, fontFamily: "var(--font-zilla), serif" }}
           >
-            Real preparation isn&rsquo;t just measured in hours of sleep.
+            Real preparation isn&rsquo;t just measured
+            <br />
+            <span style={{ fontStyle: "italic" }}>in hours of sleep.</span>
           </h2>
           <p
             className="mx-auto mt-8 max-w-2xl text-base leading-relaxed sm:text-lg"
             style={{ color: TEXT_BODY }}
           >
-            Some platforms track your sleep and recovery. Others track your shots
-            and scores. A few connect you with your coach. All of it matters.
-            None of it measures the thing that actually moves the needle: the
-            work you do in practice, the focus you bring to it, and whether
-            it&rsquo;s preparing you for what&rsquo;s next.{" "}
-            <span style={{ color: TEXT_HEAD }}>Elite Prep measures that.</span>{" "}
-            The reps. The decisions. What you focused on, how it felt, what you
-            noticed. Because preparation is the most important variable in
-            competitive sport, and nobody&rsquo;s been measuring it where it
-            matters most.
+            Some platforms track sleep and recovery. Others track shots and
+            scores. None of them measure the thing that actually moves the
+            needle: the work you do in practice, the focus you bring to it, and
+            whether it&rsquo;s preparing you for what&rsquo;s next.
+          </p>
+          <p
+            className="mx-auto mt-10 max-w-2xl text-lg sm:text-xl"
+            style={{
+              color: TEXT_HEAD,
+              fontFamily: "var(--font-zilla), serif",
+              fontStyle: "italic",
+            }}
+          >
+            That&rsquo;s what Elite Prep measures.
           </p>
         </Reveal>
       </div>
