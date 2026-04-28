@@ -297,28 +297,19 @@ function Pillar({
 
   return (
     <div className="grid items-center gap-10 lg:grid-cols-2">
-      {flip ? (
-        <>
-          {demo}
-          {text}
-        </>
-      ) : (
-        <>
-          {text}
-          {demo}
-        </>
-      )}
+      <div className={flip ? "lg:order-2" : "lg:order-1"}>{text}</div>
+      <div className={flip ? "lg:order-1" : "lg:order-2"}>{demo}</div>
     </div>
   );
 }
 
 function WhyElitePrep() {
   type CompareValue = true | false;
-  const competitors: { name: string; sub: string; primary?: boolean }[] = [
-    { name: "Elite Prep", sub: "Event-Anchored", primary: true },
-    { name: "Stat Trackers", sub: "Shot & Round Data" },
-    { name: "Coaching Apps", sub: "Video & Comms" },
-    { name: "Team Platforms", sub: "Enterprise Suites" },
+  const competitors: { name: string; short: string; sub: string; primary?: boolean }[] = [
+    { name: "Elite Prep", short: "Elite Prep", sub: "Event-Anchored", primary: true },
+    { name: "Stat Trackers", short: "Stat", sub: "Shot & Round Data" },
+    { name: "Coaching Apps", short: "Coach", sub: "Video & Comms" },
+    { name: "Team Platforms", short: "Team", sub: "Enterprise Suites" },
   ];
   const rows: { feature: string; marks: CompareValue[] }[] = [
     { feature: "Plans your training around your real event calendar", marks: [true, false, false, false] },
@@ -357,56 +348,67 @@ function WhyElitePrep() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-4 md:hidden">
-        {competitors.map((comp, ci) => (
-          <div
-            key={comp.name}
-            className="rounded-2xl border p-5"
-            style={{
-              borderColor: comp.primary ? BRAND : CARD_BORDER,
-              background: comp.primary
-                ? "rgba(154,187,198,0.06)"
-                : CARD_BG,
-              boxShadow: comp.primary
-                ? "0 0 0 1px rgba(154,187,198,0.25)"
-                : "none",
-            }}
-          >
-            <div className="mb-4">
-              <div
-                className="text-base font-semibold"
-                style={{
-                  color: comp.primary ? BRAND : TEXT_HEAD,
-                  fontFamily: "var(--font-zilla), serif",
-                }}
-              >
-                {comp.name}
-              </div>
-              <div
-                className="mt-0.5 text-[10px] font-medium uppercase tracking-[0.1em]"
-                style={{ color: TEXT_BODY }}
-              >
-                {comp.sub}
-              </div>
-            </div>
-            <ul className="flex flex-col gap-2.5">
-              {rows.map((r) => (
-                <li
-                  key={r.feature}
-                  className="flex items-start gap-3"
+      <div
+        className="md:hidden rounded-2xl border overflow-hidden"
+        style={{ borderColor: CARD_BORDER, background: CARD_BG }}
+      >
+        <table className="w-full border-collapse">
+          <thead>
+            <tr>
+              <th className="px-2.5 py-3 text-left" />
+              {competitors.map((c) => (
+                <th
+                  key={c.name}
+                  className="px-1 py-3 text-center align-bottom"
+                  style={{
+                    background: c.primary
+                      ? "rgba(154,187,198,0.12)"
+                      : "transparent",
+                    borderBottom: `2px solid ${c.primary ? BRAND : CARD_BORDER}`,
+                  }}
                 >
-                  <CompareMark value={r.marks[ci]} />
-                  <span
-                    className="text-sm leading-snug"
-                    style={{ color: TEXT_HEAD }}
+                  <div
+                    className={c.primary ? "text-[11px] font-semibold leading-tight" : "text-xs font-semibold"}
+                    style={{
+                      color: c.primary ? BRAND : TEXT_HEAD,
+                      fontFamily: "var(--font-zilla), serif",
+                    }}
                   >
-                    {r.feature}
-                  </span>
-                </li>
+                    {c.short}
+                  </div>
+                </th>
               ))}
-            </ul>
-          </div>
-        ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((r) => (
+              <tr key={r.feature}>
+                <td
+                  className="px-2.5 py-3 text-left text-[11px] leading-snug"
+                  style={{
+                    color: TEXT_HEAD,
+                    borderTop: `1px solid ${CARD_BORDER}`,
+                  }}
+                >
+                  {r.feature}
+                </td>
+                {r.marks.map((m, ci) => (
+                  <td
+                    key={ci}
+                    className="px-1 py-3 text-center"
+                    style={{
+                      background:
+                        ci === 0 ? "rgba(154,187,198,0.06)" : "transparent",
+                      borderTop: `1px solid ${CARD_BORDER}`,
+                    }}
+                  >
+                    <CompareMark value={m} size="sm" />
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
 
       <div
@@ -482,29 +484,31 @@ function WhyElitePrep() {
   );
 }
 
-function CompareMark({ value }: { value: true | false }) {
+function CompareMark({ value, size = "md" }: { value: true | false; size?: "sm" | "md" }) {
+  const box = size === "sm" ? "h-5 w-5" : "h-7 w-7";
+  const icon = size === "sm" ? 10 : 14;
   if (value === true) {
     return (
       <span
-        className="inline-flex h-7 w-7 items-center justify-center rounded-md"
+        className={`inline-flex ${box} items-center justify-center rounded-md`}
         style={{
           background: BRAND,
           color: "#0a0f14",
-          boxShadow: "0 0 0 3px rgba(154,187,198,0.18)",
+          boxShadow: size === "sm" ? "0 0 0 2px rgba(154,187,198,0.18)" : "0 0 0 3px rgba(154,187,198,0.18)",
         }}
         aria-label="Yes"
       >
-        <Check size={14} strokeWidth={3} />
+        <Check size={icon} strokeWidth={3} />
       </span>
     );
   }
   return (
     <span
-      className="inline-flex h-7 w-7 items-center justify-center rounded-md"
+      className={`inline-flex ${box} items-center justify-center rounded-md`}
       style={{ color: "#5a5a5e", border: `1px solid ${CARD_BORDER}` }}
       aria-label="No"
     >
-      <X size={14} strokeWidth={2.5} />
+      <X size={icon} strokeWidth={2.5} />
     </span>
   );
 }
