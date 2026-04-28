@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Target, ArrowRight, Trophy, User, Users, Gauge, Check, CheckCircle2, BarChart3, X } from "lucide-react";
+import HeroCarousel from "./components/HeroCarousel";
 import Logo from "./components/Logo";
 import PhoneMockup from "./components/PhoneMockup";
 import Reveal from "./components/Reveal";
@@ -70,15 +70,7 @@ function TopNav() {
 function Hero() {
   return (
     <section className="relative isolate overflow-hidden">
-      <Image
-        src="/hero/tournament-v3.jpg"
-        alt="Tournament gallery and grandstand surrounding the green during a final-round event"
-        fill
-        priority
-        sizes="100vw"
-        quality={90}
-        className="-z-20 object-cover scale-[1.25] origin-[50%_25%] md:scale-100 md:origin-center md:object-[center_75%]"
-      />
+      <HeroCarousel />
       {/* Mobile: stronger top+bottom letterbox so copy reads everywhere */}
       <div
         aria-hidden
