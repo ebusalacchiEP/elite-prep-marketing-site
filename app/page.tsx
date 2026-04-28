@@ -40,8 +40,9 @@ function TopNav() {
       }}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" aria-label="Elite Prep home">
-          <Logo width={140} />
+        <Link href="/" aria-label="Elite Prep home" className="shrink-0">
+          <span className="sm:hidden"><Logo width={120} /></span>
+          <span className="hidden sm:inline-flex"><Logo width={140} /></span>
         </Link>
         <nav className="flex items-center gap-3 sm:gap-5">
           <a
@@ -103,7 +104,7 @@ function Hero() {
             </a>
             <a
               href={LOGIN_URL}
-              className="text-sm font-medium underline-offset-4 hover:underline"
+              className="inline-flex items-center py-2.5 text-sm font-medium underline-offset-4 hover:underline"
               style={{ color: BRAND }}
             >
               Already have an account? Log in →
@@ -147,7 +148,7 @@ function Thesis() {
           What we believe
         </p>
         <h2
-          className="text-3xl font-semibold leading-[1.15] tracking-tight sm:text-4xl lg:text-5xl"
+          className="text-2xl font-semibold leading-[1.15] tracking-tight sm:text-3xl md:text-4xl lg:text-5xl"
           style={{ color: TEXT_HEAD, fontFamily: "var(--font-zilla), serif" }}
         >
           How you prepare —
@@ -356,8 +357,60 @@ function WhyElitePrep() {
         </p>
       </div>
 
+      <div className="flex flex-col gap-4 md:hidden">
+        {competitors.map((comp, ci) => (
+          <div
+            key={comp.name}
+            className="rounded-2xl border p-5"
+            style={{
+              borderColor: comp.primary ? BRAND : CARD_BORDER,
+              background: comp.primary
+                ? "rgba(154,187,198,0.06)"
+                : CARD_BG,
+              boxShadow: comp.primary
+                ? "0 0 0 1px rgba(154,187,198,0.25)"
+                : "none",
+            }}
+          >
+            <div className="mb-4">
+              <div
+                className="text-base font-semibold"
+                style={{
+                  color: comp.primary ? BRAND : TEXT_HEAD,
+                  fontFamily: "var(--font-zilla), serif",
+                }}
+              >
+                {comp.name}
+              </div>
+              <div
+                className="mt-0.5 text-[10px] font-medium uppercase tracking-[0.1em]"
+                style={{ color: TEXT_BODY }}
+              >
+                {comp.sub}
+              </div>
+            </div>
+            <ul className="flex flex-col gap-2.5">
+              {rows.map((r) => (
+                <li
+                  key={r.feature}
+                  className="flex items-start gap-3"
+                >
+                  <CompareMark value={r.marks[ci]} />
+                  <span
+                    className="text-sm leading-snug"
+                    style={{ color: TEXT_HEAD }}
+                  >
+                    {r.feature}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
       <div
-        className="overflow-x-auto rounded-2xl border"
+        className="hidden md:block overflow-x-auto rounded-2xl border"
         style={{ borderColor: CARD_BORDER, background: CARD_BG }}
       >
         <table className="w-full min-w-[640px] border-collapse">

@@ -35,7 +35,7 @@ export default function PhoneMockup({
     <div
       className={`relative mx-auto aspect-[9/19] w-full rounded-[42px] p-[10px] ${className}`}
       style={{
-        maxWidth: `${width}px`,
+        maxWidth: `min(${width}px, calc(100vw - 8rem))`,
         background:
           "linear-gradient(135deg, #2a2a2c 0%, #18181a 60%, #2a2a2c 100%)",
         boxShadow:
