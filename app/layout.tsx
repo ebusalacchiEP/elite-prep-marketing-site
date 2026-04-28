@@ -17,7 +17,7 @@ const zillaSlab = Zilla_Slab({
 export const metadata: Metadata = {
   title: "Elite Prep — Walk into your event feeling ready",
   description:
-    "Performance tracking for competitive golfers. Forecast your event, see your readiness, and log every round, practice, and training session in one place.",
+    "Performance tracking for athletes who take prep seriously. Forecast your event, see your readiness, and log every competition, practice, and training session in one place. Starting with golf.",
   applicationName: "Elite Prep",
 };
 
