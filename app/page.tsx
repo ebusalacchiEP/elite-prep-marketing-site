@@ -90,19 +90,8 @@ function Hero() {
 
       <div className="relative mx-auto flex max-w-6xl flex-col justify-end px-6 pb-16 pt-24 sm:pb-24 sm:pt-32 min-h-[600px] sm:min-h-[680px] lg:min-h-[760px] lg:justify-center">
         <div className="max-w-3xl">
-          <span
-            className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold tracking-wider uppercase"
-            style={{
-              background: "rgba(154,187,198,0.18)",
-              color: BRAND,
-              backdropFilter: "blur(6px)",
-            }}
-          >
-            <Trophy size={13} strokeWidth={2} />
-            Built for athletes
-          </span>
           <h1
-            className="mt-6 text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-[68px]"
+            className="text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-[68px]"
             style={{
               color: TEXT_HEAD,
               fontFamily: "var(--font-zilla), serif",
@@ -118,27 +107,18 @@ function Hero() {
               textShadow: "0 1px 12px rgba(0,0,0,0.5)",
             }}
           >
-            Elite Prep is the only platform that tracks both sides of competition —
-            how you <span style={{ color: TEXT_HEAD }}>prepare</span> and how you{" "}
-            <span style={{ color: TEXT_HEAD }}>perform</span> — and connects them.
-            Capture every session, see your{" "}
-            <span style={{ color: BRAND }}>Performance Readiness Score</span>, and
-            over time, learn the prep formula that puts you at your best.
+            Elite Prep tracks how you{" "}
+            <span style={{ color: TEXT_HEAD }}>prepare</span> and how you{" "}
+            <span style={{ color: TEXT_HEAD }}>perform</span> — and shows you the
+            formula that puts you at your best.
           </p>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
+          <div className="mt-10">
             <a
               href={SIGNUP_URL}
               className="inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold transition-opacity hover:opacity-90"
               style={{ background: BRAND_GRADIENT, color: "#111112" }}
             >
               Try it free during beta <ArrowRight className="h-4 w-4" />
-            </a>
-            <a
-              href={LOGIN_URL}
-              className="inline-flex items-center py-2.5 text-sm font-medium underline-offset-4 hover:underline"
-              style={{ color: BRAND }}
-            >
-              Already have an account? Log in →
             </a>
           </div>
           <p
