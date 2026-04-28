@@ -83,8 +83,10 @@ function Hero() {
         aria-hidden
         className="absolute inset-0 -z-10"
         style={{
-          background:
-            "linear-gradient(180deg, rgba(17,17,18,0.45) 0%, rgba(17,17,18,0.65) 45%, rgba(17,17,18,0.92) 100%)",
+          background: [
+            "linear-gradient(90deg, rgba(17,17,18,0.65) 0%, rgba(17,17,18,0.35) 40%, rgba(17,17,18,0.10) 75%, rgba(17,17,18,0.05) 100%)",
+            "linear-gradient(180deg, rgba(17,17,18,0.20) 0%, rgba(17,17,18,0.40) 50%, rgba(17,17,18,0.92) 100%)",
+          ].join(", "),
         }}
       />
 
