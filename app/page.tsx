@@ -102,7 +102,7 @@ function Hero() {
               textShadow: "0 2px 30px rgba(0,0,0,0.55)",
             }}
           >
-            Walk into your event feeling ready.
+            Walk into your event ready, not feeling ready.
           </h1>
           <p
             className="mt-6 max-w-xl text-base leading-relaxed sm:text-lg"

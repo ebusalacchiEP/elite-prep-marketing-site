@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
 export const alt =
-  "Elite Prep — Walk into your event feeling ready. Track how you prepare and how you perform.";
+  "Elite Prep — Walk into your event ready, not feeling ready. Track how you prepare and how you perform.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -75,7 +75,7 @@ export default async function Image() {
               maxWidth: 580,
             }}
           >
-            Walk into your event feeling ready.
+            Walk into your event ready, not feeling ready.
           </div>
 
           <div
