@@ -2,7 +2,7 @@ import Link from "next/link";
 import Logo from "../components/Logo";
 
 const TEXT_HEAD = "#f0f0f0";
-const TEXT_BODY = "#a9a9a9";
+const TEXT_BODY = "#b3b3b3";
 const BRAND = "#9ABBC6";
 
 export const metadata = {

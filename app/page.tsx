@@ -13,7 +13,7 @@ const PAGE_BG = "#111112";
 const CARD_BG = "#1a1a1c";
 const CARD_BORDER = "#2a2a2c";
 const TEXT_HEAD = "#f0f0f0";
-const TEXT_BODY = "#a9a9a9";
+const TEXT_BODY = "#b3b3b3";
 const BRAND = "#9ABBC6";
 const BRAND_DIM = "rgba(154,187,198,0.12)";
 
@@ -702,7 +702,7 @@ function Footer() {
         >
           <Link href="/privacy" className="hover:opacity-80">Privacy</Link>
           <Link href="/terms" className="hover:opacity-80">Terms</Link>
-          <span style={{ color: "#5a5a5e" }}>
+          <span style={{ color: TEXT_BODY }}>
             © {new Date().getFullYear()} Elite Prep Inc.
           </span>
         </div>
