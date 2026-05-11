@@ -365,16 +365,16 @@ function WhyElitePrep() {
     { name: "Team Platforms", sub: "Enterprise Suites" },
   ];
   const rows: { feature: string; marks: CompareValue[] }[] = [
-    { feature: "Plans your training around your real event calendar", marks: [true, false, false, false] },
-    { feature: "Predicts tomorrow's performance, not just yesterday's", marks: [true, false, false, false] },
-    { feature: "Tells you whether you're ready for the next event", marks: [true, false, false, false] },
-    { feature: "Forecasts your event score with a probability curve", marks: [true, false, false, false] },
-    { feature: 'Lets you simulate "what if I trained more?"', marks: [true, false, false, false] },
-    { feature: "Tracks whether you actually did the work you planned", marks: [true, false, false, false] },
-    { feature: "Captures how practice felt, not just what happened", marks: [true, false, false, false] },
-    { feature: "Connects practice patterns to event results", marks: [true, true, false, true] },
-    { feature: "Coach sees your training between lessons", marks: [true, false, true, true] },
-    { feature: "Built for individual athletes, not just teams", marks: [true, true, true, false] },
+    { feature: "Plans around your event calendar", marks: [true, false, false, false] },
+    { feature: "Predicts tomorrow, not just yesterday", marks: [true, false, false, false] },
+    { feature: "Tells you if you're event-ready", marks: [true, false, false, false] },
+    { feature: "Forecasts your event score", marks: [true, false, false, false] },
+    { feature: 'Simulates "what if I trained more?"', marks: [true, false, false, false] },
+    { feature: "Tracks plan vs. follow-through", marks: [true, false, false, false] },
+    { feature: "Captures how practice felt", marks: [true, false, false, false] },
+    { feature: "Connects practice to event results", marks: [true, true, false, true] },
+    { feature: "Coach sees training between lessons", marks: [true, false, true, true] },
+    { feature: "For individual athletes, not just teams", marks: [true, true, true, false] },
   ];
   return (
     <section
