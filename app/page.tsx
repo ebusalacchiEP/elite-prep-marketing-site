@@ -366,6 +366,7 @@ function WhyElitePrep() {
   ];
   const rows: { feature: string; marks: CompareValue[] }[] = [
     { feature: "Plans your training around your real event calendar", marks: [true, false, false, false] },
+    { feature: "Predicts tomorrow's performance, not just yesterday's", marks: [true, false, false, false] },
     { feature: "Tells you whether you're ready for the next event", marks: [true, false, false, false] },
     { feature: "Forecasts your event score with a probability curve", marks: [true, false, false, false] },
     { feature: 'Lets you simulate "what if I trained more?"', marks: [true, false, false, false] },
@@ -478,7 +479,7 @@ function WhyElitePrep() {
                       borderTop: `1px solid ${CARD_BORDER}`,
                     }}
                   >
-                    <CompareMark value={m} size="sm" />
+                    <CompareMark value={m} size="sm" isPrimary={ci === 0} />
                   </td>
                 ))}
               </tr>
@@ -553,7 +554,7 @@ function WhyElitePrep() {
                       borderTop: `1px solid ${CARD_BORDER}`,
                     }}
                   >
-                    <CompareMark value={m} />
+                    <CompareMark value={m} isPrimary={ci === 0} />
                   </td>
                 ))}
               </tr>
@@ -568,17 +569,33 @@ function WhyElitePrep() {
   );
 }
 
-function CompareMark({ value, size = "md" }: { value: true | false; size?: "sm" | "md" }) {
+function CompareMark({
+  value,
+  size = "md",
+  isPrimary = false,
+}: {
+  value: true | false;
+  size?: "sm" | "md";
+  isPrimary?: boolean;
+}) {
   const box = size === "sm" ? "h-5 w-5" : "h-7 w-7";
   const icon = size === "sm" ? 10 : 14;
-  if (value === true) {
+  const glowRadius = size === "sm" ? 10 : 16;
+
+  if (value === true && isPrimary) {
+    // Elite Prep column — lit, high-contrast glow. The mark is the
+    // visual anchor of the table: eye lands on the glow before reading.
     return (
       <span
         className={`inline-flex ${box} items-center justify-center rounded-md`}
         style={{
           background: BRAND,
           color: "#0a0f14",
-          boxShadow: size === "sm" ? "0 0 0 2px rgba(154,187,198,0.18)" : "0 0 0 3px rgba(154,187,198,0.18)",
+          boxShadow: [
+            `0 0 0 ${size === "sm" ? 2 : 3}px rgba(154,187,198,0.22)`,
+            `0 0 ${glowRadius}px 1px rgba(154,187,198,0.55)`,
+            "inset 0 1px 0 rgba(255,255,255,0.35)",
+          ].join(", "),
         }}
         aria-label="Yes"
       >
@@ -586,13 +603,34 @@ function CompareMark({ value, size = "md" }: { value: true | false; size?: "sm" 
       </span>
     );
   }
+
+  if (value === true) {
+    // Competitor column — yes but not lit. Readable, intentionally
+    // outshone by the Elite Prep column on the same row.
+    return (
+      <span
+        className={`inline-flex ${box} items-center justify-center rounded-md`}
+        style={{
+          background: "rgba(255,255,255,0.05)",
+          color: TEXT_BODY,
+          border: `1px solid ${CARD_BORDER}`,
+        }}
+        aria-label="Yes"
+      >
+        <Check size={icon} strokeWidth={2.25} />
+      </span>
+    );
+  }
+
+  // No — dim grey X. Pulled darker than before so the row's eye-line
+  // is unambiguously on the lit Elite Prep mark.
   return (
     <span
       className={`inline-flex ${box} items-center justify-center rounded-md`}
-      style={{ color: "#5a5a5e", border: `1px solid ${CARD_BORDER}` }}
+      style={{ color: "#48484c", border: "1px solid rgba(58,58,62,0.6)" }}
       aria-label="No"
     >
-      <X size={icon} strokeWidth={2.5} />
+      <X size={icon} strokeWidth={2.25} />
     </span>
   );
 }
