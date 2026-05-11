@@ -1,17 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { Roboto, Zilla_Slab } from "next/font/google";
+import { Manrope, Anton } from "next/font/google";
 import "./globals.css";
 
-const roboto = Roboto({
-  variable: "--font-roboto",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
-const zillaSlab = Zilla_Slab({
-  variable: "--font-zilla",
+const anton = Anton({
+  variable: "--font-anton",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: "400",
 });
 
 const SITE_URL = "https://www.eliteprep.app";
@@ -51,10 +51,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${roboto.variable} ${zillaSlab.variable} h-full`}>
+    <html lang="en" className={`${manrope.variable} ${anton.variable} h-full`}>
       <body
         className="min-h-full flex flex-col"
-        style={{ fontFamily: "var(--font-roboto), sans-serif" }}
+        style={{ fontFamily: "var(--font-manrope), sans-serif" }}
       >
         {children}
       </body>

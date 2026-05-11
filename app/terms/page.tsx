@@ -43,7 +43,7 @@ export default function TermsOfService() {
 
         <h1
           className="text-3xl font-semibold mb-2 sm:text-4xl"
-          style={{ color: TEXT_HEAD, fontFamily: "var(--font-zilla), serif" }}
+          style={{ color: TEXT_HEAD, fontFamily: "var(--font-manrope), sans-serif" }}
         >
           Terms of Service
         </h1>

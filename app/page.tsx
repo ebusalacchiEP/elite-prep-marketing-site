@@ -119,10 +119,13 @@ function Hero() {
       <div className="relative mx-auto flex max-w-6xl flex-col justify-start md:justify-center px-6 pb-24 pt-24 sm:pt-32 min-h-[600px] sm:min-h-[680px] lg:min-h-[760px]">
         <div className="max-w-3xl">
           <h1
-            className="text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-[68px]"
+            className="text-5xl leading-[0.95] sm:text-6xl lg:text-[96px]"
             style={{
               color: TEXT_HEAD,
-              fontFamily: "var(--font-zilla), serif",
+              fontFamily: "var(--font-anton), sans-serif",
+              textTransform: "uppercase",
+              fontWeight: 400,
+              letterSpacing: "0",
               textShadow: "0 2px 30px rgba(0,0,0,0.55)",
             }}
           >
@@ -183,7 +186,7 @@ function Thesis() {
           </p>
           <h2
             className="text-2xl font-semibold leading-[1.15] tracking-tight sm:text-3xl md:text-4xl lg:text-5xl"
-            style={{ color: TEXT_HEAD, fontFamily: "var(--font-zilla), serif" }}
+            style={{ color: TEXT_HEAD, fontFamily: "var(--font-manrope), sans-serif" }}
           >
             Real preparation isn&rsquo;t just measured
             <br />
@@ -202,7 +205,7 @@ function Thesis() {
             className="mx-auto mt-10 max-w-2xl text-lg sm:text-xl"
             style={{
               color: TEXT_HEAD,
-              fontFamily: "var(--font-zilla), serif",
+              fontFamily: "var(--font-manrope), sans-serif",
               fontStyle: "italic",
             }}
           >
@@ -236,7 +239,7 @@ function Pillars() {
             </p>
             <h2
               className="text-3xl font-semibold leading-tight sm:text-4xl"
-              style={{ color: TEXT_HEAD, fontFamily: "var(--font-zilla), serif" }}
+              style={{ color: TEXT_HEAD, fontFamily: "var(--font-manrope), sans-serif" }}
             >
               Four answers. Every time you open the app.
             </h2>
@@ -323,7 +326,7 @@ function Pillar({
       </div>
       <h3
         className="text-2xl font-semibold leading-tight sm:text-3xl"
-        style={{ color: TEXT_HEAD, fontFamily: "var(--font-zilla), serif" }}
+        style={{ color: TEXT_HEAD, fontFamily: "var(--font-manrope), sans-serif" }}
       >
         {title}
       </h3>
@@ -397,7 +400,7 @@ function WhyElitePrep() {
           </p>
           <h2
             className="text-3xl font-semibold leading-[1.05] tracking-tight sm:text-4xl lg:text-5xl"
-            style={{ color: TEXT_HEAD, fontFamily: "var(--font-zilla), serif" }}
+            style={{ color: TEXT_HEAD, fontFamily: "var(--font-manrope), sans-serif" }}
           >
             Built for the{" "}
             <span style={{ color: BRAND, fontStyle: "italic" }}>next event.</span>
@@ -448,7 +451,7 @@ function WhyElitePrep() {
                     className="text-[10px] font-semibold leading-[1.15] break-words"
                     style={{
                       color: c.primary ? BRAND : TEXT_HEAD,
-                      fontFamily: "var(--font-zilla), serif",
+                      fontFamily: "var(--font-manrope), sans-serif",
                     }}
                   >
                     {c.name}
@@ -517,7 +520,7 @@ function WhyElitePrep() {
                     className="text-sm font-semibold sm:text-base"
                     style={{
                       color: c.primary ? BRAND : TEXT_HEAD,
-                      fontFamily: "var(--font-zilla), serif",
+                      fontFamily: "var(--font-manrope), sans-serif",
                     }}
                   >
                     {c.name}
@@ -657,7 +660,7 @@ function WhoItsFor() {
           </p>
           <h2
             className="text-3xl font-semibold leading-tight sm:text-4xl"
-            style={{ color: TEXT_HEAD, fontFamily: "var(--font-zilla), serif" }}
+            style={{ color: TEXT_HEAD, fontFamily: "var(--font-manrope), sans-serif" }}
           >
             For athletes who take the work seriously
             <br />and the coaches in their corner.
@@ -723,7 +726,7 @@ function Audience({
       </div>
       <h3
         className="text-xl font-semibold sm:text-2xl"
-        style={{ color: TEXT_HEAD, fontFamily: "var(--font-zilla), serif" }}
+        style={{ color: TEXT_HEAD, fontFamily: "var(--font-manrope), sans-serif" }}
       >
         {title}
       </h3>
@@ -758,7 +761,7 @@ function CtaBand() {
           </span>
           <h2
             className="text-3xl font-semibold leading-tight sm:text-4xl"
-            style={{ color: TEXT_HEAD, fontFamily: "var(--font-zilla), serif" }}
+            style={{ color: TEXT_HEAD, fontFamily: "var(--font-manrope), sans-serif" }}
           >
             Build a season you can actually plan around.
           </h2>
