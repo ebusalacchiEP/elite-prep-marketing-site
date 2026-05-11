@@ -245,3 +245,39 @@ body {
   cursor: not-allowed;
   transform: none;
 }
+
+/* ── Marketing CTA glow ──────────────────────────────────────────────────
+   For the primary hero CTA. The button sits against a darkened image
+   background — without this, it reads as flat and tonally matches the
+   muted brand wash already in the bg. Layered brand-tinted shadow
+   makes it look lit, and a slow 3.5s pulse gently draws the eye on
+   idle. prefers-reduced-motion kills the pulse but keeps the glow. */
+@keyframes ctaPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.18),
+      0 8px 24px -4px rgba(154, 187, 198, 0.55),
+      0 16px 48px -8px rgba(154, 187, 198, 0.30),
+      inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.22),
+      0 10px 32px -4px rgba(154, 187, 198, 0.75),
+      0 20px 64px -8px rgba(154, 187, 198, 0.45),
+      inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  }
+}
+.cta-glow {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.18),
+    0 8px 24px -4px rgba(154, 187, 198, 0.55),
+    0 16px 48px -8px rgba(154, 187, 198, 0.30),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  animation: ctaPulse 3.5s ease-in-out infinite;
+  transition: transform 0.15s ease;
+}
+.cta-glow:hover { transform: scale(1.03); }
+@media (prefers-reduced-motion: reduce) {
+  .cta-glow { animation: none; }
+}

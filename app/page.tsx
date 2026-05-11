@@ -143,7 +143,7 @@ function Hero() {
           <div className="mt-8 md:mt-10">
             <a
               href={SIGNUP_URL}
-              className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-opacity hover:opacity-90 md:px-7 md:py-3.5 md:text-base"
+              className="cta-glow inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold md:px-7 md:py-3.5 md:text-base"
               style={{ background: BRAND_GRADIENT, color: "#111112" }}
             >
               Try it free during beta <ArrowRight className="h-4 w-4" />
