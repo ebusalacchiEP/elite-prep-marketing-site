@@ -10,12 +10,36 @@ const SIGNUP_URL = "https://app.eliteprep.app/signup";
 
 const BRAND_GRADIENT = "linear-gradient(86deg, #9ABBC6 4%, #C5D6DB 99%)";
 const PAGE_BG = "#111112";
-const CARD_BG = "#1a1a1c";
 const CARD_BORDER = "#2a2a2c";
 const TEXT_HEAD = "#f0f0f0";
 const TEXT_BODY = "#b3b3b3";
 const BRAND = "#9ABBC6";
 const BRAND_DIM = "rgba(154,187,198,0.12)";
+
+// Soft section transitions — these replace hard 1px borders so adjacent
+// sections bleed into each other with a brand-tinted glow instead of a
+// hard seam. Used as background layers (stack on top of the section bg).
+const SECTION_TOP_HALO =
+  "radial-gradient(ellipse 90% 30% at 50% 0%, rgba(154,187,198,0.07) 0%, transparent 70%)";
+const SECTION_BOTTOM_HALO =
+  "radial-gradient(ellipse 90% 30% at 50% 100%, rgba(154,187,198,0.05) 0%, transparent 70%)";
+
+// Premium card chrome — gradient fill + top edge highlight + bottom inner
+// shadow + soft drop shadow. Makes feature cards feel like physical objects
+// catching light, not flat bordered rectangles.
+const PREMIUM_CARD_BG =
+  "linear-gradient(180deg, #1d1d20 0%, #161618 100%)";
+const PREMIUM_CARD_SHADOW = [
+  "inset 0 1px 0 rgba(255,255,255,0.06)",
+  "inset 0 -1px 1px rgba(0,0,0,0.35)",
+  "0 14px 32px -10px rgba(0,0,0,0.5)",
+].join(", ");
+const PREMIUM_CARD_SHADOW_BRAND = [
+  "inset 0 1px 0 rgba(154,187,198,0.15)",
+  "inset 0 -1px 1px rgba(0,0,0,0.35)",
+  "0 14px 32px -10px rgba(0,0,0,0.5)",
+  "0 0 0 1px rgba(154,187,198,0.25)",
+].join(", ");
 
 export default function Page() {
   return (
@@ -141,10 +165,12 @@ function Thesis() {
   return (
     <section
       style={{
-        background:
-          "radial-gradient(ellipse at top, rgba(154,187,198,0.08) 0%, transparent 60%), #0d0d0e",
-        borderTop: `1px solid ${CARD_BORDER}`,
-        borderBottom: `1px solid ${CARD_BORDER}`,
+        background: `
+          ${SECTION_TOP_HALO},
+          ${SECTION_BOTTOM_HALO},
+          radial-gradient(ellipse at top, rgba(154,187,198,0.08) 0%, transparent 60%),
+          #0d0d0e
+        `,
       }}
     >
       <div className="mx-auto max-w-4xl px-6 py-24 text-center sm:py-32">
@@ -191,8 +217,13 @@ function Thesis() {
 function Pillars() {
   return (
     <section
-      className="border-y"
-      style={{ background: "#0d0d0e", borderColor: CARD_BORDER }}
+      style={{
+        background: `
+          ${SECTION_TOP_HALO},
+          ${SECTION_BOTTOM_HALO},
+          #0d0d0e
+        `,
+      }}
     >
       <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
         <Reveal>
@@ -345,7 +376,16 @@ function WhyElitePrep() {
     { feature: "Built for individual athletes, not just teams", marks: [true, true, true, false] },
   ];
   return (
-    <section className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
+    <section
+      style={{
+        background: `
+          ${SECTION_TOP_HALO},
+          ${SECTION_BOTTOM_HALO},
+          ${PAGE_BG}
+        `,
+      }}
+    >
+    <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
       <Reveal>
         <div className="mb-12 max-w-3xl">
           <p
@@ -375,7 +415,11 @@ function WhyElitePrep() {
       <Reveal>
       <div
         className="md:hidden rounded-2xl border overflow-hidden"
-        style={{ borderColor: CARD_BORDER, background: CARD_BG }}
+        style={{
+          borderColor: CARD_BORDER,
+          background: PREMIUM_CARD_BG,
+          boxShadow: PREMIUM_CARD_SHADOW,
+        }}
       >
         <table className="w-full border-collapse table-fixed">
           <colgroup>
@@ -447,7 +491,11 @@ function WhyElitePrep() {
       <Reveal>
       <div
         className="hidden md:block overflow-x-auto rounded-2xl border"
-        style={{ borderColor: CARD_BORDER, background: CARD_BG }}
+        style={{
+          borderColor: CARD_BORDER,
+          background: PREMIUM_CARD_BG,
+          boxShadow: PREMIUM_CARD_SHADOW,
+        }}
       >
         <table className="w-full min-w-[640px] border-collapse">
           <thead>
@@ -515,6 +563,7 @@ function WhyElitePrep() {
       </div>
       </Reveal>
 
+    </div>
     </section>
   );
 }
@@ -550,7 +599,16 @@ function CompareMark({ value, size = "md" }: { value: true | false; size?: "sm" 
 
 function WhoItsFor() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
+    <section
+      style={{
+        background: `
+          ${SECTION_TOP_HALO},
+          ${SECTION_BOTTOM_HALO},
+          ${PAGE_BG}
+        `,
+      }}
+    >
+    <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
       <Reveal>
         <div className="mb-12 max-w-2xl">
           <p
@@ -594,6 +652,7 @@ function WhoItsFor() {
           />
         </Reveal>
       </div>
+    </div>
     </section>
   );
 }
@@ -613,9 +672,9 @@ function Audience({
     <div
       className="rounded-3xl border p-8"
       style={{
-        borderColor: primary ? BRAND : CARD_BORDER,
-        background: CARD_BG,
-        boxShadow: primary ? "0 0 0 1px rgba(154,187,198,0.25)" : "none",
+        borderColor: primary ? "rgba(154,187,198,0.35)" : CARD_BORDER,
+        background: PREMIUM_CARD_BG,
+        boxShadow: primary ? PREMIUM_CARD_SHADOW_BRAND : PREMIUM_CARD_SHADOW,
       }}
     >
       <div
@@ -643,8 +702,13 @@ function Audience({
 function CtaBand() {
   return (
     <section
-      className="border-y"
-      style={{ background: "#0d0d0e", borderColor: CARD_BORDER }}
+      style={{
+        background: `
+          ${SECTION_TOP_HALO},
+          ${SECTION_BOTTOM_HALO},
+          #0d0d0e
+        `,
+      }}
     >
       <div className="mx-auto max-w-3xl px-6 py-20 text-center sm:py-24">
         <Reveal>
