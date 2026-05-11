@@ -16,8 +16,8 @@
     "react-dom": "19.2.4"
   },
   "devDependencies": {
-    "@fontsource/roboto": "^5.2.10",
-    "@fontsource/zilla-slab": "^5.2.8",
+    "@fontsource/anton": "^5.2.7",
+    "@fontsource/manrope": "^5.2.8",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

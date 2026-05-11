@@ -12,13 +12,13 @@ export default async function Image() {
   const fontDir = (pkg: string) =>
     join(root, "node_modules", "@fontsource", pkg, "files");
 
-  const [logoSvg, screenshotPng, zillaSemibold, robotoRegular, robotoMedium] =
+  const [logoSvg, screenshotPng, anton400, manrope400, manrope500] =
     await Promise.all([
       readFile(join(root, "public/logo-white.svg"), "utf-8"),
       readFile(join(root, "public/app-screens/hero-dashboard.png")),
-      readFile(join(fontDir("zilla-slab"), "zilla-slab-latin-600-normal.woff")),
-      readFile(join(fontDir("roboto"), "roboto-latin-400-normal.woff")),
-      readFile(join(fontDir("roboto"), "roboto-latin-500-normal.woff")),
+      readFile(join(fontDir("anton"), "anton-latin-400-normal.woff")),
+      readFile(join(fontDir("manrope"), "manrope-latin-400-normal.woff")),
+      readFile(join(fontDir("manrope"), "manrope-latin-500-normal.woff")),
     ]);
 
   const logoSrc = `data:image/svg+xml;utf8,${encodeURIComponent(logoSvg)}`;
@@ -33,7 +33,7 @@ export default async function Image() {
           display: "flex",
           background:
             "linear-gradient(135deg, #0d0d0e 0%, #15151a 50%, #1a1a22 100%)",
-          fontFamily: "Roboto",
+          fontFamily: "Manrope",
           position: "relative",
         }}
       >
@@ -65,12 +65,13 @@ export default async function Image() {
 
           <div
             style={{
-              fontFamily: "Zilla Slab",
-              fontSize: 68,
-              lineHeight: 1.04,
+              fontFamily: "Anton",
+              fontSize: 88,
+              lineHeight: 0.95,
               color: "#f0f0f0",
-              fontWeight: 600,
-              letterSpacing: "-0.02em",
+              fontWeight: 400,
+              letterSpacing: 0,
+              textTransform: "uppercase",
               display: "flex",
               maxWidth: 580,
             }}
@@ -164,20 +165,20 @@ export default async function Image() {
       ...size,
       fonts: [
         {
-          name: "Zilla Slab",
-          data: zillaSemibold,
-          style: "normal",
-          weight: 600,
-        },
-        {
-          name: "Roboto",
-          data: robotoRegular,
+          name: "Anton",
+          data: anton400,
           style: "normal",
           weight: 400,
         },
         {
-          name: "Roboto",
-          data: robotoMedium,
+          name: "Manrope",
+          data: manrope400,
+          style: "normal",
+          weight: 400,
+        },
+        {
+          name: "Manrope",
+          data: manrope500,
           style: "normal",
           weight: 500,
         },
