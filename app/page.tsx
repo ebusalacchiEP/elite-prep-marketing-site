@@ -767,20 +767,25 @@ function CtaBand() {
           </span>
           <h2
             className="text-3xl font-semibold leading-tight sm:text-4xl"
-            style={{ color: TEXT_HEAD, fontFamily: "var(--font-manrope), sans-serif" }}
+            style={{
+              color: TEXT_HEAD,
+              fontFamily: "var(--font-manrope), sans-serif",
+              textWrap: "balance",
+            }}
           >
             Build a season you can actually plan around.
           </h2>
           <p
             className="mx-auto mt-5 max-w-xl text-base leading-relaxed"
-            style={{ color: TEXT_BODY }}
+            style={{ color: TEXT_BODY, textWrap: "pretty" }}
           >
-            Try every feature free for 14 days. Card required to start; cancel anytime within the trial for no charge.
+            Try every feature free for 14 days. Card required; cancel anytime
+            within the trial for no charge.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <a
               href={SIGNUP_URL}
-              className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold transition-opacity hover:opacity-90"
+              className="cta-glow inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold"
               style={{ background: BRAND_GRADIENT, color: "#111112" }}
             >
               Start free trial <ArrowRight className="h-4 w-4" />
