@@ -6,7 +6,14 @@ import PhoneMockup from "./components/PhoneMockup";
 import Reveal from "./components/Reveal";
 
 const LOGIN_URL = "https://app.eliteprep.app/login";
-const SIGNUP_URL = "https://app.eliteprep.app/signup";
+// Conversion CTAs ("Try free for 14 days", "Start free trial", "Sign up")
+// now land on /billing (the paywall card with plan picker + price + trust
+// bullets) instead of /signup. /billing handles unauthed visitors itself:
+// shows the hero card, stashes the chosen plan when they click Start free
+// trial, redirects to /signup, and auto-resumes Stripe Checkout once they
+// come back authed — so the user sees the offer before being asked for
+// an email. Netflix/NYT-style "paywall-as-acquisition" funnel.
+const SIGNUP_URL = "https://app.eliteprep.app/billing";
 
 const BRAND_GRADIENT = "linear-gradient(86deg, #9ABBC6 4%, #C5D6DB 99%)";
 const PAGE_BG = "#111112";
