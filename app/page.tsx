@@ -70,17 +70,17 @@ function TopNav() {
           <span className="sm:hidden"><Logo width={120} /></span>
           <span className="hidden sm:inline-flex"><Logo width={140} /></span>
         </Link>
-        <nav className="flex items-center gap-3 sm:gap-5">
+        <nav className="flex items-center gap-4 sm:gap-5">
           <a
             href={LOGIN_URL}
-            className="text-sm font-medium hidden sm:block"
+            className="text-sm font-medium"
             style={{ color: TEXT_BODY }}
           >
             Log in
           </a>
           <a
             href={SIGNUP_URL}
-            className="rounded-full px-5 py-2.5 text-sm font-semibold transition-opacity hover:opacity-90"
+            className="rounded-full px-4 py-2.5 sm:px-5 text-sm font-semibold transition-opacity hover:opacity-90"
             style={{ background: BRAND_GRADIENT, color: "#111112" }}
           >
             Sign up
