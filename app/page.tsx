@@ -149,8 +149,14 @@ function Hero() {
               className="cta-glow inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold md:px-7 md:py-3.5 md:text-base"
               style={{ background: BRAND_GRADIENT, color: "#111112" }}
             >
-              Try it free during beta <ArrowRight className="h-4 w-4" />
+              Try free for 14 days <ArrowRight className="h-4 w-4" />
             </a>
+            <p
+              className="mt-3 text-xs md:text-sm"
+              style={{ color: "#bdbdc0" }}
+            >
+              Then $24.99/month. Cancel anytime.
+            </p>
           </div>
           <p
             className="mt-5 md:mt-6 text-xs"
@@ -757,7 +763,7 @@ function CtaBand() {
             className="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold tracking-wider uppercase mb-5"
             style={{ background: BRAND_DIM, color: BRAND }}
           >
-            Free during beta
+            14 days free, then $24.99/mo
           </span>
           <h2
             className="text-3xl font-semibold leading-tight sm:text-4xl"
@@ -769,7 +775,7 @@ function CtaBand() {
             className="mx-auto mt-5 max-w-xl text-base leading-relaxed"
             style={{ color: TEXT_BODY }}
           >
-            No card, no commitment — every feature is open while we polish v1.
+            Try every feature free for 14 days. Card required to start; cancel anytime within the trial for no charge.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <a
@@ -777,7 +783,7 @@ function CtaBand() {
               className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold transition-opacity hover:opacity-90"
               style={{ background: BRAND_GRADIENT, color: "#111112" }}
             >
-              Create your account <ArrowRight className="h-4 w-4" />
+              Start free trial <ArrowRight className="h-4 w-4" />
             </a>
             <a
               href={LOGIN_URL}
