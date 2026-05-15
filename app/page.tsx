@@ -7,13 +7,16 @@ import Reveal from "./components/Reveal";
 
 const LOGIN_URL = "https://app.eliteprep.app/login";
 // Conversion CTAs ("Try free for 14 days", "Start free trial", "Sign up")
-// now land on /billing (the paywall card with plan picker + price + trust
-// bullets) instead of /signup. /billing handles unauthed visitors itself:
-// shows the hero card, stashes the chosen plan when they click Start free
-// trial, redirects to /signup, and auto-resumes Stripe Checkout once they
-// come back authed — so the user sees the offer before being asked for
-// an email. Netflix/NYT-style "paywall-as-acquisition" funnel.
-const SIGNUP_URL = "https://app.eliteprep.app/billing";
+// land on /signup — the auth-method chooser (email / Google / Apple).
+//
+// 2026-05-15: changed from /billing back to /signup. The app shipped the
+// magic-moment onboarding reorder — a new visitor now goes
+// signup → role → tier → handicap → readiness-preview → paywall, so the
+// paywall comes AFTER the user has seen their personalized readiness
+// score. Pointing the marketing CTA at /billing sent cold visitors
+// straight to the paywall, skipping signup and the whole onboarding /
+// preview flow. /signup is the correct entry point for the new funnel.
+const SIGNUP_URL = "https://app.eliteprep.app/signup";
 
 const BRAND_GRADIENT = "linear-gradient(86deg, #9ABBC6 4%, #C5D6DB 99%)";
 const PAGE_BG = "#111112";
