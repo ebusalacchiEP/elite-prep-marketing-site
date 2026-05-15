@@ -25,15 +25,6 @@ const TARGET_AR = 9 / 19; // phone screen aspect ratio (width / height)
 const PLAN = [
   // Hero — show the dashboard top: header, welcome, today, schedule, next event
   { src: "hero-dashboard.png", anchor: "top" },
-  // PRS — show the readiness page top: 76/Ready + the inputs that go into it
-  { src: "readiness.png", anchor: "top" },
-  // Forecast — anchor near top, but skip the very top "Sync calendar" banner so
-  // the Event Forecast card with the math is the dominant element
-  { src: "forecast.png", anchor: { yPct: 0.05 } },
-  // Accountability — the accountability card sits in the lower 3rd of the
-  // dashboard. Anchor so it lands roughly mid-frame, skipping the empty space
-  // beneath the "See full stats →" link
-  { src: "accountability.png", anchor: { yPct: 0.55 } },
 ];
 
 async function cropOne({ src, anchor }) {

@@ -265,8 +265,8 @@ function Pillars() {
             eyebrow="The score"
             title="Your Performance Readiness Score"
             body="A 0–100 number built from competitive form, practice quality and volume, mental readiness, and competitive reps. The answer to “am I ready?” — grounded in real data, not a feeling."
-            demoSrc="/app-screens/readiness.png"
-            demoAlt="Performance Readiness Score showing 76 out of 100 with a breakdown of inputs"
+            demoSrc="/app-screens/readiness-v2.png"
+            demoAlt="Performance Readiness Score of 81 out of 100 with a 30-day trend and the next event countdown"
             flip={false}
           />
           <Pillar
@@ -274,8 +274,8 @@ function Pillars() {
             eyebrow="The forecast"
             title="Project your next event."
             body="Add an upcoming competition and Elite Prep projects a score from your real data. Tag it Peak, Developmental, or Baseline — the lead-up adjusts to match. Every input rolls into the math, so the number is one you trust."
-            demoSrc="/app-screens/forecast.png"
-            demoAlt="Event Forecast card showing the projected score and the math behind it"
+            demoSrc="/app-screens/forecast-v2.png"
+            demoAlt="Score Distribution bell curve with expected score, goal line, and aggressive/comfortable/stretch/conservative bands"
             flip={true}
           />
           <Pillar
@@ -283,8 +283,8 @@ function Pillars() {
             eyebrow="The follow-through"
             title="Plan the week. Sync it. Follow through."
             body="Commit to a weekly plan — practice sessions, training blocks, and competitive reps. Sync it to Google or Apple Calendar so every commitment lands where you already work. The work that gets done is the work that gets seen."
-            demoSrc="/app-screens/accountability.png"
-            demoAlt="Accountability card showing weekly commitment rate, day-by-day commitments, and Practice/Training follow-through"
+            demoSrc="/app-screens/accountability-v2.png"
+            demoAlt="Weekly plan timeline with Follow-through card showing Rounds, Practice, Physical Training, and Mental Training execution"
             flip={false}
           />
           <Pillar
@@ -292,8 +292,8 @@ function Pillars() {
             eyebrow="The patterns"
             title="Practice. Performance. Connected."
             body="Two layers of analytics, side by side. How you prepared. How you performed. The patterns that emerge when you can see both at once — patterns that stay invisible when you only track one half."
-            demoSrc="/app-screens/stats.png"
-            demoAlt="Stats & Insights view with weekly volume bar chart, activity mix donut, and scoring trend over time"
+            demoSrc="/app-screens/stats-v2.png"
+            demoAlt="Stats screen with practice segment breakdown — driving, approach, short game, and putting — and top skill per segment"
             flip={true}
           />
         </div>
