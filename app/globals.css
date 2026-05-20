@@ -178,6 +178,21 @@ button:active:not(:disabled) {
   text-rendering: optimizeLegibility;
 }
 
+/* ── Keyboard focus ───────────────────────────────────────────────────────
+   Default browser outline is faint on the dark surface. Brand-tinted
+   ring tells keyboard users we noticed them. Pointer/mouse focus is
+   unaffected (:focus-visible only). */
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+/* The hero CTA already has a glow + pulse; give the focus ring a little
+   more breathing room so it reads outside the shadow rather than inside it. */
+.cta-glow:focus-visible {
+  outline-offset: 5px;
+}
+
 body {
   background: var(--bg);
   color: var(--text-primary);
