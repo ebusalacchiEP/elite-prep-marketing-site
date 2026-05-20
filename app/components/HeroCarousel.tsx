@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 
@@ -41,17 +41,28 @@ const SLIDES: Slide[] = [
 const ROTATION_MS = 6000;
 const FADE_S = 1.0;
 
-export default function HeroCarousel() {
-  const [active, setActive] = useState(0);
+export const HERO_SLIDE_COUNT = SLIDES.length;
+
+interface HeroCarouselProps {
+  /** Active slide index, controlled by parent so siblings (e.g. HeroSportTag)
+   *  can read it. */
+  active: number;
+  onAdvance: () => void;
+}
+
+/**
+ * Controlled hero carousel. Parent owns the active index so sibling components
+ * can stay in sync with the rotation (sport-tag micro-headline, etc.). Parent
+ * passes `active` (index) and `onAdvance` (rotation tick).
+ */
+export default function HeroCarousel({ active, onAdvance }: HeroCarouselProps) {
   const reduceMotion = useReducedMotion();
 
   useEffect(() => {
     if (reduceMotion) return;
-    const id = window.setInterval(() => {
-      setActive((i) => (i + 1) % SLIDES.length);
-    }, ROTATION_MS);
+    const id = window.setInterval(onAdvance, ROTATION_MS);
     return () => window.clearInterval(id);
-  }, [reduceMotion]);
+  }, [reduceMotion, onAdvance]);
 
   return (
     <>
