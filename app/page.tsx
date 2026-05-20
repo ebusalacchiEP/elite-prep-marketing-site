@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Target, ArrowRight, Trophy, User, Users, Gauge, Check, CheckCircle2, BarChart3, X } from "lucide-react";
 import HeroCarousel from "./components/HeroCarousel";
-import HeroWordmark from "./components/HeroWordmark";
 import Logo from "./components/Logo";
 import PhoneMockup from "./components/PhoneMockup";
 import Reveal from "./components/Reveal";
@@ -133,19 +132,6 @@ function Hero() {
 
       <div className="relative mx-auto flex max-w-6xl flex-col justify-start md:justify-center px-6 pb-24 pt-24 sm:pt-32 min-h-[600px] sm:min-h-[680px] lg:min-h-[760px]">
         <div className="max-w-3xl">
-          {/* Brand statement above the H1 — wordmark + brand hairline reads as
-              "whose page this is" before the H1 reads "what we promise". Pairs
-              with the nav logo (small, persistent) as two distinct treatments
-              of the same wordmark. */}
-          <HeroWordmark className="mb-5 md:mb-6" />
-          <div
-            aria-hidden
-            className="mb-7 h-[1.5px] w-[60px] md:mb-8"
-            style={{
-              background: BRAND,
-              boxShadow: "0 0 12px rgba(154,187,198,0.4)",
-            }}
-          />
           <h1
             className="text-5xl leading-[0.95] sm:text-6xl lg:text-[96px]"
             style={{
