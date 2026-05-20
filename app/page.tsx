@@ -80,17 +80,17 @@ function TopNav() {
           <span className="sm:hidden"><Logo width={120} /></span>
           <span className="hidden sm:inline-flex"><Logo width={140} /></span>
         </Link>
-        <nav className="flex items-center gap-4 sm:gap-5">
+        <nav className="flex items-center gap-2 sm:gap-3">
           <a
             href={LOGIN_URL}
-            className="text-sm font-medium"
+            className="inline-flex min-h-[44px] items-center px-3 text-sm font-medium"
             style={{ color: TEXT_BODY }}
           >
             Log in
           </a>
           <a
             href={SIGNUP_URL}
-            className="rounded-full px-4 py-2.5 sm:px-5 text-sm font-semibold transition-opacity hover:opacity-90"
+            className="inline-flex min-h-[44px] items-center rounded-full px-4 sm:px-5 text-sm font-semibold transition-opacity hover:opacity-90"
             style={{ background: BRAND_GRADIENT, color: "#111112" }}
           >
             Sign up
@@ -826,8 +826,18 @@ function Footer() {
           className="flex flex-wrap items-center justify-end gap-x-4 gap-y-1 text-xs sm:text-sm"
           style={{ color: TEXT_BODY }}
         >
-          <Link href="/privacy" className="hover:opacity-80">Privacy</Link>
-          <Link href="/terms" className="hover:opacity-80">Terms</Link>
+          <Link
+            href="/privacy"
+            className="inline-flex min-h-[44px] items-center px-1 hover:opacity-80"
+          >
+            Privacy
+          </Link>
+          <Link
+            href="/terms"
+            className="inline-flex min-h-[44px] items-center px-1 hover:opacity-80"
+          >
+            Terms
+          </Link>
           <span style={{ color: TEXT_BODY }}>
             © {new Date().getFullYear()} Elite Prep Inc.
           </span>
