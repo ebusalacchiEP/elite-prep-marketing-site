@@ -88,10 +88,14 @@ function TopNav() {
           >
             Log in
           </a>
+          {/* Nav Sign up is the SECONDARY brand surface. Filled brand-gradient
+              is reserved for in-content primary CTAs (hero, CtaBand) so the
+              top-right button doesn't compete for the same eye-stop. Brand
+              border keeps the wordmark in dialogue without shouting. */}
           <a
             href={SIGNUP_URL}
-            className="inline-flex min-h-[44px] items-center rounded-full px-4 sm:px-5 text-sm font-semibold transition-opacity hover:opacity-90"
-            style={{ background: BRAND_GRADIENT, color: "#111112" }}
+            className="inline-flex min-h-[44px] items-center rounded-full border px-4 sm:px-5 text-sm font-semibold transition-colors hover:bg-white/5"
+            style={{ borderColor: BRAND, color: TEXT_HEAD }}
           >
             Sign up
           </a>
