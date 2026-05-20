@@ -157,6 +157,10 @@ function Hero() {
             <span style={{ color: TEXT_HEAD }}>perform</span> — and shows you the
             formula that puts you at your best.
           </p>
+          {/* Hero text budget: H1 + subhead + CTA group (with pricing +
+              positioning under it as one block). Trust strip used to be a
+              separate visual stop below; consolidated into the CTA group so
+              the eye reads one decision area, not three. */}
           <div className="mt-8 md:mt-10">
             <a
               href={SIGNUP_URL}
@@ -171,13 +175,13 @@ function Hero() {
             >
               Then $24.99/month. Cancel anytime.
             </p>
+            <p
+              className="mt-1.5 text-xs"
+              style={{ color: "#bdbdc0" }}
+            >
+              Starting with competitive golf — built for every sport.
+            </p>
           </div>
-          <p
-            className="mt-5 md:mt-6 text-xs"
-            style={{ color: "#bdbdc0" }}
-          >
-            Starting with competitive golf — built for every sport.
-          </p>
         </div>
       </div>
     </section>
