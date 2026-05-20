@@ -434,7 +434,7 @@ function WhyElitePrep() {
 
       <Reveal>
       <div
-        className="md:hidden rounded-2xl border overflow-hidden"
+        className="md:hidden rounded-2xl border overflow-x-clip"
         style={{
           borderColor: CARD_BORDER,
           background: PREMIUM_CARD_BG,
@@ -449,17 +449,24 @@ function WhyElitePrep() {
             <col style={{ width: "17%" }} />
             <col style={{ width: "17%" }} />
           </colgroup>
+          {/* Sticky thead so column identity stays anchored while scrolling
+              the 10-row table. Site header is ~73px, so we offset under it.
+              Each <th> needs an opaque background or rows scroll through. */}
           <thead>
             <tr>
-              <th className="px-2 py-3 text-left" />
+              <th
+                className="sticky top-[73px] z-10 px-2 py-3 text-left"
+                style={{ background: "#161618" }}
+              />
               {competitors.map((c) => (
                 <th
                   key={c.name}
-                  className="px-1 py-3 text-center align-bottom"
+                  className="sticky top-[73px] z-10 px-1 py-3 text-center align-bottom"
                   style={{
                     background: c.primary
-                      ? "rgba(154,187,198,0.12)"
-                      : "transparent",
+                      ? // Primary column: tinted brand bg layered over opaque card bg
+                        "linear-gradient(rgba(154,187,198,0.12), rgba(154,187,198,0.12)), #161618"
+                      : "#161618",
                     borderBottom: `2px solid ${c.primary ? BRAND : CARD_BORDER}`,
                   }}
                 >
