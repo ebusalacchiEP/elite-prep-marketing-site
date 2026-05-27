@@ -6,19 +6,18 @@ interface LogoProps {
   showBeta?: boolean;
 }
 
-// Elite Prep lockup: the "building" bars mark + "ELITE PREP" in Anton (already
-// loaded site-wide) + optional BETA badge. Bars + ELITE use the variant text
-// color; PREP + the top bar use the steel-blue accent.
+// Elite Prep lockup: the "building" bars mark + "ELITE PREP" in Anton (loaded
+// site-wide), both monochrome in the variant color, plus a steel-blue BETA
+// chip as the single pop of brand color.
 export default function Logo({
   variant = "white",
   width = 200,
   className = "",
   showBeta = true,
 }: LogoProps) {
-  const fontSize = Math.round(width * 0.135);
-  const barsHeight = Math.round(fontSize * 1.12);
+  const fontSize = Math.round(width * 0.15);
+  const barsHeight = Math.round(fontSize * 1.18);
   const textColor = variant === "white" ? "#EEF2F5" : "#0A0D14";
-  const accent = "#3A8AB5";
 
   return (
     <div
@@ -31,7 +30,7 @@ export default function Logo({
         style={{ display: "block", width: "auto", flexShrink: 0 }}
         aria-hidden="true"
       >
-        <rect x="0" y="20" width="300" height="110" rx="55" fill={accent} />
+        <rect x="0" y="20" width="300" height="110" rx="55" fill="currentColor" />
         <rect x="0" y="196" width="410" height="110" rx="55" fill="currentColor" />
         <rect x="0" y="372" width="520" height="110" rx="55" fill="currentColor" />
       </svg>
@@ -44,19 +43,20 @@ export default function Logo({
           whiteSpace: "nowrap",
         }}
       >
-        ELITE <span style={{ color: accent }}>PREP</span>
+        ELITE PREP
       </span>
       {showBeta && (
         <span
           className="font-bold rounded shrink-0"
           style={{
             fontSize: 10,
-            letterSpacing: "0.08em",
-            padding: "2px 6px",
-            background: "#9ABBC6",
-            color: "#111112",
+            letterSpacing: "0.1em",
+            padding: "3px 7px",
+            border: "1px solid currentColor",
+            color: "currentColor",
+            opacity: 0.7,
             alignSelf: "flex-start",
-            marginTop: -2,
+            marginTop: -1,
           }}
         >
           BETA
