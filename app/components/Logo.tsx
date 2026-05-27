@@ -16,7 +16,7 @@ export default function Logo({
   showBeta = true,
 }: LogoProps) {
   const fontSize = Math.round(width * 0.15);
-  const barsHeight = Math.round(fontSize * 1.18);
+  const barsHeight = Math.round(fontSize * 0.86);
   const textColor = variant === "white" ? "#EEF2F5" : "#0A0D14";
 
   return (
