@@ -12,16 +12,14 @@ export default async function Image() {
   const fontDir = (pkg: string) =>
     join(root, "node_modules", "@fontsource", pkg, "files");
 
-  const [logoSvg, screenshotPng, anton400, manrope400, manrope500] =
+  const [screenshotPng, anton400, manrope400, manrope500] =
     await Promise.all([
-      readFile(join(root, "public/logo-white.svg"), "utf-8"),
       readFile(join(root, "public/app-screens/hero-dashboard.png")),
       readFile(join(fontDir("anton"), "anton-latin-400-normal.woff")),
       readFile(join(fontDir("manrope"), "manrope-latin-400-normal.woff")),
       readFile(join(fontDir("manrope"), "manrope-latin-500-normal.woff")),
     ]);
 
-  const logoSrc = `data:image/svg+xml;utf8,${encodeURIComponent(logoSvg)}`;
   const screenshotSrc = `data:image/png;base64,${screenshotPng.toString("base64")}`;
 
   return new ImageResponse(
@@ -59,8 +57,16 @@ export default async function Image() {
             position: "relative",
           }}
         >
-          <div style={{ display: "flex", marginBottom: 40 }}>
-            <img src={logoSrc} width={220} height={29} alt="" />
+          <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 40 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 7 }}>
+              <div style={{ width: 30, height: 12, borderRadius: 6, background: "#3A8AB5" }} />
+              <div style={{ width: 41, height: 12, borderRadius: 6, background: "#f0f0f0" }} />
+              <div style={{ width: 52, height: 12, borderRadius: 6, background: "#f0f0f0" }} />
+            </div>
+            <div style={{ display: "flex", gap: 14, fontFamily: "Anton", fontSize: 46, letterSpacing: "0.01em" }}>
+              <span style={{ color: "#f0f0f0" }}>ELITE</span>
+              <span style={{ color: "#3A8AB5" }}>PREP</span>
+            </div>
           </div>
 
           <div
