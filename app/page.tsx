@@ -133,7 +133,7 @@ function Hero() {
       <div className="relative mx-auto flex max-w-6xl flex-col justify-start md:justify-center px-6 pb-24 pt-24 sm:pt-32 min-h-[600px] sm:min-h-[680px] lg:min-h-[760px]">
         <div className="max-w-3xl">
           <h1
-            className="text-5xl leading-[0.95] sm:text-6xl lg:text-[96px]"
+            className="text-5xl leading-[0.95] sm:text-6xl lg:text-[72px]"
             style={{
               color: TEXT_HEAD,
               fontFamily: "var(--font-anton), sans-serif",
@@ -143,7 +143,7 @@ function Hero() {
               textShadow: "0 2px 30px rgba(0,0,0,0.55)",
             }}
           >
-            Walk into your event ready.
+            Every rep. Every round. Every event. One system.
           </h1>
           <p
             className="mt-6 max-w-xl text-base leading-relaxed sm:text-lg"
@@ -152,10 +152,11 @@ function Hero() {
               textShadow: "0 1px 12px rgba(0,0,0,0.5)",
             }}
           >
-            Elite Prep tracks how you{" "}
-            <span style={{ color: TEXT_HEAD }}>prepare</span> and how you{" "}
-            <span style={{ color: TEXT_HEAD }}>perform</span> — and shows you the
-            formula that puts you at your best.
+            The whole climb — your{" "}
+            <span style={{ color: TEXT_HEAD }}>practice</span>, your{" "}
+            <span style={{ color: TEXT_HEAD }}>rounds</span>, your technique, your
+            coach — in one place, built around your schedule. So you always know
+            what to work on, and know it&rsquo;s working.
           </p>
           {/* Hero text budget: H1 + subhead + CTA group (with pricing +
               positioning under it as one block). Trust strip used to be a
@@ -212,18 +213,18 @@ function Thesis() {
             className="text-2xl font-semibold leading-[1.15] tracking-tight sm:text-3xl md:text-4xl lg:text-5xl"
             style={{ color: TEXT_HEAD, fontFamily: "var(--font-manrope), sans-serif" }}
           >
-            Real preparation isn&rsquo;t just measured
+            Golf is played on the course.
             <br />
-            <span style={{ fontStyle: "italic" }}>in hours of sleep.</span>
+            <span style={{ fontStyle: "italic" }}>It&rsquo;s won off it.</span>
           </h2>
           <p
             className="mx-auto mt-8 max-w-2xl text-base leading-relaxed sm:text-lg"
             style={{ color: TEXT_BODY }}
           >
-            Some platforms track sleep and recovery. Others track shots and
-            scores. None of them measure the thing that actually moves the
-            needle: the work you do in practice, the focus you bring to it, and
-            whether it&rsquo;s preparing you for what&rsquo;s next.
+            Most of your game gets built in the hours nobody tracks — the range
+            sessions, the short-game grind, the practice rounds, the work with
+            your coach. That&rsquo;s where the real work is. And until now it
+            lived in five different places, or nowhere at all.
           </p>
           <p
             className="mx-auto mt-10 max-w-2xl text-lg sm:text-xl"
@@ -233,7 +234,7 @@ function Thesis() {
               fontStyle: "italic",
             }}
           >
-            That&rsquo;s what Elite Prep measures.
+            Elite Prep is one system for all of it.
           </p>
         </Reveal>
       </div>
@@ -392,13 +393,12 @@ function WhyElitePrep() {
     { name: "Team Platforms", sub: "Enterprise Suites" },
   ];
   const rows: { feature: string; marks: CompareValue[] }[] = [
-    { feature: "Plans around your event calendar", marks: [true, false, false, false] },
-    { feature: "Predicts tomorrow, not just yesterday", marks: [true, false, false, false] },
-    { feature: "Tells you if you're event-ready", marks: [true, false, false, false] },
-    { feature: "Forecasts your event score", marks: [true, false, false, false] },
-    { feature: 'Simulates "what if I trained more?"', marks: [true, false, false, false] },
-    { feature: "Tracks plan vs. follow-through", marks: [true, false, false, false] },
-    { feature: "Captures how practice felt", marks: [true, false, false, false] },
+    { feature: "Organizes around your event calendar", marks: [true, false, false, false] },
+    { feature: "Builds your practice sessions for you", marks: [true, false, false, false] },
+    { feature: "Build your own drills & sessions", marks: [true, false, true, false] },
+    { feature: "Shot-by-shot rounds with Strokes Gained", marks: [true, true, false, false] },
+    { feature: "Game-day, practice rounds & practice in one place", marks: [true, true, false, true] },
+    { feature: "Captures how practice felt (journal + mental)", marks: [true, false, false, false] },
     { feature: "Connects practice to event results", marks: [true, true, false, true] },
     { feature: "Coach sees training between lessons", marks: [true, false, true, true] },
     { feature: "For individual athletes, not just teams", marks: [true, true, true, false] },
@@ -426,16 +426,16 @@ function WhyElitePrep() {
             className="text-3xl font-semibold leading-[1.05] tracking-tight sm:text-4xl lg:text-5xl"
             style={{ color: TEXT_HEAD, fontFamily: "var(--font-manrope), sans-serif" }}
           >
-            Built for the{" "}
-            <span style={{ color: BRAND, fontStyle: "italic" }}>next event.</span>
+            Built for the work{" "}
+            <span style={{ color: BRAND, fontStyle: "italic" }}>between events.</span>
           </h2>
           <p
             className="mt-6 max-w-2xl text-base leading-relaxed sm:text-lg"
             style={{ color: TEXT_BODY }}
           >
-            Other tools tell you to get better someday. Elite Prep tells you
-            whether you&rsquo;re ready in seventeen days — and exactly what
-            to do about it.
+            Recovery trackers grade your sleep. Stat trackers grade the round
+            you already played. Elite Prep owns the part that decides the
+            outcome — the work between events, and the proof it&rsquo;s working.
           </p>
         </div>
       </Reveal>
@@ -798,7 +798,7 @@ function CtaBand() {
               textWrap: "balance",
             }}
           >
-            Build a season you can actually plan around.
+            Know what to work on. Know it&rsquo;s working.
           </h2>
           <p
             className="mx-auto mt-5 max-w-xl text-base leading-relaxed"
