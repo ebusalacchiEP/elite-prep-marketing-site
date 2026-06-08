@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Target, ArrowRight, Trophy, User, Users, Gauge, Check, CheckCircle2, BarChart3, X } from "lucide-react";
+import { ArrowRight, Trophy, User, Users, Check, BarChart3, X, CalendarDays, Sparkles, Flag, NotebookPen } from "lucide-react";
 import HeroCarousel from "./components/HeroCarousel";
 import Logo from "./components/Logo";
 import PhoneMockup from "./components/PhoneMockup";
@@ -266,47 +266,53 @@ function Pillars() {
               className="text-3xl font-semibold leading-tight sm:text-4xl"
               style={{ color: TEXT_HEAD, fontFamily: "var(--font-manrope), sans-serif" }}
             >
-              Four answers. Every time you open the app.
+              Your season, end to end.
             </h2>
           </div>
         </Reveal>
 
         <div className="flex flex-col gap-16">
           <Pillar
-            Icon={Gauge}
-            eyebrow="The score"
-            title="Your Performance Readiness Score"
-            body="A 0–100 number built from competitive form, practice quality and volume, mental readiness, and competitive reps. The answer to “am I ready?” — grounded in real data, not a feeling."
-            demoSrc="/app-screens/readiness-v2.png"
-            demoAlt="Performance Readiness Score of 81 out of 100 with a 30-day trend and the next event countdown"
+            Icon={CalendarDays}
+            eyebrow="Plan"
+            title="Plan around your events."
+            body="Put your whole schedule in, build your own practice sessions, and save your own drills — so every week points at your next event."
+            highlights={["Your event calendar", "Build your own sessions", "Your own drill library"]}
             flip={false}
           />
           <Pillar
-            Icon={Target}
-            eyebrow="The forecast"
-            title="Project your next event."
-            body="Add an upcoming competition and Elite Prep projects a score from your real data. Tag it Peak, Developmental, or Baseline — the lead-up adjusts to match. Every input rolls into the math, so the number is one you trust."
-            demoSrc="/app-screens/forecast-v2.png"
-            demoAlt="Score Distribution bell curve with expected score, goal line, and aggressive/comfortable/stretch/conservative bands"
+            Icon={Sparkles}
+            eyebrow="Train"
+            title="Train your way."
+            body="Tell Elite Prep what you’ve got — “45 minutes, range and putting green” — and it builds a session from a real drill library. Run it on a live timer with drill-by-drill guidance."
+            highlights={["AI-built sessions", "Live practice timer", "Import drills from text, photo, or video"]}
             flip={true}
           />
           <Pillar
-            Icon={CheckCircle2}
-            eyebrow="The follow-through"
-            title="Plan the week. Sync it. Follow through."
-            body="Commit to a weekly plan — practice sessions, training blocks, and competitive reps. Sync it to Google or Apple Calendar so every commitment lands where you already work. The work that gets done is the work that gets seen."
-            demoSrc="/app-screens/accountability-v2.png"
-            demoAlt="Weekly plan timeline with Follow-through card showing Rounds, Practice, Physical Training, and Mental Training execution"
+            Icon={Flag}
+            eyebrow="Play"
+            title="Every round, in full."
+            body="Game-day rounds, practice rounds, and practice — logged shot-by-shot with Strokes Gained against PGA Tour, scratch, or your handicap."
+            demoSrc="/app-screens/round-map.png"
+            demoAlt="Live GPS round map tracking shot positions hole by hole"
             flip={false}
+          />
+          <Pillar
+            Icon={NotebookPen}
+            eyebrow="Reflect"
+            title="Reflect and learn."
+            body="Journal your sessions and rounds and rate where your head’s at, so every rep turns into something you actually learn from."
+            highlights={["Practice & round journal", "Mental check-ins", "Your record, over time"]}
+            flip={true}
           />
           <Pillar
             Icon={BarChart3}
-            eyebrow="The patterns"
-            title="Practice. Performance. Connected."
-            body="Two layers of analytics, side by side. How you prepared. How you performed. The patterns that emerge when you can see both at once — patterns that stay invisible when you only track one half."
+            eyebrow="Prove"
+            title="See it connect."
+            body="Your practice and your performance, side by side — the work that’s actually showing up in your scores. The end of guessing."
             demoSrc="/app-screens/stats-v2.png"
             demoAlt="Stats screen with practice segment breakdown — driving, approach, short game, and putting — and top skill per segment"
-            flip={true}
+            flip={false}
           />
         </div>
       </div>
@@ -322,15 +328,17 @@ function Pillar({
   demoSrc,
   demoAlt,
   demoPosition = "top",
+  highlights,
   flip,
 }: {
-  Icon: typeof Target;
+  Icon: typeof BarChart3;
   eyebrow: string;
   title: string;
   body: string;
-  demoSrc: string;
-  demoAlt: string;
+  demoSrc?: string;
+  demoAlt?: string;
   demoPosition?: "top" | "center" | "bottom";
+  highlights?: string[];
   flip: boolean;
 }) {
   const text = (
@@ -363,24 +371,66 @@ function Pillar({
       </p>
     </div>
   );
-  const demo = (
+  // Each beat shows either a real product screenshot (when we have a clean
+  // one) or a branded "what's inside" panel — never a placeholder/fake screen.
+  const visual = demoSrc ? (
     <div className="flex justify-center">
       <PhoneMockup
         src={demoSrc}
-        alt={demoAlt}
+        alt={demoAlt ?? title}
         width={330}
         objectPosition={demoPosition}
       />
     </div>
+  ) : (
+    <FeaturePanel Icon={Icon} highlights={highlights ?? []} />
   );
 
   return (
     <Reveal>
       <div className="grid items-center gap-10 lg:grid-cols-2">
         <div className={flip ? "lg:order-2" : "lg:order-1"}>{text}</div>
-        <div className={flip ? "lg:order-1" : "lg:order-2"}>{demo}</div>
+        <div className={flip ? "lg:order-1" : "lg:order-2"}>{visual}</div>
       </div>
     </Reveal>
+  );
+}
+
+function FeaturePanel({
+  Icon,
+  highlights,
+}: {
+  Icon: typeof BarChart3;
+  highlights: string[];
+}) {
+  return (
+    <div
+      className="rounded-3xl border p-8 sm:p-10"
+      style={{
+        borderColor: CARD_BORDER,
+        background: PREMIUM_CARD_BG,
+        boxShadow: PREMIUM_CARD_SHADOW,
+      }}
+    >
+      <div
+        className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl"
+        style={{ background: BRAND_DIM }}
+      >
+        <Icon size={24} color={BRAND} strokeWidth={1.75} />
+      </div>
+      <ul className="flex flex-col gap-3.5">
+        {highlights.map((h) => (
+          <li
+            key={h}
+            className="flex items-center gap-3 text-sm sm:text-base"
+            style={{ color: TEXT_HEAD }}
+          >
+            <Check size={16} color={BRAND} strokeWidth={2.5} />
+            {h}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
