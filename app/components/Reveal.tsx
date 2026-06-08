@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 export default function Reveal({
   children,
@@ -13,8 +13,15 @@ export default function Reveal({
   className?: string;
 }) {
   const prefersReducedMotion = useReducedMotion();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
-  if (prefersReducedMotion) {
+  // Ship visible. The server-rendered HTML (and any client that fails to
+  // hydrate, runs with JS disabled, or never fires IntersectionObserver)
+  // renders a plain div at full opacity — never a stranded opacity:0
+  // section. The scroll-reveal animation only kicks in once JS has
+  // confirmed it's running (mounted), so motion is purely additive.
+  if (prefersReducedMotion || !mounted) {
     return <div className={className}>{children}</div>;
   }
 

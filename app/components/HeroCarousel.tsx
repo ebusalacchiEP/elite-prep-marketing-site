@@ -12,27 +12,27 @@ type Slide = {
 
 const SLIDES: Slide[] = [
   {
-    src: "/hero/courtney-cook-SsIIw_MET0E-unsplash.jpg",
+    src: "/hero/courtney-cook-SsIIw_MET0E-unsplash-c.jpg",
     alt: "Golfer following through against a mountain backdrop",
     position: "center 45%",
   },
   {
-    src: "/hero/renith-r-A9VpotrPr1k-unsplash.jpg",
+    src: "/hero/renith-r-A9VpotrPr1k-unsplash-c.jpg",
     alt: "Tennis player at the baseline mid-rally, viewed from above",
     position: "30% 30%",
   },
   {
-    src: "/hero/jannes-glas-0NaQQsLWLkA-unsplash.jpg",
+    src: "/hero/jannes-glas-0NaQQsLWLkA-unsplash-c.jpg",
     alt: "Beach volleyball players silhouetted against a sunset",
     position: "center 60%",
   },
   {
-    src: "/hero/braden-collum-9HI8UJMSdZA-unsplash.jpg",
+    src: "/hero/braden-collum-9HI8UJMSdZA-unsplash-c.jpg",
     alt: "Track sprinter set in the blocks ready to race",
     position: "center 50%",
   },
   {
-    src: "/hero/connor-coyne-OgqWLzWRSaI-unsplash.jpg",
+    src: "/hero/connor-coyne-OgqWLzWRSaI-unsplash-c.jpg",
     alt: "Soccer cleat resting on a match ball at kickoff",
     position: "center 45%",
   },
