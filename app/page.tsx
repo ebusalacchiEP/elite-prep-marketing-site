@@ -277,7 +277,8 @@ function Pillars() {
             eyebrow="Plan"
             title="Plan around your events."
             body="Put your whole schedule in, build your own practice sessions, and save your own drills — so every week points at your next event."
-            highlights={["Your event calendar", "Build your own sessions", "Your own drill library"]}
+            demoSrc="/app-screens/hero-dashboard.png"
+            demoAlt="Home screen with your next event countdown and weekly schedule"
             flip={false}
           />
           <Pillar
@@ -285,7 +286,9 @@ function Pillars() {
             eyebrow="Train"
             title="Train your way."
             body="Tell Elite Prep what you’ve got — “45 minutes, range and putting green” — and it builds a session from a real drill library. Run it on a live timer with drill-by-drill guidance."
-            highlights={["AI-built sessions", "Live practice timer", "Import drills from text, photo, or video"]}
+            demoSrc="/app-screens/log-menu.png"
+            demoAlt="Log menu: plan a session, start a live timer, or log what you already did"
+            demoPosition="center"
             flip={true}
           />
           <Pillar
@@ -302,7 +305,8 @@ function Pillars() {
             eyebrow="Reflect"
             title="Reflect and learn."
             body="Journal your sessions and rounds and rate where your head’s at, so every rep turns into something you actually learn from."
-            highlights={["Practice & round journal", "Mental check-ins", "Your record, over time"]}
+            demoSrc="/app-screens/journal.png"
+            demoAlt="Journal screen prompting what's on your mind, with a place to write or dictate"
             flip={true}
           />
           <Pillar
