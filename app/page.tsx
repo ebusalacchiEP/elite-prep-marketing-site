@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Trophy, User, Check, X } from "lucide-react";
 import HeroCarousel from "./components/HeroCarousel";
 import Logo from "./components/Logo";
@@ -651,56 +652,58 @@ function Audience({
 
 function CtaBand() {
   return (
-    <section
-      style={{
-        background: `
-          ${SECTION_TOP_HALO},
-          ${SECTION_BOTTOM_HALO},
-          #0d0d0e
-        `,
-      }}
-    >
-      <div className="mx-auto max-w-3xl px-6 py-20 text-center sm:py-24">
+    <section className="relative overflow-hidden">
+      {/* Image bookend with the hero shot, heavily darkened so it reads as
+          atmosphere behind the finale (not a literal repeat). */}
+      <Image
+        src="/hero/tee-shot-c.jpg"
+        alt=""
+        aria-hidden
+        fill
+        className="object-cover object-[center_60%]"
+        sizes="100vw"
+      />
+      <div
+        className="absolute inset-0"
+        aria-hidden
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(13,13,14,0.88) 0%, rgba(13,13,14,0.74) 45%, rgba(13,13,14,0.94) 100%)",
+        }}
+      />
+      <div className="relative mx-auto max-w-4xl px-6 py-28 text-center sm:py-36">
         <Reveal>
-          <span
-            className="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold tracking-wider uppercase mb-5"
-            style={{ background: BRAND_DIM, color: BRAND }}
+          <p
+            className="text-xs font-semibold tracking-wider uppercase"
+            style={{ color: BRAND }}
           >
-            14 days free, then $24.99/mo
-          </span>
+            Your season starts now
+          </p>
           <h2
-            className="text-3xl font-semibold leading-tight sm:text-4xl"
+            className="mt-4 text-4xl leading-[1.02] sm:text-5xl lg:text-6xl"
             style={{
               color: TEXT_HEAD,
-              fontFamily: "var(--font-manrope), sans-serif",
-              textWrap: "balance",
+              fontFamily: "var(--font-anton), sans-serif",
+              textTransform: "uppercase",
+              textShadow: "0 2px 30px rgba(0,0,0,0.5)",
             }}
           >
-            Know what to work on. Know it&rsquo;s working.
+            Know what to work on.
+            <br />
+            Know it&rsquo;s working.
           </h2>
-          <p
-            className="mx-auto mt-5 max-w-xl text-base leading-relaxed"
-            style={{ color: TEXT_BODY, textWrap: "pretty" }}
-          >
-            Try every feature free for 14 days. Card required; cancel anytime
-            within the trial for no charge.
-          </p>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-9 flex justify-center">
             <a
               href={SIGNUP_URL}
               className="cta-glow inline-flex items-center gap-2 rounded-full px-8 py-4 text-lg font-semibold"
               style={{ background: "#ffffff", color: "#111112" }}
             >
-              Start free <ArrowRight className="h-4 w-4" />
-            </a>
-            <a
-              href={LOGIN_URL}
-              className="rounded-full border px-7 py-3.5 text-base font-medium transition-colors hover:bg-white/5"
-              style={{ borderColor: CARD_BORDER, color: TEXT_HEAD }}
-            >
-              Log in
+              Start free <ArrowRight className="h-5 w-5" />
             </a>
           </div>
+          <p className="mt-5 text-sm" style={{ color: TEXT_BODY }}>
+            14 days free, then $24.99/mo. Cancel anytime.
+          </p>
         </Reveal>
       </div>
     </section>
