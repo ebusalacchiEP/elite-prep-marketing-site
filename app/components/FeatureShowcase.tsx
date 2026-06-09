@@ -167,7 +167,7 @@ export default function FeatureShowcase() {
               onClick={() => go(i)}
               aria-label={`Show ${feat.accent}`}
               aria-current={i === active}
-              className="group relative h-9 flex-1"
+              className="group relative h-11 flex-1"
             >
               <span
                 className="absolute left-0 right-0 top-1/2 h-[2px] -translate-y-1/2 rounded-full transition-colors duration-300"
