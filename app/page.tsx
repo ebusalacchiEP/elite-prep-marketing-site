@@ -249,15 +249,15 @@ function Pillars() {
     >
       <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
         <Reveal>
-          <div className="mb-16 max-w-2xl">
+          <div className="mb-10 max-w-2xl">
             <p
-              className="text-xs font-semibold tracking-wider uppercase mb-3"
+              className="text-xs font-semibold tracking-wider uppercase"
               style={{ color: BRAND }}
             >
               How it works
             </p>
             <h2
-              className="text-3xl font-semibold leading-tight sm:text-4xl"
+              className="mt-2 text-lg font-semibold sm:text-xl"
               style={{ color: TEXT_HEAD, fontFamily: "var(--font-manrope), sans-serif" }}
             >
               Your season, end to end.

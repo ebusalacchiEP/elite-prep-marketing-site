@@ -8,6 +8,8 @@ const BRAND = "#9ABBC6";
 const TEXT_HEAD = "#f0f0f0";
 const TEXT_BODY = "#b3b3b3";
 const BRAND_DIM = "rgba(154,187,198,0.12)";
+const BRAND_GRADIENT = "linear-gradient(86deg, #9ABBC6 4%, #C5D6DB 99%)";
+const SIGNUP_URL = "https://app.eliteprep.app/signup";
 
 type Feature = {
   src: string;
@@ -197,6 +199,15 @@ export default function FeatureShowcase() {
             </button>
           ))}
         </div>
+
+        <a
+          href={SIGNUP_URL}
+          className="mt-10 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-transform hover:-translate-y-0.5"
+          style={{ background: BRAND_GRADIENT, color: "#111112" }}
+        >
+          Try free for 14 days
+          <span aria-hidden>&rarr;</span>
+        </a>
       </div>
 
       {/* Phone, cycling screens */}
