@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useReducedMotion } from "framer-motion";
 
 const POSTER = "/hero/practice-poster.jpg";
-const VIDEO = "/hero/practice-v2.mp4";
+const VIDEO = "/hero/practice-v3.mp4";
 const ALT =
   "Golfer practicing bunker shots, hitting from the sand with the course behind";
 
