@@ -58,6 +58,7 @@ export default function Page() {
       <Hero />
       <Thesis />
       <Pillars />
+      <FeatureDetail />
       <WhyElitePrep />
       <WhoItsFor />
       <CtaBand />
@@ -271,6 +272,149 @@ function Pillars() {
         </Reveal>
 
         <FeatureShowcase />
+      </div>
+    </section>
+  );
+}
+
+const DETAIL_GROUPS: { tag: string; title: string; desc: string; items: string[] }[] = [
+  {
+    tag: "01 / Plan",
+    title: "Plan around your events",
+    desc: "Your season is the spine. Every week points at the next event.",
+    items: [
+      "Add your full event schedule, with a countdown to each",
+      "Build your own practice sessions",
+      "Save and organize your own drills",
+      "Pull from a curated Pro Drills library",
+    ],
+  },
+  {
+    tag: "02 / Train",
+    title: "Train your way",
+    desc: "Turn range time into deliberate practice.",
+    items: [
+      "Describe your time and facilities; AI builds the session",
+      "Run it on a live timer with drill by drill callouts",
+      "Import any drill from a coach’s text, a photo, or a video",
+      "Log practice and training as you go",
+    ],
+  },
+  {
+    tag: "03 / Play",
+    title: "Every round, in full",
+    desc: "The same depth tour players train on.",
+    items: [
+      "Log game-day rounds, practice rounds, and practice",
+      "Shot by shot, mapped with GPS",
+      "Strokes Gained vs PGA Tour, scratch, or your handicap",
+      "Fairways, greens, putts, and penalties tracked",
+    ],
+  },
+  {
+    tag: "04 / Reflect",
+    title: "Reflect and learn",
+    desc: "Make every rep something you learn from.",
+    items: [
+      "Journal your sessions and rounds",
+      "Rate where your head’s at with mental check ins",
+      "Keep a technique log your coach can write to",
+      "Watch your record build over time",
+    ],
+  },
+  {
+    tag: "05 / Prove",
+    title: "See it connect",
+    desc: "The payoff: proof the work is working.",
+    items: [
+      "Your practice next to your performance",
+      "See which work is moving your scores",
+      "Know what to shift your reps toward",
+      "The end of guessing",
+    ],
+  },
+  {
+    tag: "06 / Together",
+    title: "Don’t grind alone",
+    desc: "A coach in your corner and a community at your back.",
+    items: [
+      "Connect your instructor for assigned work and accountability",
+      "Follow the players who push you",
+      "Climb the boards for volume and consistency",
+      "Like and comment on the work others put in",
+    ],
+  },
+];
+
+function FeatureDetail() {
+  return (
+    <section style={{ background: PAGE_BG }}>
+      <div className="mx-auto max-w-5xl px-6 py-20 sm:py-28">
+        <Reveal>
+          <div className="mb-12 max-w-2xl">
+            <p
+              className="text-xs font-semibold tracking-wider uppercase"
+              style={{ color: BRAND }}
+            >
+              The full system
+            </p>
+            <h2
+              className="mt-2 text-3xl font-semibold leading-tight sm:text-4xl"
+              style={{ color: TEXT_HEAD, fontFamily: "var(--font-manrope), sans-serif" }}
+            >
+              Everything it does.
+            </h2>
+          </div>
+        </Reveal>
+        <div>
+          {DETAIL_GROUPS.map((g) => (
+            <Reveal key={g.tag}>
+              <div
+                className="grid gap-6 border-t py-10 md:grid-cols-[260px_1fr]"
+                style={{ borderColor: CARD_BORDER }}
+              >
+                <div>
+                  <p
+                    className="text-xs font-semibold tracking-wider uppercase"
+                    style={{ color: BRAND }}
+                  >
+                    {g.tag}
+                  </p>
+                  <h3
+                    className="mt-2 text-2xl leading-tight"
+                    style={{
+                      color: TEXT_HEAD,
+                      fontFamily: "var(--font-anton), sans-serif",
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    {g.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed" style={{ color: TEXT_BODY }}>
+                    {g.desc}
+                  </p>
+                </div>
+                <ul className="grid gap-x-8 gap-y-3.5 sm:grid-cols-2">
+                  {g.items.map((it) => (
+                    <li
+                      key={it}
+                      className="flex items-start gap-3 text-sm sm:text-base"
+                      style={{ color: TEXT_HEAD }}
+                    >
+                      <Check
+                        size={16}
+                        color={BRAND}
+                        strokeWidth={2.5}
+                        className="mt-1 shrink-0"
+                      />
+                      <span style={{ color: TEXT_BODY }}>{it}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );
