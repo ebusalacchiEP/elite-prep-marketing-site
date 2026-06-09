@@ -220,7 +220,7 @@ function Thesis() {
             <span style={{ fontStyle: "italic" }}>It&rsquo;s won off it.</span>
           </h2>
           <p
-            className="mx-auto mt-8 max-w-2xl text-base leading-relaxed sm:text-lg"
+            className="mx-auto mt-8 max-w-2xl text-left text-base leading-relaxed sm:text-lg"
             style={{ color: TEXT_BODY }}
           >
             Most of your game gets built in the hours nobody tracks: the range
@@ -266,7 +266,7 @@ function Pillars() {
               How it works
             </p>
             <h2
-              className="mt-2 text-lg font-semibold sm:text-xl"
+              className="mt-2 text-3xl font-semibold leading-tight sm:text-4xl"
               style={{ color: TEXT_HEAD, fontFamily: "var(--font-manrope), sans-serif" }}
             >
               Your season, end to end.
@@ -521,11 +521,11 @@ function WhyElitePrep() {
       >
         <table className="w-full border-collapse table-fixed">
           <colgroup>
-            <col style={{ width: "32%" }} />
-            <col style={{ width: "17%" }} />
-            <col style={{ width: "17%" }} />
-            <col style={{ width: "17%" }} />
-            <col style={{ width: "17%" }} />
+            <col style={{ width: "24%" }} />
+            <col style={{ width: "19%" }} />
+            <col style={{ width: "19%" }} />
+            <col style={{ width: "19%" }} />
+            <col style={{ width: "19%" }} />
           </colgroup>
           {/* Sticky thead so column identity stays anchored while scrolling
               the 10-row table. Site header is ~73px, so we offset under it.
@@ -549,7 +549,7 @@ function WhyElitePrep() {
                   }}
                 >
                   <div
-                    className="text-[10px] font-semibold leading-[1.15] break-words"
+                    className="text-[10px] font-semibold leading-[1.15] tracking-[-0.01em]"
                     style={{
                       color: c.primary ? BRAND : TEXT_HEAD,
                       fontFamily: "var(--font-manrope), sans-serif",
