@@ -132,6 +132,12 @@ function Hero() {
 
       <div className="relative mx-auto flex max-w-6xl flex-col justify-start md:justify-center px-6 pb-24 pt-24 sm:pt-32 min-h-[600px] sm:min-h-[680px] lg:min-h-[760px]">
         <div className="max-w-3xl">
+          <p
+            className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] sm:text-sm"
+            style={{ color: BRAND, textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
+          >
+            The prep app for competitive golfers
+          </p>
           <h1
             className="text-5xl leading-[0.95] sm:text-6xl lg:text-[72px]"
             style={{
@@ -152,11 +158,10 @@ function Hero() {
               textShadow: "0 1px 12px rgba(0,0,0,0.5)",
             }}
           >
-            The whole climb — your{" "}
-            <span style={{ color: TEXT_HEAD }}>practice</span>, your{" "}
-            <span style={{ color: TEXT_HEAD }}>rounds</span>, your technique, your
-            coach — in one place, built around your schedule. So you always know
-            what to work on, and know it&rsquo;s working.
+            Plan your <span style={{ color: TEXT_HEAD }}>practice</span>, track
+            every <span style={{ color: TEXT_HEAD }}>round</span>, and see whether
+            your prep is actually working. All in one place, built around your
+            next event.
           </p>
           {/* Hero text budget: H1 + subhead + CTA group (with pricing +
               positioning under it as one block). Trust strip used to be a
@@ -215,7 +220,7 @@ function Thesis() {
             className="mx-auto mt-8 max-w-2xl text-base leading-relaxed sm:text-lg"
             style={{ color: TEXT_BODY }}
           >
-            Most of your game gets built in the hours nobody tracks — the range
+            Most of your game gets built in the hours nobody tracks: the range
             sessions, the short-game grind, the practice rounds, the work with
             your coach. That&rsquo;s where the real work is. And until now it
             lived in five different places, or nowhere at all.
@@ -322,7 +327,7 @@ function WhyElitePrep() {
           >
             Recovery trackers grade your sleep. Stat trackers grade the round
             you already played. Elite Prep owns the part that decides the
-            outcome — the work between events, and the proof it&rsquo;s working.
+            outcome: the work between events, and the proof it&rsquo;s working.
           </p>
         </div>
       </Reveal>
@@ -590,7 +595,7 @@ function WhoItsFor() {
           <Audience
             Icon={Trophy}
             title="Individual athletes"
-            body="Junior, collegiate, amateur, pro — anyone who cares about the work between events. Walk into every event knowing you put in the right prep."
+            body="Junior, collegiate, amateur, pro. Anyone who cares about the work between events. Walk into every event knowing you put in the right prep."
             primary
           />
         </Reveal>
@@ -598,7 +603,7 @@ function WhoItsFor() {
           <Audience
             Icon={User}
             title="Individual coaches"
-            body="The gap between lessons stops being a black box. Every practice, training block, and competitive rep — logged, scored, and shared with you."
+            body="The gap between lessons stops being a black box. Every practice, training block, and competitive rep: logged, scored, and shared with you."
             primary
           />
         </Reveal>

@@ -38,7 +38,7 @@ const FEATURES: Feature[] = [
     pre: "Train ",
     accent: "your way",
     post: ".",
-    body: "Tell it your time and facilities and it builds the session from a real drill library — or build your own.",
+    body: "Tell it your time and facilities and it builds the session from a real drill library, or build your own.",
   },
   {
     src: "/app-screens/s-timer.png",
@@ -47,7 +47,7 @@ const FEATURES: Feature[] = [
     pre: "The clock is ",
     accent: "ticking",
     post: ".",
-    body: "Run practice live, drill by drill. Lock your screen — the timer keeps going.",
+    body: "Run practice live, drill by drill. Lock your screen and the timer keeps going.",
   },
   {
     src: "/app-screens/s-round.png",
@@ -56,7 +56,7 @@ const FEATURES: Feature[] = [
     pre: "Track the whole ",
     accent: "game",
     post: ".",
-    body: "Game-day rounds, practice rounds, and practice — shot-by-shot, with Strokes Gained vs Tour, scratch, or your handicap.",
+    body: "Game-day rounds, practice rounds, and practice, shot by shot, with Strokes Gained vs Tour, scratch, or your handicap.",
   },
   {
     src: "/app-screens/s-reflect.png",
@@ -74,7 +74,7 @@ const FEATURES: Feature[] = [
     pre: "See it ",
     accent: "connect",
     post: ".",
-    body: "Your practice next to your performance — proof the work off the course is moving your scores.",
+    body: "Your practice next to your performance. Proof the work off the course is moving your scores.",
   },
   {
     src: "/app-screens/s-community.png",
