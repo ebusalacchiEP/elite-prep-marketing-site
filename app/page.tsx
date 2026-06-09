@@ -277,8 +277,8 @@ function Pillars() {
             eyebrow="Plan"
             title="Plan around your events."
             body="Put your whole schedule in, build your own practice sessions, and save your own drills — so every week points at your next event."
-            demoSrc="/app-screens/hero-dashboard.png"
-            demoAlt="Home screen with your next event countdown and weekly schedule"
+            demoSrc="/app-screens/plan-events.png"
+            demoAlt="Events screen listing your upcoming and past competitions"
             flip={false}
           />
           <Pillar
@@ -286,9 +286,8 @@ function Pillars() {
             eyebrow="Train"
             title="Train your way."
             body="Tell Elite Prep what you’ve got — “45 minutes, range and putting green” — and it builds a session from a real drill library. Run it on a live timer with drill-by-drill guidance."
-            demoSrc="/app-screens/log-menu.png"
-            demoAlt="Log menu: plan a session, start a live timer, or log what you already did"
-            demoPosition="center"
+            demoSrc="/app-screens/train-ai.png"
+            demoAlt="Prep tab: generate a practice session with Elite Prep AI, or build one manually"
             flip={true}
           />
           <Pillar
@@ -296,8 +295,8 @@ function Pillars() {
             eyebrow="Play"
             title="Every round, in full."
             body="Game-day rounds, practice rounds, and practice — logged shot-by-shot with Strokes Gained against PGA Tour, scratch, or your handicap."
-            demoSrc="/app-screens/round-map.png"
-            demoAlt="Live GPS round map tracking shot positions hole by hole"
+            demoSrc="/app-screens/play-round.png"
+            demoAlt="Round stats: strokes gained per round, scoring breakdown, fairways and greens"
             flip={false}
           />
           <Pillar
@@ -305,8 +304,8 @@ function Pillars() {
             eyebrow="Reflect"
             title="Reflect and learn."
             body="Journal your sessions and rounds and rate where your head’s at, so every rep turns into something you actually learn from."
-            demoSrc="/app-screens/journal.png"
-            demoAlt="Journal screen prompting what's on your mind, with a place to write or dictate"
+            demoSrc="/app-screens/reflect-journal.png"
+            demoAlt="Journal and notes screen with practice, training, and round reflections"
             flip={true}
           />
           <Pillar
@@ -314,8 +313,8 @@ function Pillars() {
             eyebrow="Prove"
             title="See it connect."
             body="Your practice and your performance, side by side — the work that’s actually showing up in your scores. The end of guessing."
-            demoSrc="/app-screens/stats-v2.png"
-            demoAlt="Stats screen with practice segment breakdown — driving, approach, short game, and putting — and top skill per segment"
+            demoSrc="/app-screens/prove-connect-v2.png"
+            demoAlt="Practice-to-play screen showing time spent per area against strokes gained per round"
             flip={false}
           />
         </div>
