@@ -29,7 +29,7 @@ const FEATURES: Feature[] = [
     pre: "Every event, a ",
     accent: "countdown",
     post: ".",
-    body: "Put your season in. Every event gets a countdown, a course, and a plan to point the week at.",
+    body: "Set your goal, put your season in, and every event gets a countdown and a plan to point the week at.",
   },
   {
     src: "/app-screens/s-prep.png",
@@ -38,7 +38,7 @@ const FEATURES: Feature[] = [
     pre: "Train ",
     accent: "your way",
     post: ".",
-    body: "Tell it your time and facilities and it builds the session from a real drill library, or build your own.",
+    body: "Tell it your time and facilities and it builds the session, or build your own drills and sessions like a workout plan.",
   },
   {
     src: "/app-screens/s-timer.png",
@@ -83,7 +83,7 @@ const FEATURES: Feature[] = [
     pre: "Walked ",
     accent: "together",
     post: ".",
-    body: "Follow the players who push you, see what they’re putting in, and climb the boards.",
+    body: "See who else is putting in the work, follow the players who push you, and climb the boards.",
   },
 ];
 

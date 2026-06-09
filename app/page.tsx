@@ -281,11 +281,11 @@ const DETAIL_GROUPS: { tag: string; title: string; desc: string; items: string[]
   {
     tag: "01 / Plan",
     title: "Plan around your events",
-    desc: "Your season is the spine. Every week points at the next event.",
+    desc: "Set your goal, put your season in, and point every week at the next event.",
     items: [
+      "Set your goal and keep it in view",
       "Add your full event schedule, with a countdown to each",
-      "Build your own practice sessions",
-      "Save and organize your own drills",
+      "Build your own drills and practice sessions, like a workout plan",
       "Pull from a curated Pro Drills library",
     ],
   },
@@ -336,12 +336,12 @@ const DETAIL_GROUPS: { tag: string; title: string; desc: string; items: string[]
   {
     tag: "06 / Together",
     title: "Don’t grind alone",
-    desc: "A coach in your corner and a community at your back.",
+    desc: "A coach in your corner, and motivation from seeing who else is putting in the work.",
     items: [
-      "Connect your instructor for assigned work and accountability",
-      "Follow the players who push you",
+      "See who else is putting in the work, for motivation",
+      "Follow the players who push you; like and comment",
       "Climb the boards for volume and consistency",
-      "Like and comment on the work others put in",
+      "Connect your instructor for assigned work and accountability",
     ],
   },
 ];
