@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { ArrowRight, Trophy, User, Users, Check, BarChart3, X, CalendarDays, Sparkles, Flag, NotebookPen } from "lucide-react";
+import { ArrowRight, Trophy, User, Users, Check, X } from "lucide-react";
 import HeroCarousel from "./components/HeroCarousel";
 import Logo from "./components/Logo";
-import PhoneMockup from "./components/PhoneMockup";
+import FeatureShowcase from "./components/FeatureShowcase";
 import Reveal from "./components/Reveal";
 
 const LOGIN_URL = "https://app.eliteprep.app/login";
@@ -265,169 +265,9 @@ function Pillars() {
           </div>
         </Reveal>
 
-        <div className="flex flex-col gap-16">
-          <Pillar
-            Icon={CalendarDays}
-            eyebrow="Plan"
-            title="Plan around your events."
-            body="Put your whole schedule in, build your own practice sessions, and save your own drills — so every week points at your next event."
-            demoSrc="/app-screens/plan-events.png"
-            demoAlt="Events screen listing your upcoming and past competitions"
-            flip={false}
-          />
-          <Pillar
-            Icon={Sparkles}
-            eyebrow="Train"
-            title="Train your way."
-            body="Tell Elite Prep what you’ve got — “45 minutes, range and putting green” — and it builds a session from a real drill library. Run it on a live timer with drill-by-drill guidance."
-            demoSrc="/app-screens/train-ai.png"
-            demoAlt="Prep tab: generate a practice session with Elite Prep AI, or build one manually"
-            flip={true}
-          />
-          <Pillar
-            Icon={Flag}
-            eyebrow="Play"
-            title="Every round, in full."
-            body="Game-day rounds, practice rounds, and practice — logged shot-by-shot with Strokes Gained against PGA Tour, scratch, or your handicap."
-            demoSrc="/app-screens/play-round.png"
-            demoAlt="Round stats: strokes gained per round, scoring breakdown, fairways and greens"
-            flip={false}
-          />
-          <Pillar
-            Icon={NotebookPen}
-            eyebrow="Reflect"
-            title="Reflect and learn."
-            body="Journal your sessions and rounds and rate where your head’s at, so every rep turns into something you actually learn from."
-            demoSrc="/app-screens/reflect-journal.png"
-            demoAlt="Journal and notes screen with practice, training, and round reflections"
-            flip={true}
-          />
-          <Pillar
-            Icon={BarChart3}
-            eyebrow="Prove"
-            title="See it connect."
-            body="Your practice and your performance, side by side — the work that’s actually showing up in your scores. The end of guessing."
-            demoSrc="/app-screens/prove-connect-v2.png"
-            demoAlt="Practice-to-play screen showing time spent per area against strokes gained per round"
-            flip={false}
-          />
-        </div>
+        <FeatureShowcase />
       </div>
     </section>
-  );
-}
-
-function Pillar({
-  Icon,
-  eyebrow,
-  title,
-  body,
-  demoSrc,
-  demoAlt,
-  demoPosition = "top",
-  highlights,
-  flip,
-}: {
-  Icon: typeof BarChart3;
-  eyebrow: string;
-  title: string;
-  body: string;
-  demoSrc?: string;
-  demoAlt?: string;
-  demoPosition?: "top" | "center" | "bottom";
-  highlights?: string[];
-  flip: boolean;
-}) {
-  const text = (
-    <div>
-      <div className="mb-5 flex items-center gap-3">
-        <div
-          className="flex h-11 w-11 items-center justify-center rounded-2xl"
-          style={{ background: BRAND_DIM }}
-        >
-          <Icon size={20} color={BRAND} strokeWidth={1.75} />
-        </div>
-        <span
-          className="text-xs font-semibold tracking-wider uppercase"
-          style={{ color: TEXT_BODY }}
-        >
-          {eyebrow}
-        </span>
-      </div>
-      <h3
-        className="text-2xl font-semibold leading-tight sm:text-3xl"
-        style={{ color: TEXT_HEAD, fontFamily: "var(--font-manrope), sans-serif" }}
-      >
-        {title}
-      </h3>
-      <p
-        className="mt-4 max-w-md text-base leading-relaxed"
-        style={{ color: TEXT_BODY }}
-      >
-        {body}
-      </p>
-    </div>
-  );
-  // Each beat shows either a real product screenshot (when we have a clean
-  // one) or a branded "what's inside" panel — never a placeholder/fake screen.
-  const visual = demoSrc ? (
-    <div className="flex justify-center">
-      <PhoneMockup
-        src={demoSrc}
-        alt={demoAlt ?? title}
-        width={330}
-        objectPosition={demoPosition}
-      />
-    </div>
-  ) : (
-    <FeaturePanel Icon={Icon} highlights={highlights ?? []} />
-  );
-
-  return (
-    <Reveal>
-      <div className="grid items-center gap-10 lg:grid-cols-2">
-        <div className={flip ? "lg:order-2" : "lg:order-1"}>{text}</div>
-        <div className={flip ? "lg:order-1" : "lg:order-2"}>{visual}</div>
-      </div>
-    </Reveal>
-  );
-}
-
-function FeaturePanel({
-  Icon,
-  highlights,
-}: {
-  Icon: typeof BarChart3;
-  highlights: string[];
-}) {
-  return (
-    <div
-      className="rounded-3xl border p-8 sm:p-10"
-      style={{
-        borderColor: CARD_BORDER,
-        background: PREMIUM_CARD_BG,
-        boxShadow: PREMIUM_CARD_SHADOW,
-      }}
-    >
-      <div
-        className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl"
-        style={{ background: BRAND_DIM }}
-      >
-        <Icon size={24} color={BRAND} strokeWidth={1.75} />
-      </div>
-      <ul className="flex flex-col gap-3.5">
-        {highlights.map((h) => (
-          <li
-            key={h}
-            className="flex items-center gap-3 text-sm sm:text-base"
-            style={{ color: TEXT_HEAD }}
-          >
-            <Check size={16} color={BRAND} strokeWidth={2.5} />
-            {h}
-          </li>
-        ))}
-      </ul>
-    </div>
   );
 }
 
