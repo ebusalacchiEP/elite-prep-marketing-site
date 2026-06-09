@@ -161,7 +161,7 @@ export default function FeatureShowcase() {
         </div>
 
         {/* Climb rail: one node per feature, active glows, a tracer connects them */}
-        <div className="mt-8 flex items-center gap-2">
+        <div className="mt-8 flex items-center gap-1">
           {FEATURES.map((feat, i) => (
             <button
               key={feat.src}

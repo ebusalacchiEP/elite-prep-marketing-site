@@ -78,7 +78,7 @@ function TopNav() {
       }}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" aria-label="Elite Prep home" className="shrink-0">
+        <Link href="/" aria-label="Elite Prep home" className="shrink-0 inline-flex items-center min-h-[44px]">
           <span className="sm:hidden"><Logo width={120} /></span>
           <span className="hidden sm:inline-flex"><Logo width={140} /></span>
         </Link>
@@ -160,10 +160,11 @@ function Hero() {
               textShadow: "0 1px 12px rgba(0,0,0,0.5)",
             }}
           >
-            Plan your <span style={{ color: TEXT_HEAD }}>practice</span>, track
-            every <span style={{ color: TEXT_HEAD }}>round</span>, and see whether
-            your prep is actually working. All in one place, built around your
-            next event.
+            Track your <span style={{ color: TEXT_HEAD }}>practice</span>, track
+            your <span style={{ color: TEXT_HEAD }}>rounds</span>, and see how they
+            connect. It all builds into a repeatable{" "}
+            <span style={{ color: TEXT_HEAD }}>system</span> that gets you the most
+            prepared for every event.
           </p>
           {/* Hero text budget: H1 + subhead + CTA group (with pricing +
               positioning under it as one block). Trust strip used to be a
@@ -235,7 +236,8 @@ function Thesis() {
               fontStyle: "italic",
             }}
           >
-            Elite Prep is one system for all of it.
+            Elite Prep is one system for all of it: the prep a competitive
+            golfer built to stay ready, now an app you can run.
           </p>
         </Reveal>
       </div>
@@ -402,8 +404,8 @@ function FeatureDetail() {
           </div>
         </Reveal>
         <div>
-          {DETAIL_GROUPS.map((g) => (
-            <Reveal key={g.tag}>
+          {DETAIL_GROUPS.map((g, i) => (
+            <Reveal key={g.tag} delay={(i % 3) * 0.12}>
               <div
                 className="grid gap-6 border-t py-10 md:grid-cols-[260px_1fr]"
                 style={{ borderColor: CARD_BORDER }}
