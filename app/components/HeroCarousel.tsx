@@ -15,9 +15,9 @@ type Slide = {
 // an array so we can reintroduce rotation with more golf shots later.
 const SLIDES: Slide[] = [
   {
-    src: "/hero/courtney-cook-SsIIw_MET0E-unsplash-c.jpg",
-    alt: "Golfer following through off the tee against a mountain backdrop",
-    position: "center 45%",
+    src: "/hero/tee-shot-c.jpg",
+    alt: "Golfer holding a follow-through off an elevated tee overlooking the course",
+    position: "center 62%",
   },
 ];
 
@@ -52,8 +52,10 @@ export default function HeroCarousel() {
             fill
             priority={i === 0}
             sizes="100vw"
-            className="object-cover"
-            style={{ objectPosition: slide.position }}
+            // Portrait source: anchor higher on mobile (taller crop keeps the
+            // golfer centered) and lower on desktop (wide crop, brings the
+            // golfer up into the band instead of dead sky).
+            className="object-cover object-[center_46%] md:object-[center_62%]"
           />
         </motion.div>
       ))}
