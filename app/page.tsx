@@ -468,18 +468,18 @@ function WhyElitePrep() {
     { name: "Elite Prep", sub: "Event-Anchored", primary: true },
     { name: "Stat Trackers", sub: "Shot & Round Data" },
     { name: "Coaching Apps", sub: "Video & Comms" },
-    { name: "Team Platforms", sub: "Enterprise Suites" },
+    { name: "Wearables", sub: "Recovery & Sleep" },
   ];
   const rows: { feature: string; marks: CompareValue[] }[] = [
     { feature: "Organizes around your event calendar", marks: [true, false, false, false] },
     { feature: "Builds your practice sessions for you", marks: [true, false, false, false] },
     { feature: "Build your own drills & sessions", marks: [true, false, true, false] },
     { feature: "Shot-by-shot rounds with Strokes Gained", marks: [true, true, false, false] },
-    { feature: "Game-day, practice rounds & practice in one place", marks: [true, true, false, true] },
+    { feature: "Game-day, practice rounds & practice in one place", marks: [true, true, false, false] },
     { feature: "Captures how practice felt (journal + mental)", marks: [true, false, false, false] },
-    { feature: "Connects practice to event results", marks: [true, true, false, true] },
-    { feature: "Coach sees training between lessons", marks: [true, false, true, true] },
-    { feature: "For individual athletes, not just teams", marks: [true, true, true, false] },
+    { feature: "Connects your practice to your results", marks: [true, false, false, false] },
+    { feature: "Coach sees training between lessons", marks: [true, false, true, false] },
+    { feature: "Tracks recovery and sleep", marks: [false, false, false, true] },
   ];
   return (
     <section
