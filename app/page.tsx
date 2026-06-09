@@ -281,7 +281,7 @@ function Pillars() {
 const DETAIL_GROUPS: { tag: string; title: string; desc: string; items: string[] }[] = [
   {
     tag: "01 / Plan",
-    title: "Plan around your events",
+    title: "Set goals and plan your season",
     desc: "Set your goal, put your season in, and point every week at the next event.",
     items: [
       "Set your goal and keep it in view",
@@ -292,7 +292,7 @@ const DETAIL_GROUPS: { tag: string; title: string; desc: string; items: string[]
   },
   {
     tag: "02 / Train",
-    title: "Train your way",
+    title: "Build and run your practice",
     desc: "Turn range time into deliberate practice.",
     items: [
       "Describe your time and facilities; AI builds the session",
@@ -303,7 +303,7 @@ const DETAIL_GROUPS: { tag: string; title: string; desc: string; items: string[]
   },
   {
     tag: "03 / Play",
-    title: "Every round, in full",
+    title: "Track every round in depth",
     desc: "The same depth tour players train on.",
     items: [
       "Log game-day rounds, practice rounds, and practice",
@@ -314,7 +314,7 @@ const DETAIL_GROUPS: { tag: string; title: string; desc: string; items: string[]
   },
   {
     tag: "04 / Reflect",
-    title: "Reflect and learn",
+    title: "Journal, mind, and technique",
     desc: "Make every rep something you learn from.",
     items: [
       "Journal your sessions and rounds",
@@ -325,7 +325,7 @@ const DETAIL_GROUPS: { tag: string; title: string; desc: string; items: string[]
   },
   {
     tag: "05 / Prove",
-    title: "See it connect",
+    title: "Prove the work is working",
     desc: "The payoff: proof the work is working.",
     items: [
       "Your practice next to your performance",
@@ -336,7 +336,7 @@ const DETAIL_GROUPS: { tag: string; title: string; desc: string; items: string[]
   },
   {
     tag: "06 / Together",
-    title: "Don’t grind alone",
+    title: "Coach and community",
     desc: "A coach in your corner, and motivation from seeing who else is putting in the work.",
     items: [
       "See who else is putting in the work, for motivation",
