@@ -176,12 +176,6 @@ function Hero() {
             >
               Then $24.99/month. Cancel anytime.
             </p>
-            <p
-              className="mt-1.5 text-xs"
-              style={{ color: "#bdbdc0" }}
-            >
-              Starting with competitive golf — built for every sport.
-            </p>
           </div>
         </div>
       </div>
