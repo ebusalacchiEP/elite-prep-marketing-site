@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Trophy, User, Users, Check, X } from "lucide-react";
+import { ArrowRight, Trophy, User, Check, X } from "lucide-react";
 import HeroCarousel from "./components/HeroCarousel";
 import Logo from "./components/Logo";
 import FeatureShowcase from "./components/FeatureShowcase";
@@ -585,7 +585,7 @@ function WhoItsFor() {
           </h2>
         </div>
       </Reveal>
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-2">
         <Reveal delay={0}>
           <Audience
             Icon={Trophy}
@@ -599,14 +599,6 @@ function WhoItsFor() {
             Icon={User}
             title="Individual coaches"
             body="The gap between lessons stops being a black box. Every practice, training block, and competitive rep — logged, scored, and shared with you."
-            primary
-          />
-        </Reveal>
-        <Reveal delay={0.2}>
-          <Audience
-            Icon={Users}
-            title="Team coaches"
-            body="See the whole roster at a glance. Spot prep slipping before it shows up in results, and standardize how the team prepares."
             primary
           />
         </Reveal>
