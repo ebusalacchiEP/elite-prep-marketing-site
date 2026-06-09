@@ -2,63 +2,43 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
+import { useReducedMotion } from "framer-motion";
 
-type Slide = {
-  src: string;
-  alt: string;
-  position: string;
-};
+const POSTER = "/hero/practice-poster.jpg";
+const VIDEO = "/hero/practice.mp4";
+const ALT =
+  "Golfer practicing bunker shots, hitting from the sand with the course behind";
 
-// Single full-bleed golf hero. The copy is golf-specific, so the imagery is
-// too — a rotating carousel of mixed sports clashed with the headline. Kept as
-// an array so we can reintroduce rotation with more golf shots later.
-const SLIDES: Slide[] = [
-  {
-    src: "/hero/tee-shot-c.jpg",
-    alt: "Golfer holding a follow-through off an elevated tee overlooking the course",
-    position: "center 62%",
-  },
-];
-
-const ROTATION_MS = 6000;
-const FADE_S = 1.0;
+// Portrait source. Anchor a touch higher on mobile (taller crop), centered on
+// desktop (wide crop) so the golfer and the ball pile stay in frame.
+const FRAME = "object-cover object-[center_44%] md:object-[center_52%]";
 
 export default function HeroCarousel() {
-  const [active, setActive] = useState(0);
   const reduceMotion = useReducedMotion();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
-  useEffect(() => {
-    if (reduceMotion) return;
-    const id = window.setInterval(() => {
-      setActive((i) => (i + 1) % SLIDES.length);
-    }, ROTATION_MS);
-    return () => window.clearInterval(id);
-  }, [reduceMotion]);
+  // The video is the enhancement. The poster is the floor: it renders from the
+  // server, with JS disabled, while the clip buffers, and whenever the visitor
+  // prefers reduced motion. So the hero is never blank and never forces motion.
+  const showVideo = mounted && !reduceMotion;
 
   return (
-    <>
-      {SLIDES.map((slide, i) => (
-        <motion.div
-          key={slide.src}
-          className="absolute inset-0 -z-20"
-          initial={{ opacity: i === 0 ? 1 : 0 }}
-          animate={{ opacity: i === active ? 1 : 0 }}
-          transition={{ duration: FADE_S, ease: "easeInOut" }}
+    <div className="absolute inset-0 -z-20">
+      <Image src={POSTER} alt={ALT} fill priority sizes="100vw" className={FRAME} />
+      {showVideo && (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={POSTER}
+          aria-hidden
+          className={`absolute inset-0 h-full w-full ${FRAME}`}
         >
-          <Image
-            src={slide.src}
-            alt={slide.alt}
-            fill
-            priority={i === 0}
-            sizes="100vw"
-            // Portrait source: anchor higher on mobile (taller crop keeps the
-            // golfer centered) and lower on desktop (wide crop, brings the
-            // golfer up into the band instead of dead sky).
-            className="object-cover object-[center_46%] md:object-[center_62%]"
-          />
-        </motion.div>
-      ))}
-    </>
+          <source src={VIDEO} type="video/mp4" />
+        </video>
+      )}
+    </div>
   );
 }
