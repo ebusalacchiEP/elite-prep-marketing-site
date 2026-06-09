@@ -278,71 +278,64 @@ function Pillars() {
   );
 }
 
-const DETAIL_GROUPS: { tag: string; title: string; desc: string; items: string[] }[] = [
+const DETAIL_GROUPS: { tag: string; title: string; items: string[] }[] = [
   {
     tag: "01 / Plan",
     title: "Set goals and plan your season",
-    desc: "Set your goal, put your season in, and point every week at the next event.",
     items: [
-      "Set your goal and keep it in view",
-      "Add your full event schedule, with a countdown to each",
-      "Build your own drills and practice sessions, like a workout plan",
-      "Pull from a curated Pro Drills library",
+      "Set your goal",
+      "Full event schedule, with countdowns",
+      "Build your own drills and sessions",
+      "Curated Pro Drills library",
     ],
   },
   {
     tag: "02 / Train",
     title: "Build and run your practice",
-    desc: "Turn range time into deliberate practice.",
     items: [
-      "Describe your time and facilities; AI builds the session",
-      "Run it on a live timer with drill by drill callouts",
-      "Import any drill from a coach’s text, a photo, or a video",
-      "Log practice and training as you go",
+      "AI builds a session from your time and facilities",
+      "Live timer with drill-by-drill callouts",
+      "Import drills from text, photo, or video",
+      "Log practice and training",
     ],
   },
   {
     tag: "03 / Play",
     title: "Track every round in depth",
-    desc: "The same depth tour players train on.",
     items: [
-      "Log game-day rounds, practice rounds, and practice",
+      "Game-day rounds, practice rounds, and practice",
       "Shot by shot, mapped with GPS",
-      "Strokes Gained vs PGA Tour, scratch, or your handicap",
-      "Fairways, greens, putts, and penalties tracked",
+      "Strokes Gained vs Tour, scratch, or handicap",
+      "Fairways, greens, putts, penalties",
     ],
   },
   {
     tag: "04 / Reflect",
     title: "Journal, mind, and technique",
-    desc: "Make every rep something you learn from.",
     items: [
       "Journal your sessions and rounds",
-      "Rate where your head’s at with mental check ins",
-      "Keep a technique log your coach can write to",
-      "Watch your record build over time",
+      "Mental check-ins",
+      "Technique log your coach can write to",
+      "Your record, over time",
     ],
   },
   {
     tag: "05 / Prove",
     title: "Prove the work is working",
-    desc: "The payoff: proof the work is working.",
     items: [
       "Your practice next to your performance",
-      "See which work is moving your scores",
-      "Know what to shift your reps toward",
-      "The end of guessing",
+      "See which work moves your scores",
+      "Know what to shift reps toward",
     ],
   },
   {
     tag: "06 / Together",
     title: "Coach and community",
-    desc: "A coach in your corner, and motivation from seeing who else is putting in the work.",
     items: [
-      "See who else is putting in the work, for motivation",
-      "Follow the players who push you; like and comment",
-      "Climb the boards for volume and consistency",
-      "Connect your instructor for assigned work and accountability",
+      "See who else is putting in the work",
+      "Follow, like, and comment",
+      "Leaderboards for volume and consistency",
+      "Connect your coach for assigned work",
     ],
   },
 ];
@@ -432,9 +425,6 @@ function FeatureDetail() {
                   >
                     {g.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed" style={{ color: TEXT_BODY }}>
-                    {g.desc}
-                  </p>
                 </div>
                 <ul className="grid gap-x-8 gap-y-3.5 sm:grid-cols-2">
                   {g.items.map((it) => (
