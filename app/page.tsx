@@ -57,6 +57,7 @@ export default function Page() {
       <TopNav />
       <Hero />
       <Thesis />
+      <MantraBand />
       <Pillars />
       <FeatureDetail />
       <WhyElitePrep />
@@ -345,6 +346,47 @@ const DETAIL_GROUPS: { tag: string; title: string; desc: string; items: string[]
     ],
   },
 ];
+
+function MantraBand() {
+  const words = ["Practice", "Play", "Compete", "Learn", "Repeat"];
+  return (
+    <section
+      aria-label="Practice. Play. Compete. Learn. Repeat."
+      style={{
+        background: "#0d0d0e",
+        borderTop: `1px solid ${CARD_BORDER}`,
+        borderBottom: `1px solid ${CARD_BORDER}`,
+      }}
+    >
+      <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-x-5 gap-y-2 px-6 py-12 sm:py-14">
+        {words.map((w, i) => (
+          <span key={w} className="flex items-center gap-x-5">
+            <span
+              className="text-xl sm:text-2xl lg:text-3xl"
+              style={{
+                fontFamily: "var(--font-anton), sans-serif",
+                textTransform: "uppercase",
+                color: TEXT_HEAD,
+                letterSpacing: "0.04em",
+              }}
+            >
+              {w}
+            </span>
+            {i < words.length - 1 && (
+              <span
+                aria-hidden
+                className="text-sm sm:text-base"
+                style={{ color: BRAND }}
+              >
+                ●
+              </span>
+            )}
+          </span>
+        ))}
+      </div>
+    </section>
+  );
+}
 
 function FeatureDetail() {
   return (
