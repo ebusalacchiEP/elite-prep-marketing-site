@@ -18,7 +18,6 @@ const LOGIN_URL = "https://app.eliteprep.app/login";
 // preview flow. /signup is the correct entry point for the new funnel.
 const SIGNUP_URL = "https://app.eliteprep.app/signup";
 
-const BRAND_GRADIENT = "linear-gradient(86deg, #9ABBC6 4%, #C5D6DB 99%)";
 const PAGE_BG = "#111112";
 const CARD_BORDER = "#2a2a2c";
 const TEXT_HEAD = "#f0f0f0";
@@ -165,10 +164,10 @@ function Hero() {
           <div className="mt-8 md:mt-10">
             <a
               href={SIGNUP_URL}
-              className="cta-glow inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold md:px-7 md:py-3.5 md:text-base"
-              style={{ background: BRAND_GRADIENT, color: "#111112" }}
+              className="cta-glow inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold md:px-8 md:py-4 md:text-lg"
+              style={{ background: "#ffffff", color: "#111112" }}
             >
-              Try free for 14 days <ArrowRight className="h-4 w-4" />
+              Start free <ArrowRight className="h-4 w-4" />
             </a>
             <p
               className="mt-3 text-xs md:text-sm"
@@ -689,10 +688,10 @@ function CtaBand() {
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <a
               href={SIGNUP_URL}
-              className="cta-glow inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold"
-              style={{ background: BRAND_GRADIENT, color: "#111112" }}
+              className="cta-glow inline-flex items-center gap-2 rounded-full px-8 py-4 text-lg font-semibold"
+              style={{ background: "#ffffff", color: "#111112" }}
             >
-              Start free trial <ArrowRight className="h-4 w-4" />
+              Start free <ArrowRight className="h-4 w-4" />
             </a>
             <a
               href={LOGIN_URL}
