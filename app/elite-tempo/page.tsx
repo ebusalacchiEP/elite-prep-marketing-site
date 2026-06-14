@@ -4,6 +4,7 @@ import Link from "next/link";
 import Reveal from "../components/Reveal";
 import EmailCapture from "./EmailCapture";
 import CountUp from "./CountUp";
+import BeatTicks from "./BeatTicks";
 
 /* Elite Tempo brand palette — black + amber-gold, mirroring the app's
    DESIGN.md tokens. Scoped to this page; the rest of the site is Elite
@@ -22,40 +23,28 @@ const APP_STORE_URL = "#";
 export const metadata: Metadata = {
   title: "Elite Tempo. Copy the best, at their best.",
   description:
-    "Real tournament swings from golf's greats, timed by hand to 1/100s. Hear the exact tempo in your ear, then time your own swing against it. The exact duration and backswing to downswing ratio no other app captures. Pay once, $29.99, no subscription.",
+    "Real tournament swings from golf's greats, timed by hand to 1/100s. See the best at their best — then capture and groove your own best swing. The exact duration and backswing to downswing ratio no other app captures. Pay once, $29.99, no subscription.",
   openGraph: {
     title: "Elite Tempo. Copy the best, at their best.",
     description:
-      "Real tournament swings, timed by hand to 1/100s. Hear the exact tempo, then time your own. Exact duration plus tempo ratio. $29.99 once.",
+      "See the greats at their best, timed by hand to 1/100s. Then capture and groove your own best swing. Exact duration plus tempo ratio. $29.99 once.",
     images: ["/elite-tempo/01-copy-the-greats.png"],
   },
 };
 
-const FEATURES = [
-  {
-    img: "/elite-tempo/01-copy-the-greats.png",
-    eyebrow: "Copy the greats",
-    title: "The real swings, timed by hand.",
-    body: "Tiger's 2000 U.S. Open driver. Rory at Valhalla. Couples at Augusta. Each one timed from footage to 1/100s, played back as tones or a spoken “start, and, hit.”",
-  },
-  {
-    img: "/elite-tempo/02-time-your-own.png",
-    eyebrow: "Time your own",
-    title: "Your swing, measured the same way.",
-    body: "Film or import your swing and mark takeaway, top, and impact. Get the same two numbers for your own swing, so you can repeat it under pressure.",
-  },
-  {
-    img: "/elite-tempo/03-duration-ratio.png",
-    eyebrow: "The numbers",
-    title: "Duration and ratio. Nothing fuzzy.",
-    body: "Two numbers define a swing's timing: start to impact, and backswing to downswing. Elite Tempo gives you both, exactly. The numbers no other app captures.",
-  },
-  {
-    img: "/elite-tempo/04-groove-timing.png",
-    eyebrow: "Groove it",
-    title: "Loop it until it's yours.",
-    body: "Loop the tempo in perfect sync, beats or voice, until the timing is automatic. The beat timeline shows backswing versus through at a glance.",
-  },
+// Real, hand-timed shots — the "see the best at their best" proof row.
+const GREATS = [
+  { who: "Tiger Woods", meta: "2000 U.S. Open · Driver", ratio: 3.17 },
+  { who: "Rory McIlroy", meta: "2014 PGA · Driver", ratio: 3.0 },
+  { who: "Fred Couples", meta: "1992 Masters · Fairway wood", ratio: 2.75 },
+  { who: "Adam Scott", meta: "2013 Masters · Fairway wood", ratio: 2.84 },
+];
+
+// The "copy your best, at your best" sequence — capture and groove your OWN swing.
+const STEPS = [
+  { n: "1", t: "Film", d: "Record or import your swing. Slow-motion gives the finest timing." },
+  { n: "2", t: "Mark", d: "Tap takeaway, top, and impact on the frame-accurate scrubber." },
+  { n: "3", t: "Measure", d: "Get your exact duration and tempo ratio. Your best swing, captured." },
 ];
 
 export default function EliteTempoLanding() {
@@ -93,8 +82,8 @@ export default function EliteTempoLanding() {
                 at their best.
               </h1>
               <p className="mt-5 max-w-md text-base leading-relaxed" style={{ color: MUTED }}>
-                Real tournament swings, timed by hand to 1/100s. Hear the exact
-                tempo, then time your own against it.
+                Real tournament swings, timed by hand to 1/100s. See the best at
+                their best, then capture and groove your own best swing.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <AppStoreButton />
@@ -137,41 +126,96 @@ export default function EliteTempoLanding() {
         </Reveal>
       </section>
 
-      {/* Features */}
+      <Divider />
+
+      {/* See the best at their best */}
       <section className="mx-auto max-w-5xl px-6 py-8">
-        <div className="flex flex-col gap-20 sm:gap-28">
-          {FEATURES.map((f, i) => (
-            <Reveal key={f.eyebrow}>
-              <div
-                className={`grid items-center gap-10 md:grid-cols-2 ${
-                  i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""
-                }`}
-              >
-                <div className="flex justify-center">
-                  <PhoneShot src={f.img} />
-                </div>
-                <div>
-                  <p
-                    className="text-xs font-bold uppercase tracking-[0.18em]"
-                    style={{ color: ACCENT }}
+        <div className="grid items-center gap-12 md:grid-cols-2">
+          <Reveal>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: ACCENT }}>
+                See the best at their best
+              </p>
+              <h2 className="mt-3 text-2xl font-extrabold leading-tight sm:text-3xl" style={{ color: INK }}>
+                The greats, timed by hand.
+              </h2>
+              <p className="mt-4 max-w-md text-base leading-relaxed" style={{ color: MUTED }}>
+                Famous shots from players at their peak, timed from tournament
+                footage to the hundredth of a second. Hear each one as warm tones
+                or a spoken &ldquo;start, and, hit.&rdquo;
+              </p>
+              <div className="mt-7 grid grid-cols-2 gap-3">
+                {GREATS.map((g) => (
+                  <div
+                    key={g.who}
+                    className="rounded-2xl p-4 transition-all duration-300 hover:scale-[1.02]"
+                    style={{ background: CARD, border: `1px solid ${HAIRLINE}` }}
                   >
-                    {f.eyebrow}
-                  </p>
-                  <h2
-                    className="mt-3 text-2xl font-extrabold leading-tight sm:text-3xl"
-                    style={{ color: INK }}
-                  >
-                    {f.title}
-                  </h2>
-                  <p className="mt-4 text-base leading-relaxed" style={{ color: MUTED }}>
-                    {f.body}
-                  </p>
-                </div>
+                    <p className="text-2xl font-extrabold tabular-nums" style={{ color: ACCENT, fontVariantNumeric: "tabular-nums" }}>
+                      <CountUp value={g.ratio} decimals={2} suffix=":1" />
+                    </p>
+                    <p className="mt-1.5 text-sm font-bold" style={{ color: INK }}>{g.who}</p>
+                    <p className="text-xs" style={{ color: MUTED }}>{g.meta}</p>
+                  </div>
+                ))}
               </div>
-            </Reveal>
-          ))}
+            </div>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className="flex justify-center">
+              <PhoneShot src="/elite-tempo/03-duration-ratio.png" />
+            </div>
+          </Reveal>
         </div>
       </section>
+
+      <Divider />
+
+      {/* Copy your best, at your best */}
+      <section className="mx-auto max-w-5xl px-6 py-8">
+        <div className="grid items-center gap-12 md:grid-cols-2">
+          <Reveal delay={0.1}>
+            <div className="order-2 flex justify-center md:order-1">
+              <PhoneShot src="/elite-tempo/02-time-your-own.png" />
+            </div>
+          </Reveal>
+          <Reveal>
+            <div className="order-1 md:order-2">
+              <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: ACCENT }}>
+                Then copy your best
+              </p>
+              <h2 className="mt-3 text-2xl font-extrabold leading-tight sm:text-3xl" style={{ color: INK }}>
+                Copy your best,
+                <br />
+                at your best.
+              </h2>
+              <p className="mt-4 max-w-md text-base leading-relaxed" style={{ color: MUTED }}>
+                Your best swing is a number too. Capture its exact duration and
+                ratio, groove it on repeat, and bring it back when it counts.
+              </p>
+              <div className="mt-7 flex flex-col gap-3">
+                {STEPS.map((s) => (
+                  <div
+                    key={s.n}
+                    className="flex items-start gap-4 rounded-2xl p-4"
+                    style={{ background: CARD, border: `1px solid ${HAIRLINE}` }}
+                  >
+                    <span className="text-2xl font-extrabold leading-none" style={{ color: ACCENT, fontFamily: "var(--font-anton), sans-serif" }}>
+                      {s.n}
+                    </span>
+                    <div>
+                      <p className="font-extrabold" style={{ color: INK }}>{s.t}</p>
+                      <p className="mt-0.5 text-sm leading-relaxed" style={{ color: MUTED }}>{s.d}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <Divider />
 
       {/* Pricing */}
       <section className="mx-auto max-w-5xl px-6 py-20">
@@ -256,6 +300,16 @@ export default function EliteTempoLanding() {
 
 /* ── Pieces ─────────────────────────────────────────────────────────────── */
 
+// Animated beat-tick equalizer between sections — the brand's "this is running"
+// signal, doubling as connective tissue that breaks up the vertical rhythm.
+function Divider() {
+  return (
+    <div className="flex justify-center py-4 sm:py-6" aria-hidden>
+      <BeatTicks heights={[10, 18, 10, 28, 10, 18, 10]} barWidth={4} gap={5} />
+    </div>
+  );
+}
+
 function Wordmark() {
   return (
     <div
@@ -266,14 +320,7 @@ function Wordmark() {
       <span className="text-xl tracking-wide" style={{ color: INK }}>
         ELITE
       </span>
-      <span className="flex items-end gap-[2px]" aria-hidden>
-        {[7, 12, 7, 17, 7, 12, 7].map((h, i) => (
-          <span
-            key={i}
-            style={{ width: 2.5, height: h, background: ACCENT, borderRadius: 2 }}
-          />
-        ))}
-      </span>
+      <BeatTicks heights={[7, 12, 7, 17, 7, 12, 7]} barWidth={2.5} gap={2.5} />
       <span className="text-xl tracking-wide" style={{ color: ACCENT }}>
         TEMPO
       </span>
