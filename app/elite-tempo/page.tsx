@@ -88,7 +88,7 @@ export default function EliteTempoLanding() {
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <AppStoreButton />
                 <span className="text-sm" style={{ color: MUTED }}>
-                  <strong style={{ color: INK }}>$29.99</strong> once · no subscription
+                  Free to download · <strong style={{ color: INK }}>$29.99</strong> one-time unlock
                 </span>
               </div>
             </div>
@@ -228,14 +228,17 @@ export default function EliteTempoLanding() {
               className="text-xs font-bold uppercase tracking-[0.18em]"
               style={{ color: ACCENT }}
             >
-              Pay once
+              Free to download
             </p>
             <p className="mt-4 text-5xl font-extrabold" style={{ color: INK }}>
               $29.99
             </p>
-            <p className="mt-3 text-base" style={{ color: MUTED }}>
-              The full library and Time Your Swing, unlocked once. No
-              subscription, no account.
+            <p className="mt-1 text-sm font-semibold" style={{ color: MUTED }}>
+              one-time unlock · no subscription
+            </p>
+            <p className="mt-4 text-base" style={{ color: MUTED }}>
+              Play a free shot in every area. One in-app purchase unlocks the
+              full library and Time Your Swing, forever.
             </p>
             <div className="mt-8 flex justify-center">
               <AppStoreButton />
