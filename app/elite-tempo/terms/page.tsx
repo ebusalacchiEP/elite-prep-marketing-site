@@ -1,0 +1,214 @@
+import Link from "next/link";
+
+const INK = "#F3F5F9";
+const MUTED = "#8F929C";
+const BODY = "#C9CCD3";
+const ACCENT = "#FFB300";
+const BG = "#0B0B0C";
+
+export const metadata = {
+  title: "Elite Tempo Terms of Use",
+  description: "The terms that govern your use of Elite Tempo.",
+};
+
+export default function EliteTempoTerms() {
+  return (
+    <div className="min-h-screen px-6 py-10" style={{ background: BG }}>
+      <div className="mx-auto max-w-2xl">
+        <div className="mb-12 flex items-center justify-between">
+          <Link
+            href="/elite-tempo"
+            aria-label="Elite Tempo home"
+            className="text-lg font-extrabold"
+            style={{ fontFamily: "var(--font-anton), sans-serif", color: INK }}
+          >
+            ELITE <span style={{ color: ACCENT }}>TEMPO</span>
+          </Link>
+          <Link
+            href="/elite-tempo"
+            className="inline-flex items-center gap-2 text-sm hover:opacity-80"
+            style={{ color: ACCENT }}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            Back
+          </Link>
+        </div>
+
+        <h1 className="mb-2 text-3xl font-extrabold sm:text-4xl" style={{ color: INK }}>
+          Terms of Use
+        </h1>
+        <p className="mb-10 text-sm" style={{ color: MUTED }}>
+          Elite Tempo · Effective June 14, 2026
+        </p>
+
+        <div className="flex flex-col gap-8 text-sm leading-relaxed" style={{ color: BODY }}>
+          <p>
+            These Terms of Use (&quot;Terms&quot;) govern your use of the Elite
+            Tempo app published by Elite Prep LLC (&quot;Elite Prep,&quot;
+            &quot;we,&quot; &quot;us&quot;). By downloading or using the app, you
+            agree to these Terms. If you don&apos;t agree, don&apos;t use the app.
+          </p>
+
+          <Section title="1. The app & your license">
+            <p>
+              Elite Tempo is a golf tempo and timing trainer: it plays the
+              hand-timed tempo of real, notable golf swings and lets you time and
+              review your own swings. We grant you a personal, non-exclusive, non-transferable,
+              revocable license to use the app for your own non-commercial use,
+              subject to these Terms and Apple&apos;s rules.
+            </p>
+          </Section>
+
+          <Section title="2. Purchases (one-time unlock)">
+            <p>
+              The full library and the Time Your Swing feature are unlocked by a
+              one-time, non-consumable in-app purchase (&quot;Unlock Elite
+              Tempo&quot;). There is no subscription. All payments are processed by
+              Apple through your Apple ID; we do not handle your payment
+              information. Restoring a previous purchase on a new device is
+              supported in Settings. Refunds are handled by Apple under the App
+              Store terms; we cannot directly issue App Store refunds.
+            </p>
+          </Section>
+
+          <Section title="3. Your content (swing videos)">
+            <p>
+              Swing videos you record or import, and the timings you create, are
+              yours. They are stored on your device (see the Privacy Policy); we do
+              not receive or host them. You are solely responsible for the content
+              you capture and for having the right to record any person in your
+              videos. Don&apos;t capture or use content that is unlawful or
+              infringes someone else&apos;s rights.
+            </p>
+          </Section>
+
+          <Section title="4. Acceptable use">
+            <p>
+              Don&apos;t: reverse-engineer, copy, resell, or redistribute the app or
+              its data; attempt to bypass the purchase/unlock; use the app to break
+              any law; or interfere with its operation.
+            </p>
+          </Section>
+
+          <Section title="5. Intellectual property; no affiliation or endorsement">
+            <p>
+              The app, its design, code, audio, and the curated tempo dataset are
+              owned by Elite Prep and protected by law.{" "}
+              <strong style={{ color: INK }}>
+                Elite Tempo references real golfers, tournaments, and shots for
+                descriptive, educational, and historical purposes only. Elite
+                Tempo and Elite Prep are not affiliated with, sponsored by,
+                endorsed by, or associated with any player, tournament, tour, or
+                organization named in the app.
+              </strong>{" "}
+              All player names and trademarks belong to their respective owners;
+              their use here is nominative (to identify the real swing being
+              modeled) and does not imply any endorsement.
+            </p>
+          </Section>
+
+          <Section title="6. Not professional instruction; no guarantee of results">
+            <p>
+              Elite Tempo is a training aid, not professional golf coaching,
+              medical, or fitness advice. Tempo data is timed by hand from video
+              and provided &quot;as is&quot; for practice. We don&apos;t guarantee any
+              improvement in your game. Warm up appropriately and train within your
+              physical limits.
+            </p>
+          </Section>
+
+          <Section title="7. Disclaimers">
+            <p>
+              The app is provided &quot;as is&quot; and &quot;as available,&quot;
+              without warranties of any kind, express or implied, including
+              merchantability, fitness for a particular purpose, and
+              non-infringement, to the fullest extent permitted by law.
+            </p>
+          </Section>
+
+          <Section title="8. Limitation of liability">
+            <p>
+              To the fullest extent permitted by law, Elite Prep will not be liable
+              for any indirect, incidental, special, consequential, or punitive
+              damages, or for lost data, arising from your use of the app. Our total
+              liability for any claim will not exceed the amount you paid for the
+              app.
+            </p>
+          </Section>
+
+          <Section title="9. Apple-specific terms">
+            <ul className="flex list-disc flex-col gap-1.5 pl-5">
+              <li>
+                These Terms are between you and Elite Prep only, not Apple. Apple is
+                not responsible for the app or its content.
+              </li>
+              <li>
+                Your license is limited to use on Apple-branded devices you own or
+                control, per the App Store Usage Rules.
+              </li>
+              <li>
+                Apple has no obligation to provide maintenance or support for the
+                app. Support questions go to us at the contact below.
+              </li>
+              <li>
+                To the extent permitted by law, Apple has no warranty obligation for
+                the app; any warranty claims are our responsibility.
+              </li>
+              <li>
+                Apple is not responsible for addressing any claims by you or a third
+                party relating to the app, or for intellectual-property
+                infringement claims regarding the app.
+              </li>
+              <li>
+                You represent that you are not located in a U.S.-embargoed country
+                or on any U.S. government prohibited/restricted-parties list.
+              </li>
+              <li>
+                Apple and its subsidiaries are third-party beneficiaries of these
+                Terms and may enforce them against you.
+              </li>
+            </ul>
+          </Section>
+
+          <Section title="10. Changes & termination">
+            <p>
+              We may update these Terms (we&apos;ll revise the date above) and may
+              discontinue the app or features. Your license ends if you violate
+              these Terms.
+            </p>
+          </Section>
+
+          <Section title="11. Governing law">
+            <p>
+              These Terms are governed by the laws of the State of Florida, without
+              regard to conflict-of-laws rules.
+            </p>
+          </Section>
+
+          <Section title="12. Contact">
+            <p>
+              Contact us at{" "}
+              <a href="mailto:ebusalacchi@eliteprep.app" style={{ color: ACCENT }}>
+                ebusalacchi@eliteprep.app
+              </a>
+              . Elite Prep LLC.
+            </p>
+          </Section>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Section({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <section>
+      <h2 className="mb-2 text-base font-bold" style={{ color: INK }}>
+        {title}
+      </h2>
+      {children}
+    </section>
+  );
+}
