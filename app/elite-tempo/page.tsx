@@ -78,13 +78,13 @@ export default function EliteTempoLanding() {
                 <span style={{ color: ACCENT }}>Copy your best.</span>
               </h1>
               <p className="mt-5 max-w-md text-base leading-relaxed" style={{ color: MUTED }}>
-                Tempo, timed by hand to 1/100s. Match the greats, groove your own
-                swing, and time your whole pre-shot routine.
+                Feel what it&apos;s like to swing like the greats, and learn to bring
+                your range game to the course when it matters most.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <AppStoreButton />
                 <span className="text-sm" style={{ color: MUTED }}>
-                  Free to download · <strong style={{ color: INK }}>$29.99</strong> one-time unlock
+                  Free to try · <strong style={{ color: INK }}>$29.99</strong> one-time · No subscription
                 </span>
               </div>
             </div>
@@ -127,7 +127,7 @@ export default function EliteTempoLanding() {
         <Reveal>
           <div className="text-center">
             <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: ACCENT }}>
-              Time the greats
+              Copy the greats
             </p>
             <h2 className="mt-3 text-2xl font-extrabold leading-tight sm:text-3xl" style={{ color: INK }}>
               Real tournament swings, timed by hand.
@@ -226,7 +226,7 @@ export default function EliteTempoLanding() {
               </h2>
               <p className="mt-4 max-w-md text-base leading-relaxed" style={{ color: MUTED }}>
                 Time your full routine, then drill it two ways: watch it back live,
-                or go eyes-up while quiet beats pace you.
+                or practice with a live timer and audible feedback until it&apos;s perfected.
               </p>
             </div>
           </Reveal>
