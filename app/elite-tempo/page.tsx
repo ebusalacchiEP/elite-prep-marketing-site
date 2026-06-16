@@ -20,14 +20,18 @@ const HAIRLINE = "#242732";
 const APP_STORE_URL = "#";
 
 export const metadata: Metadata = {
-  title: "Elite Tempo. Copy the best, at their best.",
+  title: "Elite Tempo. Copy the greats. Copy your best.",
   description:
-    "Real tournament swings from golf's greats, timed by hand to 1/100s. Capture and groove your own best swing, compare it side by side with the pros, and time your whole pre-shot routine. The exact duration and backswing to downswing ratio no other app captures. Pay once, $29.99, no subscription.",
+    "Golf tempo, timed by hand to 1/100s. Match the greats, groove your own swing, compare side by side, and time your whole pre-shot routine. Exact duration and tempo ratio, no other app captures it. Pay once, $29.99, no subscription.",
   openGraph: {
-    title: "Elite Tempo. Copy the best, at their best.",
+    title: "Elite Tempo. Copy the greats. Copy your best.",
     description:
-      "See the greats at their best, timed by hand to 1/100s. Capture your own swing, compare it side by side with the pros, and groove your pre-shot routine. $29.99 once.",
-    images: ["/elite-tempo/library.png"],
+      "Golf tempo, timed by hand to 1/100s. Match the greats, groove your own swing, and time your pre-shot routine. $29.99 once, no subscription.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Elite Tempo. Copy the greats. Copy your best.",
+    description: "Golf tempo, timed by hand to 1/100s. $29.99 once, no subscription.",
   },
 };
 
@@ -69,15 +73,13 @@ export default function EliteTempoLanding() {
                 className="mt-4 text-4xl font-extrabold leading-[1.05] sm:text-5xl"
                 style={{ color: INK }}
               >
-                Time the greats.
+                Copy the greats.
                 <br />
-                Time yourself.
-                <br />
-                <span style={{ color: ACCENT }}>Time your routine.</span>
+                <span style={{ color: ACCENT }}>Copy your best.</span>
               </h1>
               <p className="mt-5 max-w-md text-base leading-relaxed" style={{ color: MUTED }}>
-                Every swing&apos;s exact duration and tempo ratio, plus your whole
-                pre-shot routine, measured by hand to 1/100s.
+                Tempo, timed by hand to 1/100s. Match the greats, groove your own
+                swing, and time your whole pre-shot routine.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <AppStoreButton />
@@ -89,9 +91,7 @@ export default function EliteTempoLanding() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <PhoneStage>
-              <PhoneVideo src="/elite-tempo/hero-beats.mp4" poster="/elite-tempo/hero-beats-poster.jpg" />
-            </PhoneStage>
+            <PhoneStage src="/elite-tempo/hero-loop.mp4" poster="/elite-tempo/hero-loop-poster.jpg" />
           </Reveal>
         </div>
       </section>
@@ -122,7 +122,7 @@ export default function EliteTempoLanding() {
 
       <Divider />
 
-      {/* Time the greats — hand-timed pro tempos */}
+      {/* Time the greats — hand-timed pro tempos, with the in-app beats clip */}
       <section className="mx-auto max-w-5xl px-6 py-8">
         <Reveal>
           <div className="text-center">
@@ -133,22 +133,29 @@ export default function EliteTempoLanding() {
               Real tournament swings, timed by hand.
             </h2>
           </div>
-          <div className="mx-auto mt-8 grid max-w-3xl grid-cols-2 gap-3 sm:grid-cols-4">
-            {GREATS.map((g) => (
-              <div
-                key={g.who}
-                className="rounded-2xl p-4 transition-all duration-300 hover:scale-[1.03]"
-                style={{ background: CARD, border: `1px solid ${HAIRLINE}` }}
-              >
-                <p className="text-2xl font-extrabold tabular-nums" style={{ color: ACCENT, fontVariantNumeric: "tabular-nums" }}>
-                  <CountUp value={g.ratio} decimals={2} suffix=":1" />
-                </p>
-                <p className="mt-1.5 text-sm font-bold" style={{ color: INK }}>{g.who}</p>
-                <p className="text-xs" style={{ color: MUTED }}>{g.meta}</p>
-              </div>
-            ))}
-          </div>
         </Reveal>
+        <div className="mt-9 grid items-center gap-12 md:grid-cols-2">
+          <Reveal delay={0.1}>
+            <PhoneStage src="/elite-tempo/greats-beats.mp4" poster="/elite-tempo/greats-beats-poster.jpg" />
+          </Reveal>
+          <Reveal>
+            <div className="grid grid-cols-2 gap-3">
+              {GREATS.map((g) => (
+                <div
+                  key={g.who}
+                  className="rounded-2xl p-4 transition-all duration-300 hover:scale-[1.03]"
+                  style={{ background: CARD, border: `1px solid ${HAIRLINE}` }}
+                >
+                  <p className="text-2xl font-extrabold tabular-nums" style={{ color: ACCENT, fontVariantNumeric: "tabular-nums" }}>
+                    <CountUp value={g.ratio} decimals={2} suffix=":1" />
+                  </p>
+                  <p className="mt-1.5 text-sm font-bold" style={{ color: INK }}>{g.who}</p>
+                  <p className="text-xs" style={{ color: MUTED }}>{g.meta}</p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
       </section>
 
       <Divider />
@@ -156,11 +163,6 @@ export default function EliteTempoLanding() {
       {/* Time yourself — capture your own swing and groove it on a loop */}
       <section className="mx-auto max-w-5xl px-6 py-8">
         <div className="grid items-center gap-12 md:grid-cols-2">
-          <Reveal delay={0.1}>
-            <PhoneStage>
-              <PhoneVideo src="/elite-tempo/swing-loop.mp4" poster="/elite-tempo/swing-loop-poster.jpg" />
-            </PhoneStage>
-          </Reveal>
           <Reveal>
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: ACCENT }}>
@@ -176,6 +178,9 @@ export default function EliteTempoLanding() {
                 Play it back on repeat until the move is yours.
               </p>
             </div>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <PhoneStage src="/elite-tempo/swing-loop.mp4" poster="/elite-tempo/swing-loop-poster.jpg" />
           </Reveal>
         </div>
       </section>
@@ -199,9 +204,7 @@ export default function EliteTempoLanding() {
         </Reveal>
         <Reveal delay={0.1}>
           <div className="mt-9 flex justify-center">
-            <PhoneStage>
-              <PhoneVideo src="/elite-tempo/compare-loop.mp4" poster="/elite-tempo/compare-loop-poster.jpg" max={360} />
-            </PhoneStage>
+            <PhoneStage src="/elite-tempo/compare-loop.mp4" poster="/elite-tempo/compare-loop-poster.jpg" max={340} />
           </div>
         </Reveal>
       </section>
@@ -211,13 +214,8 @@ export default function EliteTempoLanding() {
       {/* Time your routine — time and groove the whole pre-shot routine */}
       <section className="mx-auto max-w-5xl px-6 py-8">
         <div className="grid items-center gap-12 md:grid-cols-2">
-          <Reveal delay={0.1}>
-            <PhoneStage>
-              <PhoneVideo src="/elite-tempo/routine-loop.mp4" poster="/elite-tempo/routine-loop-poster.jpg" />
-            </PhoneStage>
-          </Reveal>
           <Reveal>
-            <div>
+            <div className="md:order-2">
               <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: ACCENT }}>
                 Time your routine
               </p>
@@ -232,38 +230,102 @@ export default function EliteTempoLanding() {
               </p>
             </div>
           </Reveal>
+          <Reveal delay={0.1}>
+            <div className="md:order-1">
+              <PhoneStage src="/elite-tempo/routine-loop.mp4" poster="/elite-tempo/routine-loop-poster.jpg" />
+            </div>
+          </Reveal>
         </div>
       </section>
 
       <Divider />
 
-      {/* Pricing */}
+      {/* Live Activity / lock screen — glanceable timing away from the app.
+          TODO: add an Apple Watch frame alongside once that screenshot lands. */}
+      <section className="mx-auto max-w-5xl px-6 py-8">
+        <div className="grid items-center gap-12 md:grid-cols-2">
+          <Reveal>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: ACCENT }}>
+                Always in reach
+              </p>
+              <h2 className="mt-3 text-2xl font-extrabold leading-tight sm:text-3xl" style={{ color: INK }}>
+                Your tempo,
+                <br />
+                on your lock screen.
+              </h2>
+              <p className="mt-4 max-w-md text-base leading-relaxed" style={{ color: MUTED }}>
+                A Live Activity keeps your playing tempo on the lock screen, with a
+                glance on your Apple Watch, so the beat stays with you on the range.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <PhoneStage img="/elite-tempo/lock-activity.jpg" notch={false} />
+          </Reveal>
+        </div>
+      </section>
+
+      <Divider />
+
+      {/* Pricing — free to download, one-time unlock, no subscription */}
       <section className="mx-auto max-w-5xl px-6 py-20">
         <Reveal>
           <div
             className="mx-auto max-w-xl rounded-3xl p-8 text-center sm:p-12"
             style={{ background: CARD, border: `1px solid ${HAIRLINE}` }}
           >
-            <p
-              className="text-xs font-bold uppercase tracking-[0.18em]"
-              style={{ color: ACCENT }}
-            >
+            <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: ACCENT }}>
               Free to download
             </p>
-            <p className="mt-4 text-5xl font-extrabold" style={{ color: INK }}>
-              $29.99
+
+            <div className="mt-5 flex items-end justify-center gap-2">
+              <span className="text-6xl font-extrabold leading-none" style={{ color: INK }}>
+                $29.99
+              </span>
+              <span className="pb-1 text-lg font-bold" style={{ color: ACCENT }}>
+                once
+              </span>
+            </div>
+            <p className="mt-2 text-sm font-semibold" style={{ color: MUTED }}>
+              Less than a single lesson. Yours forever.
             </p>
-            <p className="mt-1 text-sm font-semibold" style={{ color: MUTED }}>
-              one-time unlock · no subscription
-            </p>
-            <p className="mt-4 text-base" style={{ color: MUTED }}>
-              Play a free shot in every area. One in-app purchase unlocks the
-              full library, your own swings, side-by-side Compare, and Routines,
-              forever.
-            </p>
+
+            <div className="mt-5 flex flex-wrap justify-center gap-2">
+              {["No subscription", "No renewals", "Pay one time"].map((t) => (
+                <span
+                  key={t}
+                  className="rounded-full px-3 py-1 text-xs font-semibold"
+                  style={{ background: BG, border: `1px solid ${HAIRLINE}`, color: INK }}
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+
+            <ul className="mx-auto mt-7 flex max-w-xs flex-col gap-2.5 text-left">
+              {[
+                "The full library of hand-timed greats",
+                "Your own swings, captured and saved",
+                "Side-by-side Compare",
+                "Routines, Watch and Practice",
+                "Lock-screen Live Activity and Apple Watch",
+              ].map((f) => (
+                <li key={f} className="flex items-start gap-2.5 text-sm" style={{ color: MUTED }}>
+                  <span className="mt-0.5 font-extrabold" style={{ color: ACCENT }} aria-hidden>
+                    ✓
+                  </span>
+                  <span>{f}</span>
+                </li>
+              ))}
+            </ul>
+
             <div className="mt-8 flex justify-center">
               <AppStoreButton />
             </div>
+            <p className="mt-4 text-xs" style={{ color: MUTED }}>
+              Start free. Play a shot in every area before you unlock.
+            </p>
           </div>
         </Reveal>
       </section>
@@ -378,22 +440,68 @@ function AppStoreButton() {
   );
 }
 
-// Autoplaying looping phone clip. Muted + playsInline so it plays inline on
-// mobile without going fullscreen.
-function PhoneVideo({ src, poster, max = 300 }: { src: string; poster?: string; max?: number }) {
+// Media inside a black phone bezel, so it reads as a device screen (not a raw
+// screen recording). Pass `src` for a looping clip or `img` for a still.
+function DeviceFrame({
+  src,
+  poster,
+  img,
+  notch = true,
+  max = 280,
+}: {
+  src?: string;
+  poster?: string;
+  img?: string;
+  notch?: boolean;
+  max?: number;
+}) {
   return (
     <div
-      className="overflow-hidden rounded-[28px] transition-all duration-300 will-change-transform hover:scale-[1.02] hover:shadow-[0_24px_70px_-20px_rgba(255,179,0,0.28)]"
-      style={{ border: `1px solid ${HAIRLINE}`, maxWidth: max, width: "100%" }}
+      className="relative transition-all duration-300 will-change-transform hover:scale-[1.02]"
+      style={{
+        maxWidth: max,
+        width: "100%",
+        background: "#0A0A0C",
+        borderRadius: 44,
+        padding: 9,
+        border: "1px solid #2C2C33",
+        boxShadow: "0 34px 90px -32px rgba(0,0,0,0.85)",
+      }}
     >
-      <video src={src} poster={poster} autoPlay loop muted playsInline className="h-auto w-full" />
+      {notch && (
+        <div
+          className="absolute left-1/2 top-[14px] z-10 -translate-x-1/2"
+          style={{ width: 84, height: 22, background: "#0A0A0C", borderRadius: 999 }}
+          aria-hidden
+        />
+      )}
+      <div style={{ borderRadius: 36, overflow: "hidden" }}>
+        {img ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={img} alt="" className="block h-auto w-full" />
+        ) : (
+          <video src={src} poster={poster} autoPlay loop muted playsInline className="block h-auto w-full" />
+        )}
+      </div>
     </div>
   );
 }
 
-// Phone media on a "stage": framed in a card with the gold beat-tick motif
-// flanking it left and right, echoing the in-app beat ticker.
-function PhoneStage({ children }: { children: React.ReactNode }) {
+// Phone media on a "stage": a device-framed clip in a card with the gold
+// beat-tick motif flanking it left and right, echoing the in-app beat ticker.
+function PhoneStage({
+  src,
+  poster,
+  img,
+  notch,
+  max,
+}: {
+  src?: string;
+  poster?: string;
+  img?: string;
+  notch?: boolean;
+  max?: number;
+}) {
   return (
     <div
       className="relative flex items-center justify-center rounded-[34px] px-8 py-9 sm:px-12"
@@ -405,7 +513,7 @@ function PhoneStage({ children }: { children: React.ReactNode }) {
       <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 sm:right-5" aria-hidden>
         <BeatTicks heights={[8, 14, 8, 22, 8, 14, 8]} barWidth={3} gap={4} />
       </div>
-      {children}
+      <DeviceFrame src={src} poster={poster} img={img} notch={notch} max={max} />
     </div>
   );
 }
