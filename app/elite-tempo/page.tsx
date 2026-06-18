@@ -4,6 +4,7 @@ import Reveal from "../components/Reveal";
 import EmailCapture from "./EmailCapture";
 import CountUp from "./CountUp";
 import BeatTicks from "./BeatTicks";
+import BudFlank from "./BudFlank";
 
 /* Elite Tempo brand palette — black + amber-gold, mirroring the app's
    DESIGN.md tokens. Scoped to this page; the rest of the site is Elite
@@ -22,16 +23,16 @@ const APP_STORE_URL = "#";
 export const metadata: Metadata = {
   title: "Elite Tempo. Copy the greats. Copy your best.",
   description:
-    "Golf tempo, timed by hand to 1/100s. Match the greats, groove your own swing, compare side by side, and time your whole pre-shot routine. Exact duration and tempo ratio, no other app captures it. Pay once, $29.99, no subscription.",
+    "Golf tempo, timed by hand to 1/100s. Match the greats, then record your own swing and let the app find takeaway, top, and impact automatically. Train hands-free with the beats in your headphones. Pay once, $29.99, no subscription.",
   openGraph: {
     title: "Elite Tempo. Copy the greats. Copy your best.",
     description:
-      "Golf tempo, timed by hand to 1/100s. Match the greats, groove your own swing, and time your pre-shot routine. $29.99 once, no subscription.",
+      "Golf tempo, timed by hand to 1/100s. Record your swing and the app times it automatically. Train hands-free with beats in your headphones. $29.99 once, no subscription.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Elite Tempo. Copy the greats. Copy your best.",
-    description: "Golf tempo, timed by hand to 1/100s. $29.99 once, no subscription.",
+    description: "Golf tempo, timed by hand to 1/100s. Auto swing capture, hands-free. $29.99 once, no subscription.",
   },
 };
 
@@ -78,8 +79,8 @@ export default function EliteTempoLanding() {
                 <span style={{ color: ACCENT }}>Copy your best.</span>
               </h1>
               <p className="mt-5 max-w-md text-base leading-relaxed" style={{ color: MUTED }}>
-                Feel what it&apos;s like to swing like the greats, and learn to bring
-                your range game to the course when it matters most.
+                Feel what it&apos;s like to swing like the greats, then bring your
+                range game to the course when it matters most.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <AppStoreButton />
@@ -130,7 +131,7 @@ export default function EliteTempoLanding() {
               Copy the greats
             </p>
             <h2 className="mt-3 text-2xl font-extrabold leading-tight sm:text-3xl" style={{ color: INK }}>
-              Real tournament swings, timed by hand.
+              Real tournament swings, meticulously timed.
             </h2>
           </div>
         </Reveal>
@@ -166,16 +167,18 @@ export default function EliteTempoLanding() {
           <Reveal>
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: ACCENT }}>
-                Time yourself
+                Automatic capture
               </p>
               <h2 className="mt-3 text-2xl font-extrabold leading-tight sm:text-3xl" style={{ color: INK }}>
-                Capture your swing.
+                Just swing.
                 <br />
-                Groove it on a loop.
+                We time it for you.
               </h2>
               <p className="mt-4 max-w-md text-base leading-relaxed" style={{ color: MUTED }}>
-                Film a swing, mark it, and get your exact duration and tempo ratio.
-                Play it back on repeat until the move is yours.
+                Record a swing and Elite Tempo finds takeaway, top, and impact in
+                seconds, on its own. No tapping, no scrubbing. You get your exact
+                duration and tempo ratio, then groove it on a loop until the move
+                is yours.
               </p>
             </div>
           </Reveal>
@@ -247,21 +250,32 @@ export default function EliteTempoLanding() {
           <Reveal>
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: ACCENT }}>
-                Always in reach
+                Hands-free
               </p>
               <h2 className="mt-3 text-2xl font-extrabold leading-tight sm:text-3xl" style={{ color: INK }}>
-                Your tempo,
+                Beats in your ears.
                 <br />
-                on your lock screen.
+                Phone in your bag.
               </h2>
               <p className="mt-4 max-w-md text-base leading-relaxed" style={{ color: MUTED }}>
-                A Live Activity keeps your playing tempo on the lock screen, with a
-                glance on your Apple Watch, so the beat stays with you on the range.
+                Put your headphones in, drop your phone in your golf bag, and train
+                to the beat. No screen, no taps, eyes on the ball. A Live Activity
+                keeps your tempo on the lock screen and Apple Watch for when you
+                want a glance.
               </p>
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <PhoneStage img="/elite-tempo/lock-activity.jpg" notch={false} />
+            {/* Ladder-style: phone centered, one AirPod flanking each side, each
+                sitting on a gold glow ring — the beat radiating out (gold = the
+                live-timing signal). Buds sit just outside the phone edges. */}
+            <div className="relative mx-auto w-fit px-12 sm:px-16">
+              <DeviceFrame img="/elite-tempo/lock-activity.jpg" notch={false} max={260} topFade />
+
+              {/* Left AirPod, scattered up; right AirPod, scattered down */}
+              <BudFlank src="/elite-tempo/airpod-left.png" side="left" offsetY={-30} />
+              <BudFlank src="/elite-tempo/airpod-right.png" side="right" offsetY={34} />
+            </div>
           </Reveal>
         </div>
       </section>
@@ -306,7 +320,7 @@ export default function EliteTempoLanding() {
             <ul className="mx-auto mt-7 flex max-w-xs flex-col gap-2.5 text-left">
               {[
                 "The full library of hand-timed greats",
-                "Your own swings, captured and saved",
+                "Your own swings, captured and timed automatically",
                 "Side-by-side Compare",
                 "Routines, Watch and Practice",
                 "Lock-screen Live Activity and Apple Watch",
@@ -448,12 +462,14 @@ function DeviceFrame({
   img,
   notch = true,
   max = 280,
+  topFade = false,
 }: {
   src?: string;
   poster?: string;
   img?: string;
   notch?: boolean;
   max?: number;
+  topFade?: boolean;
 }) {
   return (
     <div
@@ -475,12 +491,24 @@ function DeviceFrame({
           aria-hidden
         />
       )}
-      <div style={{ borderRadius: 36, overflow: "hidden" }}>
+      <div className="relative" style={{ borderRadius: 36, overflow: "hidden" }}>
         {img ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img src={img} alt="" className="block h-auto w-full" />
         ) : (
           <video src={src} poster={poster} autoPlay loop muted playsInline className="block h-auto w-full" />
+        )}
+        {/* Fade the top of the lock screen so the clock recedes and the Live
+            Activity card becomes the focal point. */}
+        {topFade && (
+          <div
+            className="pointer-events-none absolute inset-x-0 top-0 h-[42%]"
+            style={{
+              background:
+                "linear-gradient(to bottom, #0A0A0C 6%, rgba(10,10,12,0.85) 34%, transparent)",
+            }}
+            aria-hidden
+          />
         )}
       </div>
     </div>
