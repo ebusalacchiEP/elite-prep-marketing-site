@@ -1,19 +1,20 @@
-"use client";
-
-import { motion, useReducedMotion } from "framer-motion";
-
 const ACCENT = "#FFB300";
 
-/* An AirPod flanking the phone in the hands-free section, with gold sonar
-   rings around it — the beat/audio radiating into your ears.
+/* An AirPod flanking the phone in the hands-free section, ringed by static gold
+   sonar rings — the beat radiating into your ears (Ladder-style).
 
-   topPct positions the bud's vertical center as a % of the phone height (so it
-   tracks across breakpoints); the two buds straddle the Live Activity card.
+   Pure CSS: the rings are plain <span> circles with fixed radii and opacity, so
+   they render on every device including mobile Safari with Reduce Motion on (an
+   earlier framer-motion version failed to paint there).
 
-   Rings: when motion is allowed they expand outward and fade (sound leaving the
-   bud). With Reduce Motion on, they DON'T collapse to nothing — each freezes at
-   a distinct radius, so they read as static concentric rings (Ladder-style) and
-   still render on phones with Reduce Motion enabled. */
+   topPct positions the bud's vertical center as a % of the phone height so the
+   two buds straddle the Live Activity card across breakpoints. */
+const RINGS = [
+  { size: 56, opacity: 0.6 },
+  { size: 90, opacity: 0.36 },
+  { size: 126, opacity: 0.18 },
+];
+
 export default function BudFlank({
   src,
   side,
@@ -23,10 +24,7 @@ export default function BudFlank({
   side: "left" | "right";
   topPct?: number;
 }) {
-  const reduce = useReducedMotion();
   const isLeft = side === "left";
-  const rings = [0, 1, 2, 3];
-
   return (
     <div
       className={`pointer-events-none absolute z-10 -translate-y-1/2 ${
@@ -36,37 +34,27 @@ export default function BudFlank({
       aria-hidden
     >
       <div className="relative grid place-items-center">
-        {/* Sonar rings — expanding when motion is on, static concentric when off */}
-        {rings.map((i) => (
-          <motion.span
+        {/* Concentric gold sonar rings */}
+        {RINGS.map((r, i) => (
+          <span
             key={i}
             className="absolute rounded-full"
             style={{
-              width: 52,
-              height: 52,
+              width: r.size,
+              height: r.size,
               border: `2px solid ${ACCENT}`,
-              boxShadow: "0 0 10px rgba(255,179,0,0.45)",
+              opacity: r.opacity,
+              boxShadow: `0 0 12px rgba(255,179,0,${(r.opacity * 0.7).toFixed(2)})`,
             }}
-            initial={false}
-            animate={
-              reduce
-                ? { scale: 0.85 + i * 0.5, opacity: 0.55 - i * 0.12 }
-                : { scale: [0.5, 2.4], opacity: [0.85, 0] }
-            }
-            transition={
-              reduce
-                ? { duration: 0 }
-                : { duration: 3.2, repeat: Infinity, ease: "easeOut", delay: i * 0.8 }
-            }
           />
         ))}
-        {/* Soft static gold core glow under the bud */}
+        {/* Soft gold core glow under the bud */}
         <span
           className="absolute rounded-full"
           style={{
-            width: 84,
-            height: 84,
-            background: "radial-gradient(circle, rgba(255,179,0,0.30), transparent 68%)",
+            width: 86,
+            height: 86,
+            background: "radial-gradient(circle, rgba(255,179,0,0.3), transparent 68%)",
             filter: "blur(3px)",
           }}
         />

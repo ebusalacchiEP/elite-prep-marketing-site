@@ -79,8 +79,8 @@ export default function EliteTempoLanding() {
                 <span style={{ color: ACCENT }}>Copy your best.</span>
               </h1>
               <p className="mt-5 max-w-md text-base leading-relaxed" style={{ color: MUTED }}>
-                Feel what it&apos;s like to swing like the greats, then bring your
-                range game to the course when it matters most.
+                Copy the tempo of the greats. Capture your best tempo and
+                routine. Repeat it when it matters most.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <AppStoreButton />
@@ -270,10 +270,10 @@ export default function EliteTempoLanding() {
             <div className="relative mx-auto w-fit px-8 sm:px-14">
               <DeviceFrame img="/elite-tempo/lock-activity.jpg" notch={false} max={300} topFade />
 
-              {/* Buds straddle the Live Activity card (~78% down): left rides just
-                  above it, right just below, so the widget sits between them. */}
-              <BudFlank src="/elite-tempo/airpod-left.png" side="left" topPct={70} />
-              <BudFlank src="/elite-tempo/airpod-right.png" side="right" topPct={86} />
+              {/* Widget now sits mid-screen; buds straddle it near the middle —
+                  left just above, right just below. */}
+              <BudFlank src="/elite-tempo/airpod-left.png" side="left" topPct={43} />
+              <BudFlank src="/elite-tempo/airpod-right.png" side="right" topPct={57} />
             </div>
           </Reveal>
         </div>
