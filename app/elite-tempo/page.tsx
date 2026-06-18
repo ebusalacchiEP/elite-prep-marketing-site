@@ -258,10 +258,8 @@ export default function EliteTempoLanding() {
                 Phone in your bag.
               </h2>
               <p className="mt-4 max-w-md text-base leading-relaxed" style={{ color: MUTED }}>
-                Put your headphones in, drop your phone in your golf bag, and train
-                to the beat. No screen, no taps, eyes on the ball. A Live Activity
-                keeps your tempo on the lock screen and Apple Watch for when you
-                want a glance.
+                Headphones in, phone in your bag, eyes on the ball. Your tempo
+                stays on the lock screen and Apple Watch, a glance away.
               </p>
             </div>
           </Reveal>
@@ -269,12 +267,13 @@ export default function EliteTempoLanding() {
             {/* Ladder-style: phone centered, one AirPod flanking each side, each
                 sitting on a gold glow ring — the beat radiating out (gold = the
                 live-timing signal). Buds sit just outside the phone edges. */}
-            <div className="relative mx-auto w-fit px-12 sm:px-16">
-              <DeviceFrame img="/elite-tempo/lock-activity.jpg" notch={false} max={260} topFade />
+            <div className="relative mx-auto w-fit px-8 sm:px-14">
+              <DeviceFrame img="/elite-tempo/lock-activity.jpg" notch={false} max={300} topFade />
 
-              {/* Left AirPod, scattered up; right AirPod, scattered down */}
-              <BudFlank src="/elite-tempo/airpod-left.png" side="left" offsetY={-30} />
-              <BudFlank src="/elite-tempo/airpod-right.png" side="right" offsetY={34} />
+              {/* Buds straddle the Live Activity card (~78% down): left rides just
+                  above it, right just below, so the widget sits between them. */}
+              <BudFlank src="/elite-tempo/airpod-left.png" side="left" topPct={70} />
+              <BudFlank src="/elite-tempo/airpod-right.png" side="right" topPct={86} />
             </div>
           </Reveal>
         </div>
