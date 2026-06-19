@@ -23,16 +23,16 @@ const APP_STORE_URL = "#";
 export const metadata: Metadata = {
   title: "Elite Tempo. Copy the greats. Copy your best.",
   description:
-    "Golf tempo, timed by hand to 1/100s. Match the greats, then record your own swing and let the app find takeaway, top, and impact automatically. Train hands-free with the beats in your headphones. Pay once, $29.99, no subscription.",
+    "Golf tempo, timed by hand to 1/100s. Match the greats, then record your own swing and let the app find takeaway, top, and impact automatically. Train hands-free with the beats in your headphones. Try it free for 7 days, then $19.99 a year, or $49.99 for life.",
   openGraph: {
     title: "Elite Tempo. Copy the greats. Copy your best.",
     description:
-      "Golf tempo, timed by hand to 1/100s. Record your swing and the app times it automatically. Train hands-free with beats in your headphones. $29.99 once, no subscription.",
+      "Golf tempo, timed by hand to 1/100s. Record your swing and the app times it automatically. Train hands-free with beats in your headphones. Free for 7 days, then $19.99 a year or $49.99 once.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Elite Tempo. Copy the greats. Copy your best.",
-    description: "Golf tempo, timed by hand to 1/100s. Auto swing capture, hands-free. $29.99 once, no subscription.",
+    description: "Golf tempo, timed by hand to 1/100s. Auto swing capture, hands-free. Free 7-day trial, then $19.99 a year or $49.99 for life.",
   },
 };
 
@@ -85,7 +85,7 @@ export default function EliteTempoLanding() {
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <AppStoreButton />
                 <span className="text-sm" style={{ color: MUTED }}>
-                  Free to try · <strong style={{ color: INK }}>$29.99</strong> one-time · No subscription
+                  Free to try · <strong style={{ color: INK }}>7 days free</strong>, then $19.99/yr · or $49.99 for life
                 </span>
               </div>
             </div>
@@ -281,7 +281,7 @@ export default function EliteTempoLanding() {
 
       <Divider />
 
-      {/* Pricing — free to download, one-time unlock, no subscription */}
+      {/* Pricing — free to download; go Pro via lifetime (hero) or a yearly plan with a 7-day free trial */}
       <section className="mx-auto max-w-5xl px-6 py-20">
         <Reveal>
           <div
@@ -292,28 +292,30 @@ export default function EliteTempoLanding() {
               Free to download
             </p>
 
+            {/* Lifetime — the hero price */}
             <div className="mt-5 flex items-end justify-center gap-2">
               <span className="text-6xl font-extrabold leading-none" style={{ color: INK }}>
-                $29.99
+                $49.99
               </span>
               <span className="pb-1 text-lg font-bold" style={{ color: ACCENT }}>
-                once
+                for life
               </span>
             </div>
             <p className="mt-2 text-sm font-semibold" style={{ color: MUTED }}>
-              Less than a single lesson. Yours forever.
+              Pay once. Yours forever, no renewals.
             </p>
 
-            <div className="mt-5 flex flex-wrap justify-center gap-2">
-              {["No subscription", "No renewals", "Pay one time"].map((t) => (
-                <span
-                  key={t}
-                  className="rounded-full px-3 py-1 text-xs font-semibold"
-                  style={{ background: BG, border: `1px solid ${HAIRLINE}`, color: INK }}
-                >
-                  {t}
-                </span>
-              ))}
+            {/* Yearly — lower-commitment way in, with a free trial */}
+            <div
+              className="mx-auto mt-6 max-w-xs rounded-2xl px-4 py-3"
+              style={{ background: BG, border: `1px solid ${HAIRLINE}` }}
+            >
+              <p className="text-sm font-bold" style={{ color: INK }}>
+                Or start free for 7 days
+              </p>
+              <p className="mt-0.5 text-xs font-semibold" style={{ color: MUTED }}>
+                Then $19.99 a year. Cancel anytime.
+              </p>
             </div>
 
             <ul className="mx-auto mt-7 flex max-w-xs flex-col gap-2.5 text-left">
@@ -337,7 +339,7 @@ export default function EliteTempoLanding() {
               <AppStoreButton />
             </div>
             <p className="mt-4 text-xs" style={{ color: MUTED }}>
-              Start free. Play a shot in every area before you unlock.
+              Start free. Play a tempo in every area and time one of your own swings before you decide.
             </p>
           </div>
         </Reveal>

@@ -61,15 +61,27 @@ export default function EliteTempoTerms() {
             </p>
           </Section>
 
-          <Section title="2. Purchases (one-time unlock)">
+          <Section title="2. Purchases (Elite Tempo Pro)">
             <p>
-              The full library and the Time Your Swing feature are unlocked by a
-              one-time, non-consumable in-app purchase (&quot;Unlock Elite
-              Tempo&quot;). There is no subscription. All payments are processed by
-              Apple through your Apple ID; we do not handle your payment
-              information. Restoring a previous purchase on a new device is
-              supported in Settings. Refunds are handled by Apple under the App
-              Store terms; we cannot directly issue App Store refunds.
+              The full library, Time Your Swing, Compare, and Routines are unlocked
+              by &quot;Elite Tempo Pro,&quot; available two ways: a one-time,
+              non-consumable in-app purchase that unlocks the app for life, or an
+              auto-renewable yearly subscription. Both grant the same access.
+            </p>
+            <p>
+              The yearly subscription includes a 7-day free trial for new
+              subscribers. After the trial it renews automatically at the
+              then-current yearly price unless you cancel at least 24 hours before
+              the end of the current period. You can manage or cancel the
+              subscription anytime in your Apple ID settings; canceling stops future
+              renewals, and you keep access through the period you already paid for.
+              The lifetime purchase does not renew.
+            </p>
+            <p>
+              All payments are processed by Apple through your Apple ID; we do not
+              handle your payment information. Restoring a previous purchase on a new
+              device is supported in Settings. Refunds are handled by Apple under the
+              App Store terms; we cannot directly issue App Store refunds.
             </p>
           </Section>
 

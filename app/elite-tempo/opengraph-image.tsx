@@ -98,7 +98,7 @@ export default async function Image() {
               alignSelf: "flex-start",
             }}
           >
-            $29.99 once · no subscription
+            Free for 7 days · then $19.99/yr or $49.99
           </div>
         </div>
 

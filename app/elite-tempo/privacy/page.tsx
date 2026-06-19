@@ -72,11 +72,11 @@ export default function EliteTempoPrivacy() {
             </p>
             <ul className="flex list-disc flex-col gap-1.5 pl-5">
               <li>
-                <strong style={{ color: INK }}>Purchases.</strong> The one-time
-                &quot;Unlock Elite Tempo&quot; purchase is processed entirely by
-                Apple through the App Store. We never see your payment-card
-                details. Apple provides only an anonymized record that an
-                entitlement exists, so the app can unlock.
+                <strong style={{ color: INK }}>Purchases.</strong> Your purchase of
+                Elite Tempo Pro, whether the one-time lifetime unlock or the yearly
+                subscription, is processed entirely by Apple through the App Store. We
+                never see your payment-card details. Apple provides only an anonymized
+                record that an entitlement exists, so the app can unlock.
               </li>
               <li>
                 <strong style={{ color: INK }}>
