@@ -17,8 +17,7 @@ const MUTED = "#8F929C";
 const CARD = "#151720";
 const HAIRLINE = "#242732";
 
-// TODO: replace with the real App Store URL once the app is live.
-const APP_STORE_URL = "#";
+const APP_STORE_URL = "https://apps.apple.com/app/elite-tempo/id6779226434";
 
 export const metadata: Metadata = {
   title: "Elite Tempo. Copy the greats. Copy your best.",
